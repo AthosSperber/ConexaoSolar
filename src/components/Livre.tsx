@@ -1,35 +1,32 @@
 export default function Livre() {
   return (
-    <section
-      id="livre"
-      className="px-4 py-12 bg-gray-50"
-    >
-      <div className="max-w-md mx-auto text-center">
-        {/* Título – problema/benefício */}
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
-          Reduza o custo de energia da sua empresa
+    <section id="livre" className="section bg-white scroll-mt-24">
+      <div className="container-mobile">
+        <img
+          src="/assets/images/company-energy.jpg"
+          className="w-full rounded-3xl shadow-sm mb-8"
+          alt="Energia para empresas"
+        />
+
+        <h2 className="text-2xl font-extrabold mb-2">
+          Energia mais barata para empresas
         </h2>
 
-        {/* Subtítulo – nome oficial */}
-        <p className="text-sm text-green-600 font-semibold mb-6">
-          Conexão Livre
+        <p className="product-tag mb-4">Conexão Livre</p>
+
+        <p className="text-gray-600 mb-6">
+          Solução voltada para empresas que pagam caro na energia e buscam reduzir
+          custos de forma legal.
         </p>
 
-        {/* Resumo direto */}
-        <ul className="text-left text-gray-700 space-y-3 mb-8">
-          <li>✔ Economia significativa na conta de energia</li>
-          <li>✔ Ideal para empresas com consumo elevado</li>
-          <li>✔ Redução de custos fixos mês a mês</li>
+        <ul className="space-y-3 mb-8">
+          <li>✓ Redução de custos operacionais</li>
+          <li>✓ Processo regulamentado</li>
+          <li>✓ Sem troca de equipamentos</li>
         </ul>
 
-        {/* CTA */}
-        <a
-          href="https://wa.me/5519996693018?text=Olá!%20Vi%20o%20QR%20Code%20e%20quero%20entender%20como%20minha%20empresa%20pode%20reduzir%20o%20custo%20com%20energia."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block bg-green-600 text-white py-4 rounded-2xl font-semibold text-base hover:bg-green-700 transition"
-        >
-          Falar no WhatsApp e analisar minha empresa
+        <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" className="btn-primary block text-center">
+          Avaliar minha empresa
         </a>
       </div>
     </section>

@@ -1,35 +1,38 @@
 export default function Solar() {
   return (
-    <section
-      id="solar"
-      className="px-4 py-12 bg-gray-50"
-    >
-      <div className="max-w-md mx-auto text-center">
-        {/* Título – problema/benefício */}
-        <h2 className="text-2xl font-bold text-gray-900 mb-2">
-          Use energia solar e pague menos na conta
+    <section id="solar" className="section bg-white scroll-mt-24">
+      <div className="container-mobile">
+        <img
+          src="/assets/images/solar-roof.jpg"
+          className="w-full rounded-3xl shadow-sm mb-8"
+          alt="Energia solar no imóvel"
+        />
+
+        <h2 className="text-2xl font-extrabold mb-2">
+          Energia solar sem investimento inicial
         </h2>
 
-        {/* Subtítulo – nome oficial */}
-        <p className="text-sm text-green-600 font-semibold mb-6">
-          Conexão Solar
+        <p className="product-tag mb-4">Conexão Solar</p>
+
+        <p className="text-gray-600 mb-6">
+          Painéis solares são instalados no imóvel sem custo inicial,
+          gerando economia mensal na conta de luz.
         </p>
 
-        {/* Resumo direto */}
-        <ul className="text-left text-gray-700 space-y-3 mb-8">
-          <li>✔ Economia mensal direto na conta de luz</li>
-          <li>✔ Não precisa instalar placas no imóvel</li>
-          <li>✔ Energia limpa, segura e sem burocracia</li>
+        <ul className="space-y-3 mb-8">
+          <li>✓ Sem compra de placas</li>
+          <li>✓ Economia desde o início</li>
+          <li>✓ Contrato claro e transparente</li>
         </ul>
 
-        {/* CTA */}
-        <a
-          href="https://wa.me/5519996693018?text=Olá!%20Vi%20o%20QR%20Code%20e%20quero%20entender%20como%20funciona%20a%20energia%20solar%20sem%20instalar%20placas."
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block bg-green-600 text-white py-4 rounded-2xl font-semibold text-base hover:bg-green-700 transition"
-        >
-          Falar no WhatsApp e ver se posso usar
+        <div className="info-box mb-8">
+          <p className="text-sm text-gray-600">
+            Uma análise é feita antes para verificar se o imóvel se encaixa.
+          </p>
+        </div>
+
+        <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" className="btn-primary block text-center">
+          Ver se meu imóvel pode participar
         </a>
       </div>
     </section>
