@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://conexaosolar.com.br/sitemap.xml

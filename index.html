@@ -5,27 +5,66 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Energia Solar em Rio Claro - ConexãoSolar | Instalação de Painéis Solares</title>
-    <meta name="description" content="ConexãoSolar – Energia Solar em Rio Claro. Instalação de sistemas solares residenciais e comerciais, kits completos e suporte técnico. Economize na conta de luz com energia limpa e sustentável." />
+    <title>Conecta Solar - Soluções em Energia Renovável | Simule sua Economia</title>
+    <meta name="description" content="Conecta Solar — Soluções inteligentes em energia solar, redução de custos e sustentabilidade. Simule sua economia e solicite orçamento sem compromisso." />
     <meta name="keywords" content="energia solar rio claro, energia solar sp, painéis solares rio claro, economia na conta de luz, instalação energia solar, sistema fotovoltaico, energia limpa, energia renovável" />
     <meta name="author" content="ConexãoSolar" />
 
-    <meta property="og:title" content="Energia Solar em Rio Claro - ConexãoSolar" />
+    <meta property="og:title" content="Conecta Solar - Soluções em Energia Renovável" />
     <meta property="og:description" content="Soluções inteligentes em energia solar para residências, comércios e propriedades rurais. Economia, sustentabilidade e tecnologia ao seu alcance." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
+    <meta property="og:url" content="https://conexaosolar.com.br" />
+    <meta property="og:image" content="/assets/images/solar.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Energia Solar em Rio Claro - ConexãoSolar" />
+    <meta name="twitter:title" content="Conecta Solar - Soluções em Energia Renovável" />
     <meta name="twitter:description" content="Soluções inteligentes em energia solar para residências, comércios e propriedades rurais." />
+    <meta name="twitter:image" content="/assets/images/solar.png" />
 
     <meta name="theme-color" content="#00A859" />
-    <link rel="canonical" href="https://conexaosolar.com.br" />
-    <meta property="og:image" content="https://bolt.new/static/og_default.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+    <link rel="canonical" href="https://conectasolar.com.br" />
+
+    <!-- Structured data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "name": "Conecta Solar",
+            "url": "https://conexaosolar.com.br",
+            "logo": "https://conexaosolar.com.br/assets/images/solar.png",
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "telephone": "+55-000-000-000",
+              "contactType": "customer service",
+              "email": "exemplo@dominio.com"
+            }]
+          },
+          {
+            "@type": "WebSite",
+            "url": "https://conectasolar.com.br",
+            "name": "Conecta Solar",
+            "description": "Soluções em energia solar, economia e sustentabilidade. Simule sua economia e solicite orçamento."
+          }
+        ]
+      }
+    </script>
+
+    <!-- Ensure essential content is available when JS is disabled -->
+    <noscript>
+      <style> .no-js-hero{display:block !important} </style>
+    </noscript>
 </head>
   <body>
+    <!-- Minimal SEO content for non-JS clients: visible only when JS is disabled -->
+    <div class="no-js-hero" style="display:none; padding:24px; text-align:center; background:#ffffff;">
+      <h1 style="font-size:22px; margin-bottom:8px;">Economize na conta de luz com energia limpa</h1>
+      <p style="color:#4b5563; margin-bottom:12px;">Conecta Solar — simule sua economia e solicite orçamento.</p>
+      <p><a href="#contact" style="background:#059669;color:#fff;padding:10px 16px;border-radius:9999px;text-decoration:none;">Simule sua economia</a></p>
+    </div>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -85,3 +85,29 @@ O site está otimizado para os seguintes termos:
 - Painéis solares rio claro
 - Economia na conta de luz
 - Instalação energia solar
+
+## Otimização de Imagens e Extração de PDF
+
+Se você tem um PDF com imagens (catálogo, materiais de marketing), siga estes passos para reutilizar as imagens no site:
+
+1. Extraia imagens do PDF para `src/assets/images/`:
+	- Recomendo usar `pdfimages` (do poppler) ou `magick` (ImageMagick).
+	- Exemplo com `pdfimages`:
+
+```bash
+pdfimages -j path/to/document.pdf output_prefix
+```
+
+2. Renomeie as imagens para corresponder aos nomes usados no projeto (por exemplo `solar.png`, `placas.png`, `green-lightbill.jpg`, `telecom.png`, `livre.png`).
+
+3. Instale dependências e gere versões WebP e `srcset` com o script incluído:
+
+```bash
+npm install
+npm run images:convert
+```
+
+O script `scripts/convert-images.js` gera arquivos `-480.webp`, `-768.webp` e `-1200.webp` ao lado das imagens originais. Os componentes já usam `<picture>`/`srcset` para carregar o melhor formato/tamanho.
+
+Observação: a conversão usa a biblioteca `sharp` (instalada como devDependency). Em algumas plataformas pode ser necessário instalar bibliotecas nativas (vcbuild/ prebuilt binaries). Se preferir, gere as WebP manualmente com `magick`.
+
