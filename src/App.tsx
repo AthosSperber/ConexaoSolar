@@ -1,17 +1,17 @@
 import { Suspense, lazy } from 'react';
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
+import Header from './components/layout/Header.tsx';
+import Footer from './components/layout/Footer.tsx';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import Hero from './components/sections/Hero';
 
 const ProductCarousel = lazy(() => import('./components/sections/ProductCarousel'));
-const Products = lazy(() => import('./components/sections/Products'));
-const Green = lazy(() => import('./components/sections/Green'));
-const Solar = lazy(() => import('./components/sections/Solar'));
-const Placas = lazy(() => import('./components/sections/Placas'));
-const Livre = lazy(() => import('./components/sections/Livre'));
-const Telecom = lazy(() => import('./components/sections/Telecom'));
-const Contact = lazy(() => import('./components/sections/Contact'));
+const Products = lazy(() => import('./components/sections/Products.tsx'));
+const Green = lazy(() => import('./components/sections/Green.tsx'));
+const Solar = lazy(() => import('./components/sections/Solar.tsx'));
+const Placas = lazy(() => import('./components/sections/Placas.tsx'));
+const Livre = lazy(() => import('./components/sections/Livre.tsx'));
+const Telecom = lazy(() => import('./components/sections/Telecom.tsx'));
+const Contact = lazy(() => import('./components/sections/Contact.tsx'));
 
 export default function App() {
   return (
