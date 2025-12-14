@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { homeContent } from '../../data/texts';
 
 function scrollToId(id?: string) {
   if (!id) return;
@@ -20,26 +21,30 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full bg-white sticky top-0 z-40 border-b border-gray-100">
-      <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-3">
+    <header className="w-full bg-white sticky top-0 z-40 border-b border-gray-100 transition-shadow">
+      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+        <button onClick={() => scrollToId('hero')} className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition">
           <div className="w-10 h-10 rounded-md bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center text-white font-bold">CS</div>
           <div>
-            <div className="text-sm font-semibold text-gray-800">Conecta Solar</div>
-            <div className="text-xs text-green-600">Energia inteligente</div>
+            <div className="text-sm font-semibold text-gray-800">{homeContent.header.brand}</div>
+            <div className="text-xs text-green-600">{homeContent.header.tagline}</div>
           </div>
-        </div>
+        </button>
 
-        <nav className="hidden md:flex items-center gap-4 text-sm text-gray-700">
-          <button onClick={() => scrollToId('produtos')} className="hover:text-green-600">Soluções</button>
-          <button onClick={() => scrollToId('green')} className="hover:text-green-600">Conta de luz</button>
-          <button onClick={() => scrollToId('solar')} className="hover:text-green-600">Solar</button>
-          <button onClick={() => scrollToId('placas')} className="hover:text-green-600">Placas</button>
-          <button onClick={() => scrollToId('contact')} className="hover:text-green-600">Contato</button>
+        <nav className="hidden md:flex items-center gap-8 text-sm text-gray-700">
+          {homeContent.header.links.map((link) => (
+            <button
+              key={link.id}
+              onClick={() => scrollToId(link.id)}
+              className="hover:text-green-600 transition font-medium"
+            >
+              {link.label}
+            </button>
+          ))}
         </nav>
 
         <div className="ml-4">
-          <a href="#contact" onClick={() => scrollToId('contact')} className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-700">Simule sua economia</a>
+          <button onClick={() => scrollToId('hero')} className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-700 transition">Simule sua economia</button>
         </div>
       </div>
     </header>

@@ -3,6 +3,7 @@ import Header from './components/layout/Header.tsx';
 import Footer from './components/layout/Footer.tsx';
 import WhatsAppButton from './components/ui/WhatsAppButton';
 import Hero from './components/sections/Hero';
+import About from './components/sections/About';
 
 const ProductCarousel = lazy(() => import('./components/sections/ProductCarousel'));
 const Products = lazy(() => import('./components/sections/Products.tsx'));
@@ -20,9 +21,10 @@ export default function App() {
 
       <main className="flex-1">
         <Hero />
+        <About />
 
         <Suspense fallback={<div className="py-16 text-center">Carregando conteúdo...</div>}>
-          <Products id="produtos" />
+          <Products />
           <ProductCarousel />
           <Green />
           <Solar />
