@@ -10,7 +10,7 @@ const SolutionCard: FC<SolutionCardProps> = ({ solution, onCardClick }) => {
   return (
     <button
       onClick={() => onCardClick?.(solution)}
-      className="relative flex-shrink-0 w-72 bg-white rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-green-300 cursor-pointer group overflow-hidden"
+      className="relative flex-shrink-0 w-4/5 sm:w-72 lg:w-72 bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800/100 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent dark:border-gray-700/50 hover:border-green-300 dark:hover:border-green-600 cursor-pointer group overflow-hidden"
       aria-label={`${solution.title}: ${solution.subtitle}`}
     >
       {/* Background gradient accent (subtle) */}
@@ -26,7 +26,7 @@ const SolutionCard: FC<SolutionCardProps> = ({ solution, onCardClick }) => {
         </div>
 
         {/* Título */}
-        <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 leading-tight">
           {solution.title}
         </h3>
 
@@ -34,17 +34,17 @@ const SolutionCard: FC<SolutionCardProps> = ({ solution, onCardClick }) => {
         <div className="w-10 h-1 bg-gradient-to-r from-transparent via-green-400 to-transparent mx-auto mb-4"></div>
 
         {/* Subtítulo (descrição principal para cliente final) */}
-        <p className="text-sm font-semibold text-gray-700 mb-3 leading-snug h-12 flex items-center justify-center">
+        <p className="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 leading-snug h-12 flex items-center justify-center">
           {solution.subtitle}
         </p>
 
         {/* Descrição adicional */}
-        <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">
+        <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2">
           {solution.description}
         </p>
 
         {/* CTA sutil */}
-        <div className="mt-5 inline-flex items-center text-green-600 text-xs font-semibold group-hover:text-green-700 transition-colors">
+        <div className="mt-5 inline-flex items-center text-green-600 dark:text-green-400 text-xs font-semibold group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors">
           Saiba mais →
         </div>
       </div>

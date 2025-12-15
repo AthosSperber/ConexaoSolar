@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply bg-gray-50 text-gray-800 antialiased;
+  @apply bg-gray-50 dark:bg-black text-gray-800 dark:text-gray-300 antialiased;
 }
 
 /* Scroll snap container */
