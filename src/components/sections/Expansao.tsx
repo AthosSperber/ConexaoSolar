@@ -4,10 +4,10 @@ import { CheckCircle2, TrendingUp } from 'lucide-react';
 export default function Expansao() {
   return (
     <section id="expansao" className="scroll-snap-section bg-white dark:bg-black">
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div className="text-center mb-12">
-          <span className="product-tag text-emerald-600 dark:text-emerald-400 font-semibold text-sm uppercase tracking-wide">Conexão Expansão</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-6">Multiplique sua rede e seus ganhos</h2>
+      <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+        <div className="text-center mb-8 md:mb-12">
+          <span className="product-tag text-emerald-600 dark:text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wide">Conexão Expansão</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4 md:mb-6">Multiplique sua rede e seus ganhos</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Indique novos licenciados, forme sua equipe e alcance bônus, prêmios, viagens e comissões em escala. É o caminho para quem quer crescer rápido e construir uma carreira de sucesso na iGreen.
           </p>
@@ -37,55 +37,55 @@ export default function Expansao() {
 
         {/* Tabela de Comissões por Conexão */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Comissões por Tipo de Conexão</h3>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Comissões por Tipo de Conexão</h3>
+          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+            <table className="w-full text-xs sm:text-sm min-w-[600px]">
               <thead>
-                <tr className="bg-emerald-100 border-b-2 border-emerald-600">
-                  <th className="px-4 py-3 text-left font-bold text-gray-900">Conexão</th>
-                  <th className="px-4 py-3 text-left font-bold text-gray-700">GP (Própria)</th>
-                  <th className="px-4 py-3 text-left font-bold text-gray-700">GI PRO (Indireta)</th>
-                  <th className="px-4 py-3 text-left font-bold text-gray-700">RO (Royalties)</th>
-                  <th className="px-4 py-3 text-left font-bold text-gray-700">Base</th>
+                <tr className="bg-emerald-100 dark:bg-emerald-900 border-b-2 border-emerald-600 dark:border-emerald-500">
+                  <th className="px-4 py-3 text-left font-bold text-gray-900 dark:text-white">Conexão</th>
+                  <th className="px-4 py-3 text-left font-bold text-gray-700 dark:text-gray-300">GP (Própria)</th>
+                  <th className="px-4 py-3 text-left font-bold text-gray-700 dark:text-gray-300">GI PRO (Indireta)</th>
+                  <th className="px-4 py-3 text-left font-bold text-gray-700 dark:text-gray-300">RO (Royalties)</th>
+                  <th className="px-4 py-3 text-left font-bold text-gray-700 dark:text-gray-300">Base</th>
                 </tr>
               </thead>
-              <tbody className="bg-white">
-                <tr className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="px-4 py-3 font-semibold text-emerald-600">Green</td>
-                  <td className="px-4 py-3 text-gray-700">Até 4%</td>
-                  <td className="px-4 py-3 text-gray-700">Até 1%</td>
-                  <td className="px-4 py-3 text-gray-700">Até 1,5%</td>
-                  <td className="px-4 py-3 text-gray-600 text-xs">Sobre fatura</td>
+              <tbody className="bg-white dark:bg-gray-900">
+                <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <td className="px-4 py-3 font-semibold text-emerald-600 dark:text-emerald-400">Green</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até 4%</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até 1%</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até 1,5%</td>
+                  <td className="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">Sobre fatura</td>
                 </tr>
-                <tr className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="px-4 py-3 font-semibold text-yellow-600">Solar</td>
-                  <td className="px-4 py-3 text-gray-700">2% + Bônus</td>
-                  <td className="px-4 py-3 text-gray-700">0,50%</td>
-                  <td className="px-4 py-3 text-gray-700">Até 0,75%</td>
-                  <td className="px-4 py-3 text-gray-600 text-xs">Sobre fatura</td>
+                <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <td className="px-4 py-3 font-semibold text-yellow-600 dark:text-yellow-400">Solar</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">2% + Bônus</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">0,50%</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até 0,75%</td>
+                  <td className="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">Sobre fatura</td>
                 </tr>
-                <tr className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="px-4 py-3 font-semibold text-blue-600">Placas</td>
-                  <td className="px-4 py-3 text-gray-700">10%</td>
-                  <td className="px-4 py-3 text-gray-700">1%</td>
-                  <td className="px-4 py-3 text-gray-700">Até 1,5%</td>
-                  <td className="px-4 py-3 text-gray-600 text-xs">Sobre projeto</td>
+                <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <td className="px-4 py-3 font-semibold text-blue-600 dark:text-blue-400">Placas</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">10%</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">1%</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até 1,5%</td>
+                  <td className="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">Sobre projeto</td>
                 </tr>
-                <tr className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="px-4 py-3 font-semibold text-purple-600">Livre</td>
-                  <td className="px-4 py-3 text-gray-700">Até 2%</td>
-                  <td className="px-4 py-3 text-gray-700">Até 0,50%</td>
-                  <td className="px-4 py-3 text-gray-700">Até 0,75%</td>
-                  <td className="px-4 py-3 text-gray-600 text-xs">Sobre fatura</td>
+                <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <td className="px-4 py-3 font-semibold text-purple-600 dark:text-purple-400">Livre</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até 2%</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até 0,50%</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até 0,75%</td>
+                  <td className="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">Sobre fatura</td>
                 </tr>
-                <tr className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="px-4 py-3 font-semibold text-indigo-600">Telecom</td>
-                  <td className="px-4 py-3 text-gray-700">R$ 7,00</td>
-                  <td className="px-4 py-3 text-gray-700">R$ 1,00</td>
-                  <td className="px-4 py-3 text-gray-700">Até R$ 5,00</td>
-                  <td className="px-4 py-3 text-gray-600 text-xs">Por plano</td>
+                <tr className="border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800">
+                  <td className="px-4 py-3 font-semibold text-indigo-600 dark:text-indigo-400">Telecom</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">R$ 7,00</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">R$ 1,00</td>
+                  <td className="px-4 py-3 text-gray-700 dark:text-gray-300">Até R$ 5,00</td>
+                  <td className="px-4 py-3 text-gray-600 dark:text-gray-400 text-xs">Por plano</td>
                 </tr>
-                <tr className="bg-emerald-50 hover:bg-emerald-100">
+                <tr className="bg-emerald-50 dark:bg-emerald-900/30 hover:bg-emerald-100 dark:hover:bg-emerald-900/50">
                   <td className="px-4 py-3 font-semibold text-emerald-700">Expansão (PRO)</td>
                   <td className="px-4 py-3 font-bold text-emerald-700">R$ 300</td>
                   <td className="px-4 py-3 font-bold text-emerald-700">R$ 100</td>
@@ -95,7 +95,7 @@ export default function Expansao() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-gray-600 text-center mt-4">
+          <p className="text-xs text-gray-600 dark:text-gray-400 text-center mt-4">
             GP: Geração Própria | GI PRO: Geração Indireta PRO | RO: Royalties
           </p>
         </div>
@@ -147,19 +147,19 @@ export default function Expansao() {
           </Accordion>
 
           <Accordion title="💡 Dicas para Expansão">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
-              <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-6 border border-emerald-200">
-                <p className="font-bold text-emerald-700 mb-3">🚀 Para Licenciados Iniciantes:</p>
-                <ul className="space-y-2 text-sm text-gray-700">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700 dark:text-gray-300">
+              <div className="bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 rounded-xl p-6 border border-emerald-200 dark:border-emerald-700">
+                <p className="font-bold text-emerald-700 dark:text-emerald-400 mb-3">🚀 Para Licenciados Iniciantes:</p>
+                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                   <li>▸ Lista Inicial de 100 nomes</li>
                   <li>▸ 2 a 4 convites por dia</li>
                   <li>▸ Adicionar 3 novos prospectos em lista/dia</li>
                   <li>▸ Mostrar pelo menos 3 planos/dia</li>
                 </ul>
               </div>
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border border-blue-200">
-                <p className="font-bold text-blue-700 mb-3">⭐ Para Licenciados PRO:</p>
-                <ul className="space-y-2 text-sm text-gray-700">
+              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-700">
+                <p className="font-bold text-blue-700 dark:text-blue-400 mb-3">⭐ Para Licenciados PRO:</p>
+                <ul className="space-y-2 text-sm text-gray-700 dark:text-gray-300">
                   <li>▸ Praticar a metodologia</li>
                   <li>▸ Guiar seu time a ser PRO</li>
                   <li>▸ Participar treinamentos ao vivo</li>

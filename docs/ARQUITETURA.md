@@ -14,11 +14,11 @@ A estrutura segue o padrão de um projeto Vite + React.
 │   ├── assets/           # Imagens e outros arquivos estáticos
 │   ├── components/       # Componentes React reutilizáveis
 │   │   ├── layout/       # AppLayout, Header, Footer
-│   │   ├── sections/     # Hero, About, SolutionsSection, BenefitsSection, CTASection
-│   │   └── ui/           # SolutionCard, BenefitCard, Button, Carousel
-│   ├── data/             # Dados mockados ou estáticos (texts.ts, solutions.ts, partner.ts)
+│   │   ├── sections/     # Hero, About, SolutionsSection, BenefitsSection, CTASection, IgreenBenefits
+│   │   └── ui/           # SolutionCard, BenefitCard, Button, Carousel, ProductModal, Accordion
+│   ├── data/             # Dados mockados ou estáticos (texts.ts, solutions.ts, partner.ts, productDetails.ts)
 │   ├── lib/              # Configuração de clientes (ex: supabase.ts)
-│   ├── pages/            # Componentes de página completos (ex: Partnerships.tsx)
+│   ├── pages/            # Componentes de página completos (Home, Partnerships, ProductPage)
 │   └── App.tsx           # Ponto de entrada principal da aplicação
 └── docs/                 # Documentação do projeto
 ```
@@ -48,9 +48,29 @@ Cada seção segue o padrão:
 
 ### Componentes UI
 Componentes reutilizáveis que seguem os padrões de UX/UI documentados:
-- SolutionCard: Card de solução com ícone, título, descrição
+- SolutionCard: Card de solução com ícone, título, descrição, hover states e dark mode
 - BenefitCard: Card de benefício com emoji, título, descrição
-- Carousel: Carrossel horizontal com indicadores dinâmicos
+- Accordion: Componente expansível para conteúdo longo (usado em FAQ)
+- Button: Botão base com variantes (primary, secondary)
+- Card: Container base para conteúdo
+- ThemeToggle: Switcher de tema com ícones animados
+- ProductModal: Modal de preview de produto com backdrop, summary, benefits, 2 CTAs
+- WhatsAppButton: Botão flutuante de WhatsApp
+
+### Páginas
+- **Home.tsx**: Landing page principal com todas as seções (Hero, About, Solutions, IgreenBenefits, Benefits, CTA, Product sections, Contact)
+- **Partnerships.tsx**: Página dedicada a informações para parceiros/licenciados
+- **ProductPage.tsx**: Template dinâmico reutilizado para todos os produtos (/:productId)
+  - Consome dados de `productDetails.ts` via `useParams()`
+  - Seções: Hero, Benefits, How It Works, FAQ, Final CTA
+  - Rota dinâmica para 6 produtos: /green, /solar, /placas, /livre, /telecom, /expansao
+
+### Estrutura de Dados
+- **solutions.ts**: Dados básicos dos 6 produtos (id, title, subtitle, icon) - usado no carrossel e modal
+- **productDetails.ts**: Dados completos de cada produto para páginas dedicadas
+  - Interface: `ProductDetail` com hero, benefits[], howItWorks[], faq[], cta
+  - Record<string, ProductDetail> exportado para acesso por ID
+  - Fonte: Extraído de APN Outubro 2025.pdf
 
 ## Back-end
 

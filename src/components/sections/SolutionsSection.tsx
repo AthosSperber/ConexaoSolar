@@ -1,43 +1,90 @@
-import { FC, useState } from 'react';
-import { solutions } from '../../data/solutions';
+import { FC, useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { solutions, Solution } from '../../data/solutions';
 import SolutionCard from '../ui/SolutionCard';
+import ProductModal from '../ui/ProductModal';
 
 const SolutionsSection: FC = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [selectedSolution, setSelectedSolution] = useState<Solution | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  const handleCardClick = (solutionId: string) => {
-    const index = solutions.findIndex(s => s.id === solutionId);
+  const handleCardClick = (solution: Solution) => {
+    const index = solutions.findIndex(s => s.id === solution.id);
     setSelectedIndex(index);
+    setSelectedSolution(solution);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    // Aguardar animação antes de limpar o state
+    setTimeout(() => setSelectedSolution(null), 300);
+  };
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 320; // largura aproximada de um card + gap
+      const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'right' ? scrollAmount : -scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   return (
     <section 
       id="solucoes"
-      className="w-full py-20 md:py-24 lg:py-32 bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800"
+      className="w-full py-16 md:py-20 lg:py-28 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden"
       aria-label="Soluções em energia limpa e conectividade"
     >
       {/* Container centralizado */}
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4 leading-tight">
             Soluções em energia limpa e conectividade
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">
             Conheça as possibilidades e entenda o que faz sentido para você.
           </p>
         </div>
 
-        {/* Carrossel com overflow-x apenas nele */}
-        <div className="flex flex-nowrap gap-6 overflow-x-auto scroll-smooth scrollbar-hide py-4 -mx-4 px-4 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8 mb-8">
-          {solutions.map((solution) => (
-            <div key={solution.id} className="flex-shrink-0">
-              <SolutionCard
-                solution={solution}
-                onCardClick={() => handleCardClick(solution.id)}
-              />
-            </div>
-          ))}
+        {/* Carrossel com overflow-x e botões de navegação */}
+        <div className="relative pointer-events-none">
+          {/* Botão Anterior */}
+          <button
+            onClick={() => scroll('left')}
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 hidden md:flex items-center justify-center pointer-events-auto"
+            aria-label="Card anterior"
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </button>
+
+          {/* Botão Próximo */}
+          <button
+            onClick={() => scroll('right')}
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 hidden md:flex items-center justify-center pointer-events-auto"
+            aria-label="Próximo card"
+          >
+            <ChevronRight className="w-6 h-6" />
+          </button>
+
+          <div 
+            ref={scrollContainerRef}
+            className="flex flex-nowrap gap-6 overflow-x-auto scroll-smooth scrollbar-hide py-4 -mx-4 px-4 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8 mb-8 pointer-events-auto"
+          >
+            {solutions.map((solution) => (
+              <div key={solution.id} className="flex-shrink-0">
+                <SolutionCard
+                  solution={solution}
+                  onCardClick={() => handleCardClick(solution)}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Indicadores discretos */}
@@ -87,6 +134,13 @@ const SolutionsSection: FC = () => {
           </a>
         </div>
       </div>
+
+      {/* Product Modal */}
+      <ProductModal
+        solution={selectedSolution}
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+      />
     </section>
   );
 };

@@ -1,6 +1,6 @@
 export default function Contact() {
   return (
-    <section id="contact" className="bg-white dark:bg-black px-4 py-10 text-center">
+    <section id="contact" className="bg-gray-50 dark:bg-gray-900 px-4 py-16 md:py-20 text-center border-t border-gray-200 dark:border-gray-700">
       <div className="max-w-2xl mx-auto">
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Ainda ficou alguma dúvida?</h2>
 
@@ -9,7 +9,7 @@ export default function Contact() {
         </p>
 
         <a
-          href="https://wa.me/5519996693018"
+          href="https://wa.me/55519996693018"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 px-6 py-3 rounded-xl font-semibold text-base transition"

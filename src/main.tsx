@@ -5,6 +5,7 @@ import { ThemeProvider } from './components/providers/ThemeProvider.tsx';
 import App from './App.tsx';
 import Home from './pages/Home.tsx';
 import Partnerships from './pages/Partnerships.tsx';
+import ProductPage from './pages/ProductPage.tsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -19,6 +20,10 @@ const router = createBrowserRouter([
       {
         path: '/parcerias',
         element: <Partnerships />,
+      },
+      {
+        path: '/:productId',
+        element: <ProductPage />,
       },
     ],
   },

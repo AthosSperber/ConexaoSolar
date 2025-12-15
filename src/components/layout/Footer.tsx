@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white px-4 py-12 mt-16">
-      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+    <footer className="bg-gray-900 text-white px-4 py-8 md:py-12 mt-12 md:mt-16">
+      <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-center md:text-left">
         <div>
           <p className="text-lg font-bold mb-1">Conecta Solar</p>
           <p className="text-sm text-gray-300">Soluções iGreen em energia renovável</p>

@@ -44,36 +44,36 @@ export default function Products() {
   ];
 
   const colorStyles = {
-    green: 'from-green-50 to-white border-green-100 hover:border-green-300',
-    yellow: 'from-yellow-50 to-white border-yellow-100 hover:border-yellow-300',
-    blue: 'from-blue-50 to-white border-blue-100 hover:border-blue-300',
-    purple: 'from-purple-50 to-white border-purple-100 hover:border-purple-300',
-    indigo: 'from-indigo-50 to-white border-indigo-100 hover:border-indigo-300'
+    green: 'from-green-50 to-white dark:from-green-900/10 dark:to-gray-900 border-green-100 dark:border-green-800 hover:border-green-300 dark:hover:border-green-600',
+    yellow: 'from-yellow-50 to-white dark:from-yellow-900/10 dark:to-gray-900 border-yellow-100 dark:border-yellow-800 hover:border-yellow-300 dark:hover:border-yellow-600',
+    blue: 'from-blue-50 to-white dark:from-blue-900/10 dark:to-gray-900 border-blue-100 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-600',
+    purple: 'from-purple-50 to-white dark:from-purple-900/10 dark:to-gray-900 border-purple-100 dark:border-purple-800 hover:border-purple-300 dark:hover:border-purple-600',
+    indigo: 'from-indigo-50 to-white dark:from-indigo-900/10 dark:to-gray-900 border-indigo-100 dark:border-indigo-800 hover:border-indigo-300 dark:hover:border-indigo-600'
   };
 
   const iconColors = {
-    green: 'text-green-600 bg-green-100',
-    yellow: 'text-yellow-600 bg-yellow-100',
-    blue: 'text-blue-600 bg-blue-100',
-    purple: 'text-purple-600 bg-purple-100',
-    indigo: 'text-indigo-600 bg-indigo-100'
+    green: 'text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-900/30',
+    yellow: 'text-yellow-600 dark:text-yellow-400 bg-yellow-100 dark:bg-yellow-900/30',
+    blue: 'text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30',
+    purple: 'text-purple-600 dark:text-purple-400 bg-purple-100 dark:bg-purple-900/30',
+    indigo: 'text-indigo-600 dark:text-indigo-400 bg-indigo-100 dark:bg-indigo-900/30'
   };
 
   const chevronColors = {
-    green: 'text-green-600',
-    yellow: 'text-yellow-600',
-    blue: 'text-blue-600',
-    purple: 'text-purple-600',
-    indigo: 'text-indigo-600'
+    green: 'text-green-600 dark:text-green-400',
+    yellow: 'text-yellow-600 dark:text-yellow-400',
+    blue: 'text-blue-600 dark:text-blue-400',
+    purple: 'text-purple-600 dark:text-purple-400',
+    indigo: 'text-indigo-600 dark:text-indigo-400'
   };
 
   return (
-    <section id="produtos" className="scroll-snap-section bg-gradient-to-b from-white to-gray-50">
+    <section id="produtos" className="scroll-snap-section bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-black">
       <div className="max-w-5xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <span className="product-tag text-green-600 font-semibold text-sm uppercase tracking-wide">Soluções iGreen</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 mb-4">Escolha sua solução</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">Clique em uma opção para conhecer melhor a solução mais adequada para você.</p>
+          <span className="product-tag text-green-600 dark:text-green-400 font-semibold text-sm uppercase tracking-wide">Soluções iGreen</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4">Escolha sua solução</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">Clique em uma opção para conhecer melhor a solução mais adequada para você.</p>
         </div>
 
         {/* Grid responsivo */}
@@ -94,8 +94,8 @@ export default function Products() {
                   <Icon className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <div className="font-semibold text-gray-900 text-sm md:text-base truncate">{product.title}</div>
-                  <div className="text-xs md:text-sm text-gray-600 truncate">{product.desc}</div>
+                  <div className="font-semibold text-gray-900 dark:text-white text-sm md:text-base truncate">{product.title}</div>
+                  <div className="text-xs md:text-sm text-gray-600 dark:text-gray-400 truncate">{product.desc}</div>
                 </div>
                 <ChevronRight className={`${chevronColor} w-5 h-5 flex-shrink-0`} />
               </button>

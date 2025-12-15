@@ -36,7 +36,7 @@ export default function Header() {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm text-gray-700 dark:text-gray-300">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm text-gray-700 dark:text-gray-300">
           {isHome && homeContent.header.links.map((link) => (
             <button
               key={link.id}
@@ -55,11 +55,14 @@ export default function Header() {
           <ThemeToggle />
         </nav>
 
-        <div className="ml-4">
+        <div className="flex items-center gap-2 md:gap-4">
+          <div className="md:hidden">
+            <ThemeToggle />
+          </div>
           {isHome ? (
-            <button onClick={() => scrollToId('solucoes')} className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-700 transition">Simule sua economia</button>
+            <button onClick={() => scrollToId('solucoes')} className="bg-green-600 text-white px-3 py-2 md:px-4 rounded-full text-xs md:text-sm font-semibold hover:bg-green-700 transition whitespace-nowrap">Simular</button>
           ) : (
-            <Link to="/" className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-green-700 transition inline-block">Voltar ao início</Link>
+            <Link to="/" className="bg-green-600 text-white px-3 py-2 md:px-4 rounded-full text-xs md:text-sm font-semibold hover:bg-green-700 transition inline-block whitespace-nowrap">Voltar</Link>
           )}
         </div>
       </div>

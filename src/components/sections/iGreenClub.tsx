@@ -72,57 +72,57 @@ export default function iGreenClubSection() {
         {/* Programas de Recompensas */}
         <div className="space-y-8 mb-12">
           {/* Roleta de Prêmios */}
-          <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 md:p-12 border-2 border-yellow-300 dark:border-yellow-700 shadow-md">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">🎱 Gire a Roleta e Ganhe</h3>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>Cada indicação de cliente novo = 1 Giro + 1 Número da Sorte</strong></p>
-            <div className="grid grid-cols-2 md:grid-cols-6 gap-3 mb-8">
+          <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-yellow-300 dark:border-yellow-700 shadow-md">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">🎱 Gire a Roleta e Ganhe</h3>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>Cada indicação de cliente novo = 1 Giro + 1 Número da Sorte</strong></p>
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 sm:gap-3 mb-8">
               {['+1 Sorte', 'R$ 25', 'R$ 50', 'R$ 100', 'R$ 250', 'R$ 500'].map((prize, i) => (
-                <div key={i} className="bg-white rounded-xl p-4 text-center font-bold text-yellow-600 border-2 border-yellow-200 hover:shadow-md transition">
+                <div key={i} className="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 text-center font-bold text-yellow-600 dark:text-yellow-400 border-2 border-yellow-200 dark:border-yellow-700 hover:shadow-md transition text-sm sm:text-base">
                   {prize}
                 </div>
               ))}
             </div>
-            <p className="text-sm text-gray-700 font-semibold">✓ Sem limites de giros! ✓ Quanto mais indicar, mais chance de ganhar!</p>
-            <p className="text-xs text-gray-600 mt-4">Referência: igreenenergy.com.br/igreen-premia-materiais-de-apoio</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300 font-semibold">✓ Sem limites de giros! ✓ Quanto mais indicar, mais chance de ganhar!</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-4">Referência: igreenenergy.com.br/igreen-premia-materiais-de-apoio</p>
           </div>
 
           {/* Cashback Sustentável */}
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-3xl p-8 md:p-12 border-2 border-green-300 shadow-md">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">💚 Cashback Sustentável</h3>
-            <p className="text-lg text-gray-700 mb-6"><strong>Ganhe cashback ao indicar novos clientes e abata direto na sua conta de energia:</strong></p>
-            <div className="bg-white rounded-2xl p-8 text-center mb-6 border-2 border-green-300">
-              <p className="text-sm text-gray-600 mb-2">Desconto Máximo na Energia Injetada</p>
-              <p className="text-5xl font-extrabold text-green-600 mb-2">ATÉ 100%</p>
-              <p className="text-sm text-gray-700 font-semibold">Ou use para outras indicações e ganhe recorrência</p>
+          <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-green-300 dark:border-green-700 shadow-md">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">💚 Cashback Sustentável</h3>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>Ganhe cashback ao indicar novos clientes e abata direto na sua conta de energia:</strong></p>
+            <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 text-center mb-6 border-2 border-green-300 dark:border-green-700">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Desconto Máximo na Energia Injetada</p>
+              <p className="text-4xl sm:text-5xl font-extrabold text-green-600 dark:text-green-400 mb-2">ATÉ 100%</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300 font-semibold">Ou use para outras indicações e ganhe recorrência</p>
             </div>
-            <p className="text-sm text-gray-700 mb-4\">🎯 <strong>O Licenciado ganha recorrência das suas indicações enquanto você zera a energia!</strong></p>
-            <p className="text-xs text-gray-600\">Referência: igreenenergy.com.br/cashback-sustentavel</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">🎯 <strong>O Licenciado ganha recorrência das suas indicações enquanto você zera a energia!</strong></p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">Referência: igreenenergy.com.br/cashback-sustentavel</p>
           </div>
         </div>
 
         {/* Depoimentos */}
-        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-gray-100 mb-12\">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center\">O que dizem nossos membros</h3>
+        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700 mb-12">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">O que dizem nossos membros</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((t) => (
-              <blockquote key={t.id} className="p-6 bg-gradient-to-br from-emerald-50 to-green-50 rounded-2xl border border-emerald-200">
+              <blockquote key={t.id} className="p-6 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-emerald-900/20 dark:to-green-900/20 rounded-2xl border border-emerald-200 dark:border-emerald-700">
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-yellow-500 fill-yellow-500" />
                   ))}
                 </div>
-                <p className="text-gray-800 mb-4 leading-relaxed\">"{t.text}"</p>
-                <footer className="font-semibold text-emerald-600\">— {t.name}</footer>
+                <p className="text-gray-800 dark:text-gray-300 mb-4 leading-relaxed">"{t.text}"</p>
+                <footer className="font-semibold text-emerald-600 dark:text-emerald-400">— {t.name}</footer>
               </blockquote>
             ))}
           </div>
         </div>
 
         {/* CTA Final */}
-        <div className="bg-gradient-to-r from-emerald-600 to-green-600 rounded-3xl p-8 md:p-12 text-center text-white shadow-xl">
-          <p className="text-lg text-emerald-50 mb-4\">Todos os clientes iGreen recebem</p>
-          <p className="text-4xl md:text-5xl font-extrabold mb-6\">ACESSO GRATUITO</p>
-          <p className="text-lg text-emerald-50 mb-8\">ao iGreen Club com +600 mil descontos</p>
+        <div className="bg-gradient-to-r from-emerald-600 to-green-600 rounded-3xl p-6 sm:p-8 md:p-12 text-center text-white shadow-xl">
+          <p className="text-base sm:text-lg text-emerald-50 mb-4">Todos os clientes iGreen recebem</p>
+          <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6">ACESSO GRATUITO</p>
+          <p className="text-base sm:text-lg text-emerald-50 mb-8">ao iGreen Club com +600 mil descontos</p>
           <a 
             href="https://wa.me/5519996693018" 
             target="_blank" 
@@ -131,7 +131,7 @@ export default function iGreenClubSection() {
           >
             Conhecer Mais Benefícios
           </a>
-          <p className="text-sm text-emerald-100 mt-6\">Referência: www.igreenenergy.com.br/igreenclub</p>
+          <p className="text-sm text-emerald-100 mt-6">Referência: www.igreenenergy.com.br/igreenclub</p>
         </div>
       </div>
     </section>

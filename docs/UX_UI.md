@@ -53,3 +53,65 @@ Todas as seções devem usar:
 - **Hover**: `hover:shadow-lg transition-all duration-300`
 - **Active**: `active:scale-95`
 - **Focus**: Sempre visível para acessibilidade
+
+## 📱 Responsividade Mobile-First
+
+Todos os componentes devem ser desenvolvidos primeiro para mobile e progressivamente melhorados para telas maiores.
+
+### Breakpoints (Tailwind)
+- **sm**: 640px (telefones grandes/pequenos tablets)
+- **md**: 768px (tablets)
+- **lg**: 1024px (desktops pequenos)
+- **xl**: 1280px (desktops grandes)
+
+### Padrões de Escalonamento
+
+#### Títulos Principais (h1, h2)
+```tsx
+className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+```
+
+#### Subtítulos (h3, p grandes)
+```tsx
+className="text-base sm:text-lg md:text-xl"
+```
+
+#### Paddings Verticais (sections)
+```tsx
+className="py-12 md:py-16 lg:py-24"
+```
+
+#### Margens (entre elementos)
+```tsx
+className="mb-8 md:mb-12"
+```
+
+#### Botões
+```tsx
+className="px-3 py-2 md:px-4 text-xs md:text-sm"
+```
+
+#### Grids Responsivos
+```tsx
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
+```
+
+#### Gaps e Espaçamentos
+```tsx
+className="gap-2 sm:gap-3 md:gap-4 lg:gap-6"
+```
+
+### Tabelas em Mobile
+Tabelas devem ter scroll horizontal em mobile:
+```tsx
+<div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
+  <table className="w-full min-w-[600px]">
+    {/* conteúdo */}
+  </table>
+</div>
+```
+
+### Elementos Ocultos/Visíveis por Breakpoint
+- Ocultar em mobile, mostrar em desktop: `hidden md:block` ou `hidden md:flex`
+- Mostrar em mobile, ocultar em desktop: `block md:hidden` ou `flex md:hidden`
+- ThemeToggle móvel: Dentro de wrapper `<div className="md:hidden">`

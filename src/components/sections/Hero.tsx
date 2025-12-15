@@ -13,30 +13,30 @@ const Hero: FC = () => {
   return (
     <section 
       id="hero"
-      className="w-full min-h-screen flex items-center justify-center pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-950"
+      className="w-full min-h-screen flex items-center justify-center pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-900"
       aria-label="Seção principal Conecta Solar"
     >
       <div className="mx-auto max-w-6xl w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Coluna esquerda - Texto e CTA */}
           <div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 md:mb-6 leading-tight">
               {homeContent.hero.headline}
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6 md:mb-8 leading-relaxed">
               {homeContent.hero.subheadline}
             </p>
 
             <button
               onClick={scrollToProducts}
-              className="inline-block px-8 py-4 bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 font-bold rounded-lg transition-colors duration-200 text-lg shadow-md active:scale-95"
+              className="inline-block px-6 py-3 md:px-8 md:py-4 bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 font-bold rounded-lg transition-colors duration-200 text-base md:text-lg shadow-md active:scale-95"
               aria-label={homeContent.hero.cta}
             >
               {homeContent.hero.cta}
             </button>
 
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-8">
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-6 md:mt-8">
               Sem custo inicial • Contrato transparente • Suporte iGreen
             </p>
           </div>
