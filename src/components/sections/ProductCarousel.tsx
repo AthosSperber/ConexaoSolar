@@ -30,18 +30,18 @@ const carouselItems = [
 
 export default function ProductCarousel() {
   return (
-    <section className="px-4 py-16 bg-gradient-to-r from-green-50 to-blue-50">
+    <section className="px-4 py-16 bg-white dark:bg-black">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl font-extrabold text-center mb-2 text-gray-900">Nossos Produtos</h2>
-        <p className="text-center text-gray-600 mb-8">Explore as soluções disponíveis</p>
+        <h2 className="text-3xl font-extrabold text-center mb-2 text-gray-900 dark:text-white">Nossos Produtos</h2>
+        <p className="text-center text-gray-600 dark:text-gray-400 mb-8">Explore as soluções disponíveis</p>
 
         <Carousel
           items={carouselItems.map((item) => (
             <div key={item.title} className="px-2 py-4">
-              <div className="bg-white rounded-2xl shadow-md p-6 text-center h-full">
+              <div className="bg-white dark:bg-gray-900 dark:border dark:border-gray-700 rounded-2xl shadow-md p-6 text-center h-full">
                 <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-600">{item.desc}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{item.desc}</p>
               </div>
             </div>
           ))}

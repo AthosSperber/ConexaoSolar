@@ -10,7 +10,7 @@ const SolutionCard: FC<SolutionCardProps> = ({ solution, onCardClick }) => {
   return (
     <button
       onClick={() => onCardClick?.(solution)}
-      className="relative flex-shrink-0 w-4/5 sm:w-72 lg:w-72 bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800/100 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent dark:border-gray-700/50 hover:border-green-300 dark:hover:border-green-600 cursor-pointer group overflow-hidden"
+      className="relative flex-shrink-0 w-72 min-w-[18rem] lg:w-80 lg:min-w-[20rem] bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800/100 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent dark:border-gray-700/50 hover:border-green-300 dark:hover:border-green-600 cursor-pointer group overflow-hidden"
       aria-label={`${solution.title}: ${solution.subtitle}`}
     >
       {/* Background gradient accent (subtle) */}

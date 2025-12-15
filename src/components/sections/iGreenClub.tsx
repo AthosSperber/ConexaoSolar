@@ -37,32 +37,32 @@ export default function iGreenClubSection() {
   };
 
   return (
-    <section id="igreenclub" className="scroll-snap-section bg-white">
+    <section id="igreenclub" className="scroll-snap-section bg-gray-100 dark:bg-gray-950">
       <div className="max-w-6xl mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="product-tag text-emerald-600 font-semibold text-sm uppercase tracking-wide">iGreen Club</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 mb-4\">Todos os Clientes Recebem Acesso Gratuito</h2>
-          <p className="text-2xl font-bold text-emerald-600 mb-4\">+600 mil Descontos em Serviços e Produtos</p>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <span className="product-tag text-emerald-600 dark:text-emerald-400 font-semibold text-sm uppercase tracking-wide">iGreen Club</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4\">Todos os Clientes Recebem Acesso Gratuito</h2>
+          <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-4\">+600 mil Descontos em Serviços e Produtos</p>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Benefícios exclusivos para todos os clientes que contratam qualquer solução iGreen
           </p>
         </div>
 
         {/* Funcionalidades do APP */}
-        <div className="mb-12 bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl p-8 md:p-12 border border-emerald-100">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">Funcionalidades do App iGreen Club</h3>
+        <div className="mb-12 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 md:p-12 border border-emerald-100 dark:border-gray-700">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Funcionalidades do App iGreen Club</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {appFeatures.map((feature, idx) => {
               const Icon = feature.icon;
               const colorClass = colorClasses[feature.color as keyof typeof colorClasses];
               return (
-                <div key={idx} className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                <div key={idx} className="bg-white dark:bg-gray-900 dark:border dark:border-gray-700 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
                   <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${colorClass}`}>
                     <Icon className="w-7 h-7" />
                   </div>
-                  <h4 className="font-bold text-gray-900 mb-2 text-base">{feature.title}</h4>
-                  <p className="text-sm text-gray-700 leading-relaxed">{feature.description}</p>
+                  <h4 className="font-bold text-gray-900 dark:text-white mb-2 text-base">{feature.title}</h4>
+                  <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{feature.description}</p>
                 </div>
               );
             })}
@@ -72,9 +72,9 @@ export default function iGreenClubSection() {
         {/* Programas de Recompensas */}
         <div className="space-y-8 mb-12">
           {/* Roleta de Prêmios */}
-          <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-3xl p-8 md:p-12 border-2 border-yellow-300 shadow-md">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">🎡 Gire a Roleta e Ganhe</h3>
-            <p className="text-lg text-gray-700 mb-6"><strong>Cada indicação de cliente novo = 1 Giro + 1 Número da Sorte</strong></p>
+          <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 md:p-12 border-2 border-yellow-300 dark:border-yellow-700 shadow-md">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">🎱 Gire a Roleta e Ganhe</h3>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>Cada indicação de cliente novo = 1 Giro + 1 Número da Sorte</strong></p>
             <div className="grid grid-cols-2 md:grid-cols-6 gap-3 mb-8">
               {['+1 Sorte', 'R$ 25', 'R$ 50', 'R$ 100', 'R$ 250', 'R$ 500'].map((prize, i) => (
                 <div key={i} className="bg-white rounded-xl p-4 text-center font-bold text-yellow-600 border-2 border-yellow-200 hover:shadow-md transition">

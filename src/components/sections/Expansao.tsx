@@ -3,41 +3,41 @@ import { CheckCircle2, TrendingUp } from 'lucide-react';
 
 export default function Expansao() {
   return (
-    <section id="expansao" className="scroll-snap-section bg-white">
+    <section id="expansao" className="scroll-snap-section bg-white dark:bg-black">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
-          <span className="product-tag text-emerald-600 font-semibold text-sm uppercase tracking-wide">Conexão Expansão</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 mb-6">Multiplique sua rede e seus ganhos</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+          <span className="product-tag text-emerald-600 dark:text-emerald-400 font-semibold text-sm uppercase tracking-wide">Conexão Expansão</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-6">Multiplique sua rede e seus ganhos</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Indique novos licenciados, forme sua equipe e alcance bônus, prêmios, viagens e comissões em escala. É o caminho para quem quer crescer rápido e construir uma carreira de sucesso na iGreen.
           </p>
         </div>
 
         {/* Ganhos por Novo Licenciado */}
         <div className="bg-gradient-to-br from-emerald-50 to-green-50 rounded-3xl p-8 md:p-12 mb-12 border border-emerald-200">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">Ganhe por Cada Novo Licenciado</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Ganhe por Cada Novo Licenciado</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-              <p className="text-sm text-gray-600 mb-2">Licenciado Direto</p>
-              <div className="text-5xl font-extrabold text-emerald-600 mb-1">R$ 300</div>
-              <p className="text-gray-700 font-semibold mb-4">A cada novo licenciado</p>
-              <p className="text-sm text-gray-600">+ Royalties Expansão até R$300</p>
-              <p className="text-xs text-gray-500 mt-3 italic">Conforme nível de qualificação</p>
+            <div className="bg-white dark:bg-gray-900 dark:border dark:border-gray-700 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Licenciado Direto</p>
+              <div className="text-5xl font-extrabold text-emerald-600 dark:text-emerald-400 mb-1">R$ 300</div>
+              <p className="text-gray-700 dark:text-gray-300 font-semibold mb-4">A cada novo licenciado</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">+ Royalties Expansão até R$300</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mt-3 italic">Conforme nível de qualificação</p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
-              <p className="text-sm text-gray-600 mb-2">Licenciado Indireto (PRO)</p>
-              <div className="text-5xl font-extrabold text-emerald-600 mb-1">R$ 100</div>
-              <p className="text-gray-700 font-semibold mb-4">A cada novo licenciado</p>
-              <p className="text-sm text-gray-600">+ Royalties Expansão até R$300</p>
-              <p className="text-xs text-gray-500 mt-3 italic">Conforme nível de qualificação</p>
+            <div className="bg-white dark:bg-gray-900 dark:border dark:border-gray-700 rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Licenciado Indireto (PRO)</p>
+              <div className="text-5xl font-extrabold text-emerald-600 dark:text-emerald-400 mb-1">R$ 100</div>
+              <p className="text-gray-700 dark:text-gray-300 font-semibold mb-4">A cada novo licenciado</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400">+ Royalties Expansão até R$300</p>
+              <p className="text-xs text-gray-500 dark:text-gray-500 mt-3 italic">Conforme nível de qualificação</p>
             </div>
           </div>
         </div>
 
         {/* Tabela de Comissões por Conexão */}
         <div className="mb-12">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Comissões por Tipo de Conexão</h3>
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Comissões por Tipo de Conexão</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>

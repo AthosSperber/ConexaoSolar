@@ -29,7 +29,7 @@ const SolutionsSection: FC = () => {
         </div>
 
         {/* Carrossel com overflow-x apenas nele */}
-        <div className="flex gap-4 overflow-x-auto pb-4 -mx-4 px-4 mb-8 scrollbar-hide scroll-smooth">
+        <div className="flex flex-nowrap gap-6 overflow-x-auto scroll-smooth scrollbar-hide py-4 -mx-4 px-4 sm:-mx-6 sm:px-6 md:-mx-8 md:px-8 mb-8">
           {solutions.map((solution) => (
             <div key={solution.id} className="flex-shrink-0">
               <SolutionCard
