@@ -89,9 +89,14 @@ Todas as combinações seguem **WCAG 2.1 AA**:
 | Combinação | Contraste | Status |
 |------------|-----------|--------|
 | `#111827` em `#FFFFFF` | 16.9:1 | ✅ AAA |
-| `#00A859` em `#FFFFFF` | 2.9:1 | ⚠️ Apenas large text |
-| `#FFFFFF` em `#00A859` | 3.5:1 | ✅ AA large text |
+| `#00A859` em `#FFFFFF` | 2.9:1 | ⚠️ Apenas large text (≥18px) |
+| `#FFFFFF` em `#00A859` | 3.5:1 | ✅ AA large text (≥18px) |
 | `#374151` em `#F9FAFB` | 9.7:1 | ✅ AAA |
+
+**Nota Importante**: O verde primário `#00A859` em fundo branco não atinge WCAG AA para texto normal (4.5:1). Use apenas para:
+- Texto grande (≥18px ou ≥14px bold)
+- Elementos não textuais (ícones, decorações)
+- Backgrounds de botões (com texto branco por cima)
 
 ---
 
