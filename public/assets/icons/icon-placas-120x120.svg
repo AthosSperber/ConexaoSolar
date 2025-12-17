@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Ícone Conexão Placas">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#DBEAFE"/>
+      <stop offset="1" stop-color="#EFF6FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)"/>
+  <rect x="30" y="40" width="60" height="44" rx="10" fill="#2563EB"/>
+  <path d="M30 54h60M30 68h60" stroke="#1E3A8A" stroke-width="4" opacity="0.35"/>
+  <path d="M44 40v44M60 40v44M76 40v44" stroke="#1E3A8A" stroke-width="4" opacity="0.25"/>
+  <path d="M34 90l10-12h32l10 12" fill="none" stroke="#2563EB" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+</svg>

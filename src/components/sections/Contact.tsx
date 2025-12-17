@@ -9,7 +9,7 @@ export default function Contact() {
         </p>
 
         <a
-          href="https://wa.me/55519996693018"
+          href="https://wa.me/5519996693018"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 px-6 py-3 rounded-xl font-semibold text-base transition"

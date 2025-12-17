@@ -26,7 +26,7 @@ const benefits = [
 const BenefitsSection: FC = () => {
   return (
     <section 
-      className="w-full py-16 md:py-20 lg:py-28 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
+      className="w-full py-16 md:py-20 lg:py-28 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
       aria-label="Benefícios da energia limpa com Conecta Solar"
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">

@@ -37,7 +37,7 @@ const SolutionsSection: FC = () => {
   return (
     <section 
       id="solucoes"
-      className="w-full py-16 md:py-20 lg:py-28 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden"
+      className="w-full py-16 md:py-20 lg:py-28 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden"
       aria-label="Soluções em energia limpa e conectividade"
     >
       {/* Container centralizado */}

@@ -7,10 +7,21 @@ interface SolutionCardProps {
 }
 
 const SolutionCard: FC<SolutionCardProps> = ({ solution, onCardClick }) => {
+  const fallbackIcon =
+    'data:image/svg+xml;charset=utf-8,' +
+    encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+        <rect x="0" y="0" width="96" height="96" rx="16" fill="#F3F4F6"/>
+        <path d="M24 58c10-6 20-6 30 0s18 6 18 6" stroke="#9CA3AF" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <circle cx="36" cy="40" r="4" fill="#9CA3AF"/>
+        <circle cx="60" cy="40" r="4" fill="#9CA3AF"/>
+      </svg>`
+    );
+
   return (
     <button
       onClick={() => onCardClick?.(solution)}
-      className="relative flex-shrink-0 w-72 min-w-[18rem] lg:w-80 lg:min-w-[20rem] bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800/100 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-transparent dark:border-gray-700/50 hover:border-green-300 dark:hover:border-green-600 cursor-pointer group overflow-hidden"
+      className="relative flex-shrink-0 w-72 min-w-[18rem] lg:w-80 lg:min-w-[20rem] bg-gray-50 hover:bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800/100 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700/50 hover:border-green-300 dark:hover:border-green-600 cursor-pointer group overflow-hidden"
       aria-label={`${solution.title}: ${solution.subtitle}`}
     >
       {/* Background gradient accent (subtle) */}
@@ -20,8 +31,20 @@ const SolutionCard: FC<SolutionCardProps> = ({ solution, onCardClick }) => {
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Ícone placeholder */}
         <div className="w-24 h-24 mb-6 rounded-xl bg-gradient-to-br from-green-100 to-emerald-50 flex items-center justify-center group-hover:from-green-200 group-hover:to-emerald-100 transition-colors duration-300 shadow-sm">
-          <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center text-xs text-gray-400 font-medium">
-            {solution.icon}
+          <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center">
+            {solution.icon?.startsWith('/') ? (
+              <img
+                src={solution.icon}
+                alt={`Ícone: ${solution.title}`}
+                className="w-14 h-14 object-contain"
+                loading="lazy"
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src = fallbackIcon;
+                }}
+              />
+            ) : (
+              <span className="text-xs text-gray-400 font-medium px-2 text-center">{solution.icon}</span>
+            )}
           </div>
         </div>
 

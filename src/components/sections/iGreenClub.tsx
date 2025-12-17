@@ -37,7 +37,7 @@ export default function iGreenClubSection() {
   };
 
   return (
-    <section id="igreenclub" className="scroll-snap-section bg-gray-100 dark:bg-gray-950">
+    <section id="igreenclub" className="scroll-snap-section bg-gray-100 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-12">

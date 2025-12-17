@@ -5,7 +5,7 @@ type Props = {
   message?: string;
 };
 
-export default function WhatsAppButton({ phone = '5519999999999', message = 'Olá! Gostaria de saber mais sobre energia solar.' }: Props) {
+export default function WhatsAppButton({ phone = '5519996693018', message = 'Olá! Gostaria de saber mais sobre energia solar.' }: Props) {
   const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
   return (

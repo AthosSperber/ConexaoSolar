@@ -116,7 +116,7 @@ Caso precise adicionar variáveis de ambiente no futuro (ex: API keys):
 **.env.example**
 ```bash
 # WhatsApp
-VITE_WHATSAPP_NUMBER=55519996693018
+VITE_WHATSAPP_NUMBER=5519996693018
 
 # Analytics (futuro)
 # VITE_GA_TRACKING_ID=

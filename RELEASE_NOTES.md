@@ -146,6 +146,8 @@ netlify deploy --prod --dir=dist
 3. ✅ Espaçamentos despadronizados → py-16 md:py-20 lg:py-28
 4. ✅ CTA do iGreen Club simples → Pattern decorativo + animações
 5. ✅ Borders muito escuras → cinza-200/700
+6. ✅ FAQ/Accordion com contraste ruim no dark → header e body com `dark:`
+7. ✅ Cores Tailwind inválidas (ex: `gray-850`) → substituídas por tons válidos
 
 ### Melhorias Finais
 1. ✅ Consistência visual 100%

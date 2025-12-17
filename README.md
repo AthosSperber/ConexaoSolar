@@ -106,7 +106,7 @@ theme: {
 ```
 
 ### WhatsApp
-Busque por `55519996693018` e substitua pelo seu número.
+Busque por `5519996693018` e substitua pelo seu número.
 
 ### Dados dos Produtos
 Edite `src/data/productDetails.ts` para customizar informações.
@@ -150,7 +150,7 @@ Veja [DEPLOY.md](./DEPLOY.md) para instruções completas.
 
 | Uso | Claro | Escuro |
 |-----|-------|--------|
-| Background | `gray-50` | `gray-900` |
+| Background | `white` | `gray-900` |
 | Cards | `white` | `gray-800` |
 | Borders | `gray-200` | `gray-700` |
 | Text | `gray-900` | `white` |

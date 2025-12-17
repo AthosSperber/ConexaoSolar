@@ -3,7 +3,7 @@ import { CheckCircle2, TrendingUp } from 'lucide-react';
 
 export default function Expansao() {
   return (
-    <section id="expansao" className="scroll-snap-section bg-white dark:bg-black">
+    <section id="expansao" className="scroll-snap-section bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
         <div className="text-center mb-8 md:mb-12">
           <span className="product-tag text-emerald-600 dark:text-emerald-400 font-semibold text-xs sm:text-sm uppercase tracking-wide">Conexão Expansão</span>

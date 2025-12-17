@@ -14,7 +14,7 @@ export default function App() {
       </main>
 
       <Footer />
-      <WhatsAppButton phone="55519996693018" />
+      <WhatsAppButton phone="5519996693018" />
     </AppLayout>
   );
 }

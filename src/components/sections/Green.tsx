@@ -1,26 +1,38 @@
 import Accordion from '../ui/Accordion';
-import greenJpg from '../../assets/images/green-lightbill.jpg';
-import green480 from '../../assets/images/green-lightbill-480.webp';
-import green768 from '../../assets/images/green-lightbill-768.webp';
-import green1200 from '../../assets/images/green-lightbill-1200.webp';
 
 export default function Green() {
+  const imageSrc = '/assets/sections/green.jpg';
+  const fallbackImage =
+    'data:image/svg+xml;charset=utf-8,' +
+    encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#DCFCE7"/>
+            <stop offset="1" stop-color="#ECFDF5"/>
+          </linearGradient>
+        </defs>
+        <rect width="1000" height="600" fill="url(#g)"/>
+        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="28" fill="#16A34A">Imagem Conexão Green</text>
+      </svg>`
+    );
+
   return (
     <section id="green" className="scroll-snap-section bg-white">
       <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Imagem à esquerda */}
         <div className="order-2 md:order-1">
-          <picture>
-            <source type="image/webp" srcSet={`${green480} 480w, ${green768} 768w, ${green1200} 1200w`} sizes="(max-width:768px) 90vw, 45vw" />
-            <img 
-              src={greenJpg} 
-              className="w-full rounded-3xl shadow-xl object-cover h-96" 
-              alt="Economia na conta de luz com Conexão Green" 
-              loading="lazy" 
-              width="1000" 
-              height="600" 
-            />
-          </picture>
+          <img
+            src={imageSrc}
+            className="w-full rounded-3xl shadow-xl object-contain bg-white h-96"
+            alt="Economia na conta de luz com Conexão Green"
+            loading="lazy"
+            width="1000"
+            height="600"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = fallbackImage;
+            }}
+          />
         </div>
 
         {/* Conteúdo à direita */}

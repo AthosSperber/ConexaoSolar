@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Ícone Conexão Solar">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FEF9C3"/>
+      <stop offset="1" stop-color="#FFF7ED"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)"/>
+  <circle cx="60" cy="56" r="18" fill="#CA8A04"/>
+  <g stroke="#A16207" stroke-width="6" stroke-linecap="round" opacity="0.9">
+    <path d="M60 26v10"/>
+    <path d="M60 86v10"/>
+    <path d="M30 56h10"/>
+    <path d="M80 56h10"/>
+    <path d="M38 34l7 7"/>
+    <path d="M75 71l7 7"/>
+    <path d="M82 34l-7 7"/>
+    <path d="M45 71l-7 7"/>
+  </g>
+</svg>

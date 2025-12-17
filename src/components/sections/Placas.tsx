@@ -1,26 +1,38 @@
 import Accordion from '../ui/Accordion';
-import placasJpg from '../../assets/images/placas.jpg';
-import placas480 from '../../assets/images/placas-480.webp';
-import placas768 from '../../assets/images/placas-768.webp';
-import placas1200 from '../../assets/images/placas-1200.webp';
 
 export default function Placas() {
+  const imageSrc = '/assets/sections/placas.jpg';
+  const fallbackImage =
+    'data:image/svg+xml;charset=utf-8,' +
+    encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="600" viewBox="0 0 1000 600">
+        <defs>
+          <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#DBEAFE"/>
+            <stop offset="1" stop-color="#EFF6FF"/>
+          </linearGradient>
+        </defs>
+        <rect width="1000" height="600" fill="url(#g)"/>
+        <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="28" fill="#2563EB">Imagem Conexão Placas</text>
+      </svg>`
+    );
+
   return (
     <section id="placas" className="scroll-snap-section bg-white">
       <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Imagem à esquerda */}
         <div className="order-2 md:order-1">
-          <picture>
-            <source type="image/webp" srcSet={`${placas480} 480w, ${placas768} 768w, ${placas1200} 1200w`} sizes="(max-width:768px) 90vw, 45vw" />
-            <img 
-              src={placasJpg} 
-              className="w-full rounded-3xl shadow-xl object-cover h-96" 
-              alt="Painéis solares Conexão Placas" 
-              loading="lazy" 
-              width="1000" 
-              height="600" 
-            />
-          </picture>
+          <img
+            src={imageSrc}
+            className="w-full rounded-3xl shadow-xl object-contain bg-white h-96"
+            alt="Painéis solares Conexão Placas"
+            loading="lazy"
+            width="1000"
+            height="600"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = fallbackImage;
+            }}
+          />
         </div>
 
         {/* Conteúdo à direita */}

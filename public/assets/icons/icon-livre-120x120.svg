@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120" role="img" aria-label="Ícone Conexão Livre">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F3E8FF"/>
+      <stop offset="1" stop-color="#FAF5FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="24" fill="url(#bg)"/>
+  <path d="M44 56c0-9 7-16 16-16h12" stroke="#7C3AED" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M76 64c0 9-7 16-16 16H48" stroke="#7C3AED" stroke-width="8" stroke-linecap="round" fill="none"/>
+  <path d="M52 60h16" stroke="#4C1D95" stroke-width="8" stroke-linecap="round" opacity="0.25"/>
+  <path d="M60 44l8 8-8 8" fill="none" stroke="#4C1D95" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" opacity="0.35"/>
+</svg>

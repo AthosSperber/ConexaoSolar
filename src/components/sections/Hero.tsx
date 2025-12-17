@@ -3,6 +3,15 @@ import { homeContent } from '../../data/texts';
 import { partnerData } from '../../data/partner';
 
 const Hero: FC = () => {
+  const fallbackLogo =
+    'data:image/svg+xml;charset=utf-8,' +
+    encodeURIComponent(
+      `<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160">
+        <rect x="0" y="0" width="160" height="160" rx="24" fill="#DCFCE7"/>
+        <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Arial" font-size="28" font-weight="700" fill="#16A34A">iGreen</text>
+      </svg>`
+    );
+
   const scrollToProducts = () => {
     const productsSection = document.getElementById('solucoes');
     if (productsSection) {
@@ -13,7 +22,7 @@ const Hero: FC = () => {
   return (
     <section 
       id="hero"
-      className="w-full min-h-screen flex items-center justify-center pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 via-gray-100 to-gray-50 dark:from-gray-900 dark:via-gray-850 dark:to-gray-900"
+      className="w-full min-h-screen flex items-center justify-center pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
       aria-label="Seção principal Conecta Solar"
     >
       <div className="mx-auto max-w-6xl w-full">
@@ -49,9 +58,20 @@ const Hero: FC = () => {
                   {partnerData.tagline}
                 </p>
 
-                {/* Logo placeholder */}
-                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-green-100 to-emerald-50 rounded-xl flex items-center justify-center shadow-sm">
-                  <span className="text-3xl font-bold text-green-600">{partnerData.name}</span>
+                <div className="w-32 h-32 mx-auto mb-6 bg-gradient-to-br from-green-100 to-emerald-50 rounded-xl flex items-center justify-center shadow-sm overflow-hidden">
+                  {partnerData.logoUrl ? (
+                    <img
+                      src={partnerData.logoUrl}
+                      alt={`Logo ${partnerData.name}`}
+                      className="w-24 h-24 object-contain"
+                      loading="lazy"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src = fallbackLogo;
+                      }}
+                    />
+                  ) : (
+                    <span className="text-3xl font-bold text-green-600">{partnerData.name}</span>
+                  )}
                 </div>
 
                 <p className="text-gray-700 dark:text-gray-300 text-sm mb-6 leading-relaxed font-medium">

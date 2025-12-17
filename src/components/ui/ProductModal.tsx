@@ -166,7 +166,7 @@ const ProductModal: FC<ProductModalProps> = ({ solution, isOpen, onClose }) => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="https://wa.me/55519996693018"
+                href="https://wa.me/5519996693018"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white px-6 py-3 rounded-xl font-semibold text-center transition-colors"

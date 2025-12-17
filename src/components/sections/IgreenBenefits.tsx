@@ -128,7 +128,7 @@ export default function IgreenBenefits() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="https://wa.me/55519996693018"
+                href="https://wa.me/5519996693018"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl group"
