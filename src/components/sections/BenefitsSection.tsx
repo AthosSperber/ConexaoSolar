@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { DollarSign, CheckCircle, Leaf } from 'lucide-react';
 import BenefitCard from '../ui/BenefitCard';
+import { useConsultant } from '../../config/consultant';
 
 const benefits = [
   {
@@ -24,10 +25,12 @@ const benefits = [
 ];
 
 const BenefitsSection: FC = () => {
+  const { consultant } = useConsultant();
+
   return (
     <section 
       className="w-full py-16 md:py-20 lg:py-28 bg-emerald-50/40 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700"
-      aria-label="Benefícios da energia limpa com Conecta Solar"
+      aria-label={`Benefícios da energia limpa com ${consultant.brand.short}`}
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Heading */}
@@ -39,7 +42,7 @@ const BenefitsSection: FC = () => {
             Por que escolher energia limpa
           </h2>
           <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-400">
-            com a Conecta Solar
+            com acompanhamento de consultor iGreen
           </p>
         </div>
 

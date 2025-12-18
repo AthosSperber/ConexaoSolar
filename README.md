@@ -1,11 +1,11 @@
-# ConectaSolar
+# Athos – Consultor iGreen | Energia e Economia
 
-> Landing page moderna para soluções em energia limpa e conectividade
+> Site pessoal de consultor iGreen com catálogo de soluções e CTA direto para WhatsApp
 
 [![Status](https://img.shields.io/badge/status-production-success)](https://github.com/kalebe/conexaosolar)
 [![Build](https://img.shields.io/badge/build-passing-success)](https://github.com/kalebe/conexaosolar)
 
-Landing page profissional com páginas dinâmicas por produto, dark mode completo e experiência mobile-first.
+Landing page pessoal com páginas dinâmicas por produto, dark mode completo e experiência mobile-first.
 
 ---
 
@@ -84,12 +84,21 @@ npm run typecheck    # Type checking
 
 ## 🎨 Personalização
 
+### Perfil do consultor (portabilidade consultor → consultor)
+O perfil (nome, foto, selo, mensagens e SEO) é carregado em runtime via `public/consultant.json`.
+
+- Para trocar o consultor sem rebuild: edite `public/consultant.json`.
+- Use `public/consultant.example.json` como base.
+- Foto do consultor: aponte `photo.src` para um arquivo em `public/` (ex.: `/assets/consultant/athos.jpg`). Se não existir, o site mostra as iniciais automaticamente.
+
 ### WhatsApp
 O número do WhatsApp é centralizado em `src/config/whatsapp.ts`.
 
 - Para alterar sem mexer no código, defina `VITE_WHATSAPP_NUMBER`.
 - Exemplo: crie um `.env.local` com:
   - `VITE_WHATSAPP_NUMBER=5519996693018`
+
+> Observação: se `public/consultant.json` tiver `whatsapp.number`, ele tem prioridade para facilitar a troca de consultor.
 
 ### Dados dos Produtos
 Edite `src/data/productDetails.ts` (fonte canônica das páginas) e `src/data/solutions.ts` (cards/carrossel).
@@ -193,8 +202,8 @@ conexaosolar/
 
 ## 📞 Contato
 
-**ConectaSolar**
-- 📱 WhatsApp: configurável via `VITE_WHATSAPP_NUMBER`
+**Consultor iGreen**
+- 📱 WhatsApp: via `public/consultant.json` ou `VITE_WHATSAPP_NUMBER`
 
 **Desenvolvido por:** Kalebe
 

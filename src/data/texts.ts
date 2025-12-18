@@ -1,21 +1,21 @@
 export const homeContent = {
   header: {
-    brand: "Conecta Solar",
-    tagline: "Energia inteligente",
+    brand: "Consultor iGreen",
+    tagline: "Energia e Economia",
     links: [
-      { label: "Quem Somos", id: "about" },
+      { label: "Quem eu sou", id: "about" },
       { label: "Como Funciona", id: "como-funciona" },
       { label: "Contato", id: "contact" },
     ],
   },
   hero: {
-    headline: "Conectamos pessoas à energia limpa",
-    subheadline: "De forma simples, acessível e sem complicação.",
-    cta: "Simular economia",
+    headline: "Energia e economia com acompanhamento de perto",
+    subheadline: "Sou consultor iGreen. Eu faço a análise do seu perfil e te oriento na melhor solução — sem complicação.",
+    cta: "Ver soluções",
   },
   about: {
-    title: "Quem Somos",
+    title: "Quem eu sou",
     description:
-      "A Conecta Solar é uma iniciativa focada em facilitar o acesso à energia limpa. Atuamos conectando pessoas a soluções em energia solar por meio de consultores iGreen parceiros, com transparência e simplicidade.",
+      "Eu te ajudo a entender qual solução iGreen faz mais sentido para o seu perfil — com transparência, clareza e suporte em cada etapa.",
   },
 };

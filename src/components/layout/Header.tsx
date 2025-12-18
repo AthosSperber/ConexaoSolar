@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { homeContent } from '../../data/texts';
 import { ThemeToggle } from '../ui/ThemeToggle';
+import { useConsultant } from '../../config/consultant';
 
 function scrollToId(id?: string) {
   if (!id) return;
@@ -11,6 +12,15 @@ function scrollToId(id?: string) {
 export default function Header() {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const { consultant } = useConsultant();
+
+  const brandInitials = consultant.brand.short
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((p) => p[0])
+    .join('')
+    .toUpperCase();
 
   useEffect(() => {
     // add small shadow on scroll
@@ -29,10 +39,10 @@ export default function Header() {
     <header className="w-full bg-white/80 dark:bg-gray-950/70 backdrop-blur sticky top-0 z-40 border-b border-emerald-100/70 dark:border-emerald-900/30 transition-shadow">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition">
-          <div className="w-10 h-10 rounded-md bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center text-white font-bold">CS</div>
+          <div className="w-10 h-10 rounded-md bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center text-white font-bold">{brandInitials || 'IG'}</div>
           <div>
-            <div className="text-sm font-semibold text-gray-800 dark:text-gray-200">{homeContent.header.brand}</div>
-            <div className="text-xs text-green-600 dark:text-green-400">{homeContent.header.tagline}</div>
+            <div className="text-sm font-semibold text-gray-800 dark:text-gray-200">{consultant.brand.short}</div>
+            <div className="text-xs text-green-600 dark:text-green-400">{consultant.brand.tagline}</div>
           </div>
         </Link>
 

@@ -1,8 +1,9 @@
 import { FC } from 'react';
-import { homeContent } from '../../data/texts';
 import { partnerData } from '../../data/partner';
+import { useConsultant } from '../../config/consultant';
 
 const Hero: FC = () => {
+  const { consultant } = useConsultant();
   const fallbackLogo =
     'data:image/svg+xml;charset=utf-8,' +
     encodeURIComponent(
@@ -23,26 +24,26 @@ const Hero: FC = () => {
     <section 
       id="hero"
       className="w-full min-h-screen flex items-center justify-center pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50/60 via-emerald-50/20 to-emerald-50/60 dark:from-gray-950 dark:via-emerald-950/15 dark:to-gray-950"
-      aria-label="Seção principal Conecta Solar"
+      aria-label={`Seção principal ${consultant.brand.short}`}
     >
       <div className="mx-auto max-w-6xl w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Coluna esquerda - Texto e CTA */}
           <div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 md:mb-6 leading-tight">
-              {homeContent.hero.headline}
+              {consultant.hero.headline}
             </h1>
             
             <p className="text-lg sm:text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-6 md:mb-8 leading-relaxed">
-              {homeContent.hero.subheadline}
+              {consultant.hero.subheadline}
             </p>
 
             <button
               onClick={scrollToProducts}
               className="inline-block px-6 py-3 md:px-8 md:py-4 bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 font-bold rounded-lg transition-colors duration-200 text-base md:text-lg shadow-md active:scale-95"
-              aria-label={homeContent.hero.cta}
+              aria-label={consultant.hero.cta}
             >
-              {homeContent.hero.cta}
+              {consultant.hero.cta}
             </button>
 
             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-6 md:mt-8">
