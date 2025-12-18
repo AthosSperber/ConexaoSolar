@@ -17,9 +17,9 @@ export const solutions: Solution[] = [
   {
     id: "conexao-livre",
     title: "Conexão Livre",
-    subtitle: "Soluções flexíveis de conectividade e serviços.",
-    icon: "/assets/icons/icon-livre-120x120.svg",
-    description: "Acesso a internet e serviços de telecomunicações com planos adaptáveis às suas necessidades.",
+    subtitle: "Mercado livre de energia para empresas.",
+    icon: "/assets/icons/icon-raio-120x120.svg",
+    description: "Para consumidores em média e alta tensão que buscam até 30% de economia na conta de luz, sem precisar investir em equipamentos.",
   },
   {
     id: "conexao-placas",
@@ -31,22 +31,22 @@ export const solutions: Solution[] = [
   {
     id: "conexao-solar",
     title: "Conexão Solar",
-    subtitle: "Consumo de energia limpa sem necessidade de instalação.",
+    subtitle: "Gere sua própria energia sem investimento.",
     icon: "/assets/icons/icon-solar-120x120.svg",
-    description: "Tenha acesso a energia solar renovável sem investimento inicial e sem obras em seu imóvel.",
+    description: "A iGreen aluga o telhado do cliente e instala os painéis com investimento próprio, garantindo desconto mensal na conta de luz durante o contrato.",
   },
   {
     id: "conexao-telecom",
     title: "Conexão Telecom",
     subtitle: "Planos e soluções em telecomunicações.",
     icon: "/assets/icons/icon-telecom-120x120.svg",
-    description: "Conectividade confiável com planos ajustados ao seu perfil de uso e necessidades.",
+    description: "Planos móveis com internet acumulada, WhatsApp e ligações ilimitadas e iGreen Club grátis.",
   },
   {
     id: "conexao-expansao",
     title: "Conexão Expansão",
-    subtitle: "Parcerias para crescimento e ampliação de oportunidades.",
+    subtitle: "Parceria comercial iGreen.",
     icon: "/assets/icons/icon-expansao-120x120.svg",
-    description: "Oportunidade de fazer parte da rede iGreen e desenvolver parcerias estratégicas.",
+    description: "Atue como parceiro indicando as soluções iGreen, com regras e condições claras e sem promessas de renda garantida.",
   },
 ];

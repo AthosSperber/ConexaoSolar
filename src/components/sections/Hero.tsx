@@ -22,7 +22,7 @@ const Hero: FC = () => {
   return (
     <section 
       id="hero"
-      className="w-full min-h-screen flex items-center justify-center pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-white via-gray-50 to-white dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
+      className="w-full min-h-screen flex items-center justify-center pt-20 pb-12 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-emerald-50/60 via-emerald-50/20 to-emerald-50/60 dark:from-gray-950 dark:via-emerald-950/15 dark:to-gray-950"
       aria-label="Seção principal Conecta Solar"
     >
       <div className="mx-auto max-w-6xl w-full">
@@ -52,7 +52,7 @@ const Hero: FC = () => {
 
           {/* Coluna direita - Card Parceiro */}
           <div className="flex items-center justify-center lg:justify-end">
-            <div className="w-full max-w-sm p-8 bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm rounded-2xl border-2 border-green-100 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="w-full max-w-sm p-8 bg-emerald-50/60 dark:bg-gradient-to-br dark:from-gray-900/70 dark:to-emerald-950/20 backdrop-blur-sm rounded-2xl border-2 border-emerald-200/70 dark:border-emerald-900/40 shadow-lg hover:shadow-xl transition-all duration-300">
               <div className="text-center">
                 <p className="text-sm font-semibold text-green-600 dark:text-green-400 uppercase tracking-wide mb-6">
                   {partnerData.tagline}

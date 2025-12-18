@@ -1,12 +1,13 @@
 import { MessageCircle } from 'lucide-react';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
 
 type Props = {
   phone?: string;
   message?: string;
 };
 
-export default function WhatsAppButton({ phone = '5519996693018', message = 'Olá! Gostaria de saber mais sobre energia solar.' }: Props) {
-  const href = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+export default function WhatsAppButton({ phone = WHATSAPP_NUMBER, message = 'Olá! Gostaria de saber mais sobre as soluções da ConectaSolar.' }: Props) {
+  const href = buildWhatsAppUrl(message, phone);
 
   return (
     <a

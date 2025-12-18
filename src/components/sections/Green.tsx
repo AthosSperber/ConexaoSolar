@@ -1,4 +1,5 @@
 import Accordion from '../ui/Accordion';
+import { buildWhatsAppUrl } from '../../config/whatsapp';
 
 export default function Green() {
   const imageSrc = '/assets/sections/green.jpg';
@@ -18,13 +19,13 @@ export default function Green() {
     );
 
   return (
-    <section id="green" className="scroll-snap-section bg-white">
+    <section id="green" className="scroll-snap-section bg-emerald-50/40 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Imagem à esquerda */}
         <div className="order-2 md:order-1">
           <img
             src={imageSrc}
-            className="w-full rounded-3xl shadow-xl object-contain bg-white h-96"
+            className="w-full rounded-3xl shadow-xl object-contain bg-white dark:bg-gray-950 border border-emerald-100/60 dark:border-emerald-900/30 h-96"
             alt="Economia na conta de luz com Conexão Green"
             loading="lazy"
             width="1000"
@@ -37,16 +38,16 @@ export default function Green() {
 
         {/* Conteúdo à direita */}
         <div className="order-1 md:order-2">
-          <span className="product-tag text-green-600 font-semibold text-sm uppercase tracking-wide">Conexão Green</span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mt-3 mb-4">Sua conta de luz pesa?</h2>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+          <span className="product-tag text-green-600 dark:text-green-400 font-semibold text-sm uppercase tracking-wide">Conexão Green</span>
+          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4">Sua conta de luz pesa?</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             Reduz a conta sem instalar nada no imóvel. Uma alternativa simples e segura para economizar todo mês, sem obras nem mudanças na rotina.
           </p>
 
-          <ul className="space-y-3 mb-8 hidden md:block text-gray-700">
+          <ul className="space-y-3 mb-8 hidden md:block text-gray-700 dark:text-gray-300">
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl leading-none">✓</span>
-              <span>Economia mensal direto na fatura</span>
+              <span>Créditos aplicados na fatura da distribuidora</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="text-green-600 font-bold text-xl leading-none">✓</span>
@@ -60,7 +61,7 @@ export default function Green() {
 
           <Accordion title="Como funciona a Conexão Green?">
             <div className="space-y-4">
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <span className="text-green-600 font-bold">1.</span>
                   <span>Análise rápida da sua fatura</span>
@@ -75,7 +76,7 @@ export default function Green() {
                 </li>
               </ul>
               <a 
-                href="https://wa.me/5519996693018" 
+                href={buildWhatsAppUrl()} 
                 target="_blank" 
                 rel="noreferrer" 
                 className="btn-primary block text-center mt-6 bg-green-600 text-white py-4 rounded-full font-semibold hover:bg-green-700 active:scale-[0.98] transition"

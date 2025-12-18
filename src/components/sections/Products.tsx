@@ -1,4 +1,5 @@
 import { Zap, Sun, Home, Building2, Wifi, MessageCircle, ChevronRight } from 'lucide-react';
+import { buildWhatsAppUrl } from '../../config/whatsapp';
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -44,11 +45,11 @@ export default function Products() {
   ];
 
   const colorStyles = {
-    green: 'from-green-50 to-white dark:from-green-900/10 dark:to-gray-900 border-green-100 dark:border-green-800 hover:border-green-300 dark:hover:border-green-600',
-    yellow: 'from-yellow-50 to-white dark:from-yellow-900/10 dark:to-gray-900 border-yellow-100 dark:border-yellow-800 hover:border-yellow-300 dark:hover:border-yellow-600',
-    blue: 'from-blue-50 to-white dark:from-blue-900/10 dark:to-gray-900 border-blue-100 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-600',
-    purple: 'from-purple-50 to-white dark:from-purple-900/10 dark:to-gray-900 border-purple-100 dark:border-purple-800 hover:border-purple-300 dark:hover:border-purple-600',
-    indigo: 'from-indigo-50 to-white dark:from-indigo-900/10 dark:to-gray-900 border-indigo-100 dark:border-indigo-800 hover:border-indigo-300 dark:hover:border-indigo-600'
+    green: 'from-green-50 to-emerald-50/40 dark:from-green-900/10 dark:to-gray-900 border-green-100 dark:border-green-800 hover:border-green-300 dark:hover:border-green-600',
+    yellow: 'from-yellow-50 to-emerald-50/40 dark:from-yellow-900/10 dark:to-gray-900 border-yellow-100 dark:border-yellow-800 hover:border-yellow-300 dark:hover:border-yellow-600',
+    blue: 'from-blue-50 to-emerald-50/40 dark:from-blue-900/10 dark:to-gray-900 border-blue-100 dark:border-blue-800 hover:border-blue-300 dark:hover:border-blue-600',
+    purple: 'from-purple-50 to-emerald-50/40 dark:from-purple-900/10 dark:to-gray-900 border-purple-100 dark:border-purple-800 hover:border-purple-300 dark:hover:border-purple-600',
+    indigo: 'from-indigo-50 to-emerald-50/40 dark:from-indigo-900/10 dark:to-gray-900 border-indigo-100 dark:border-indigo-800 hover:border-indigo-300 dark:hover:border-indigo-600'
   };
 
   const iconColors = {
@@ -68,7 +69,7 @@ export default function Products() {
   };
 
   return (
-    <section id="produtos" className="scroll-snap-section bg-gradient-to-b from-white to-gray-50 dark:from-gray-900 dark:to-black">
+    <section id="produtos" className="scroll-snap-section bg-gradient-to-b from-emerald-50/60 to-emerald-50/20 dark:from-gray-950 dark:to-black">
       <div className="max-w-5xl mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <span className="product-tag text-green-600 dark:text-green-400 font-semibold text-sm uppercase tracking-wide">Soluções iGreen</span>
@@ -105,7 +106,7 @@ export default function Products() {
 
         {/* CTA Consultor */}
         <a
-          href="https://wa.me/5519996693018?text=Olá!%20Gostaria%20de%20falar%20com%20um%20consultor"
+          href={buildWhatsAppUrl('Olá! Gostaria de falar com um consultor')}
           target="_blank"
           rel="noreferrer"
           className="w-full flex items-center gap-3 md:gap-4 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg hover:shadow-xl transition active:scale-[0.98]"

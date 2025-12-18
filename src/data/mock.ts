@@ -1,5 +1,5 @@
 export const products = [
-  { id: 'green', title: 'Conexão Green', subtitle: 'Economia direto na fatura', description: 'Alternativa simples para reduzir a conta de luz sem instalação' },
+  { id: 'green', title: 'Conexão Green', subtitle: 'Créditos na fatura da distribuidora', description: 'Alternativa simples para reduzir a conta de luz sem instalação' },
   { id: 'solar', title: 'Conexão Solar', subtitle: 'Sem investimento inicial', description: 'Instalação sem custo inicial para residências qualificadas' },
   { id: 'placas', title: 'Conexão Placas', subtitle: 'Placas próprias', description: 'Compra e instalação de sistema fotovoltaico completo' },
 ];

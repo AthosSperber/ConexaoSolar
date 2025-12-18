@@ -21,17 +21,17 @@ const SolutionCard: FC<SolutionCardProps> = ({ solution, onCardClick }) => {
   return (
     <button
       onClick={() => onCardClick?.(solution)}
-      className="relative flex-shrink-0 w-72 min-w-[18rem] lg:w-80 lg:min-w-[20rem] bg-gray-50 hover:bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800/100 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700/50 hover:border-green-300 dark:hover:border-green-600 cursor-pointer group overflow-hidden"
+      className="relative flex-shrink-0 w-72 min-w-[18rem] lg:w-80 lg:min-w-[20rem] bg-emerald-50/60 hover:bg-emerald-50/85 dark:bg-gradient-to-br dark:from-gray-900/60 dark:to-emerald-950/15 rounded-2xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-emerald-200/70 dark:border-emerald-900/40 hover:border-green-300 dark:hover:border-green-600 cursor-pointer group overflow-hidden"
       aria-label={`${solution.title}: ${solution.subtitle}`}
     >
       {/* Background gradient accent (subtle) */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent dark:from-emerald-900/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Ícone placeholder */}
-        <div className="w-24 h-24 mb-6 rounded-xl bg-gradient-to-br from-green-100 to-emerald-50 flex items-center justify-center group-hover:from-green-200 group-hover:to-emerald-100 transition-colors duration-300 shadow-sm">
-          <div className="w-20 h-20 bg-white rounded-lg flex items-center justify-center">
+        <div className="w-24 h-24 mb-6 rounded-xl bg-gradient-to-br from-green-100 to-emerald-50 dark:from-emerald-900/30 dark:to-gray-900 flex items-center justify-center group-hover:from-green-200 group-hover:to-emerald-100 transition-colors duration-300 shadow-sm">
+          <div className="w-20 h-20 bg-white dark:bg-gray-950 rounded-lg flex items-center justify-center border border-emerald-100/60 dark:border-gray-700">
             {solution.icon?.startsWith('/') ? (
               <img
                 src={solution.icon}

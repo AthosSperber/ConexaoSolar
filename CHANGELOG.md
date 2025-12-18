@@ -37,7 +37,7 @@
 - Template dinâmico ProductPage.tsx reutilizável
 - Estrutura de dados completa em productDetails.ts
 - Seções: Hero, Benefits, How It Works, FAQ, Final CTA
-- Dados extraídos do PDF APN Outubro 2025
+- Dados extraídos e alinhados ao PDF APN Dezembro 2025
 
 #### 🎨 Design System
 
@@ -108,7 +108,7 @@
 - TypeScript strict mode
 - Interfaces tipadas para todos os dados
 - Separação clara: components, pages, data, lib
-- Data source: PDF APN Outubro 2025 analisado
+- Data source: PDF APN Dezembro 2025 analisado
 
 #### 📞 Integração WhatsApp
 
@@ -127,6 +127,9 @@
 - ✅ Emojis substituídos por ícones Lucide
 - ✅ Espaçamentos despadronizados corrigidos
 - ✅ IgreenBenefits fundo branco no dark mode
+- ✅ Copy de cobrança na Conexão Green (boleto iGreen via WhatsApp/app + fatura mínima/encargos da distribuidora)
+- ✅ Ícone da Conexão Livre atualizado para “raio” na Home
+- ✅ Conteúdo da Conexão Expansão reescrito para parceria comercial (menos “recrutamento”, mais transparência)
 
 #### 📚 Documentação
 

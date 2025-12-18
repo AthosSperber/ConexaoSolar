@@ -37,7 +37,7 @@ const SolutionsSection: FC = () => {
   return (
     <section 
       id="solucoes"
-      className="w-full py-16 md:py-20 lg:py-28 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden"
+      className="w-full py-16 md:py-20 lg:py-28 bg-emerald-50/40 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 overflow-hidden"
       aria-label="Soluções em energia limpa e conectividade"
     >
       {/* Container centralizado */}
@@ -57,7 +57,7 @@ const SolutionsSection: FC = () => {
           {/* Botão Anterior */}
           <button
             onClick={() => scroll('left')}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 hidden md:flex items-center justify-center pointer-events-auto"
+            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-emerald-50/90 dark:bg-emerald-950/25 text-emerald-900 dark:text-emerald-50 p-3 rounded-full shadow-lg hover:bg-emerald-100 dark:hover:bg-emerald-950/35 transition-all duration-200 hidden md:flex items-center justify-center pointer-events-auto border border-emerald-200/60 dark:border-emerald-900/30"
             aria-label="Card anterior"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -66,7 +66,7 @@ const SolutionsSection: FC = () => {
           {/* Botão Próximo */}
           <button
             onClick={() => scroll('right')}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 p-3 rounded-full shadow-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200 hidden md:flex items-center justify-center pointer-events-auto"
+            className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-emerald-50/90 dark:bg-emerald-950/25 text-emerald-900 dark:text-emerald-50 p-3 rounded-full shadow-lg hover:bg-emerald-100 dark:hover:bg-emerald-950/35 transition-all duration-200 hidden md:flex items-center justify-center pointer-events-auto border border-emerald-200/60 dark:border-emerald-900/30"
             aria-label="Próximo card"
           >
             <ChevronRight className="w-6 h-6" />
@@ -96,7 +96,7 @@ const SolutionsSection: FC = () => {
               className={`h-2 rounded-full transition-all duration-300 ${
                 index === selectedIndex
                   ? 'bg-green-600 dark:bg-green-500 w-8'
-                  : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500 w-2'
+                  : 'bg-emerald-200/80 dark:bg-emerald-900/30 hover:bg-emerald-300/80 dark:hover:bg-emerald-900/45 w-2'
               }`}
               aria-label={`Ir para ${solution.title}`}
               aria-current={index === selectedIndex}

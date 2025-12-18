@@ -1,4 +1,5 @@
 import { Gift, Star, TrendingUp, Smartphone } from 'lucide-react';
+import { buildWhatsAppUrl } from '../../config/whatsapp';
 
 export default function IgreenBenefits() {
   const benefits = [
@@ -64,7 +65,7 @@ export default function IgreenBenefits() {
   };
 
   return (
-    <section className="w-full py-16 md:py-20 lg:py-28 bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+    <section className="w-full py-16 md:py-20 lg:py-28 bg-emerald-50/40 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -79,7 +80,6 @@ export default function IgreenBenefits() {
           </p>
         </div>
 
-        {/* Benefits Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
           {benefits.map((benefit, index) => {
             const colors = colorStyles[benefit.color as keyof typeof colorStyles];
@@ -128,10 +128,10 @@ export default function IgreenBenefits() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href="https://wa.me/5519996693018"
+                href={buildWhatsAppUrl()}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-green-700 hover:bg-gray-100 px-8 py-4 rounded-xl font-bold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl group"
+                className="inline-flex items-center justify-center gap-2 bg-emerald-50 text-green-800 hover:bg-emerald-100 px-8 py-4 rounded-xl font-bold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl group"
               >
                 Falar com Especialista
                 <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

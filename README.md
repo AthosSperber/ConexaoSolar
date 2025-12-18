@@ -1,12 +1,11 @@
-# ConectaSolar ⚡
+# ConectaSolar
 
-> Plataforma web moderna para soluções em energia limpa e conectividade
+> Landing page moderna para soluções em energia limpa e conectividade
 
 [![Status](https://img.shields.io/badge/status-production-success)](https://github.com/kalebe/conexaosolar)
-[![Version](https://img.shields.io/badge/version-1.0.0-blue)](https://github.com/kalebe/conexaosolar)
 [![Build](https://img.shields.io/badge/build-passing-success)](https://github.com/kalebe/conexaosolar)
 
-Landing page profissional com sistema de produtos, dark mode completo e experiência mobile-first otimizada.
+Landing page profissional com páginas dinâmicas por produto, dark mode completo e experiência mobile-first.
 
 ---
 
@@ -18,8 +17,8 @@ Landing page profissional com sistema de produtos, dark mode completo e experiê
 - ⚡ **Performance**: Build otimizado (285KB → 87KB gzip), lazy loading
 - 🎯 **SEO Ready**: Meta tags, structured data, sitemap.xml
 - ♿ **Acessível**: WCAG AA, aria-labels, focus states
-- 🔄 **SPA**: React Router com 8 páginas completas
-- 📦 **6 Produtos**: Páginas dedicadas + modal de preview
+- 🔄 **SPA**: React Router com rotas dinâmicas por produto
+- 📦 **Produtos**: Páginas dedicadas + modal de preview
 - 💬 **WhatsApp**: Integração direta com mensagens personalizadas
 - 🎁 **iGreen Club**: Seção de benefícios com prêmios e descontos
 
@@ -28,13 +27,8 @@ Landing page profissional com sistema de produtos, dark mode completo e experiê
 ## 📄 Páginas
 
 - **/** - Home (Hero, Soluções, Benefícios, iGreen Club, CTA, Contato)
-- **/green** - Conexão Green (economia na conta de luz)
-- **/solar** - Conexão Solar (energia solar por assinatura)
-- **/placas** - Conexão Placas (instalação de painéis solares)
-- **/livre** - Conexão Livre (mercado livre de energia)
-- **/telecom** - Conexão Telecom (planos de telefonia)
-- **/expansao** - Conexão Expansão (programa de licenciados)
 - **/parcerias** - Página de parcerias e licenciamento
+- **/:productId** - Página dinâmica do produto (ex.: `/green`, `/solar`, `/placas`, `/livre`, `/telecom`, `/expansao`)
 
 ---
 
@@ -42,15 +36,14 @@ Landing page profissional com sistema de produtos, dark mode completo e experiê
 
 ### Core
 - ⚛️ **React 18.3.1** - UI Library
-- 📘 **TypeScript 5.6.2** - Type Safety
-- ⚡ **Vite 5.4.8** - Build Tool Ultra-Rápido
+- 📘 **TypeScript 5.5.x** - Type Safety
+- ⚡ **Vite 5.4.x** - Build Tool
 - 🎨 **Tailwind CSS 3.4.1** - Utility-First CSS
 
 ### Bibliotecas
-- 🧭 **React Router DOM 6.28.0** - Roteamento SPA
+- 🧭 **React Router DOM 6.30.x** - Roteamento SPA
 - 🎭 **next-themes 0.4.4** - Theme Management
 - 🎯 **Lucide React 0.468.0** - Ícones SVG
-- 📝 **React Hook Form** - Validação de formulários
 
 ---
 
@@ -84,32 +77,22 @@ npm run dev          # Servidor de desenvolvimento (Vite)
 npm run build        # Build de produção
 npm run preview      # Preview do build
 npm run lint         # Lint com ESLint
-npx tsc --noEmit     # Type checking
+npm run typecheck    # Type checking
 ```
 
 ---
 
 ## 🎨 Personalização
 
-### Cores (Tailwind)
-```js
-// tailwind.config.js
-theme: {
-  extend: {
-    colors: {
-      green: {
-        600: '#10b981', // Verde primário ConectaSolar
-      }
-    }
-  }
-}
-```
-
 ### WhatsApp
-Busque por `5519996693018` e substitua pelo seu número.
+O número do WhatsApp é centralizado em `src/config/whatsapp.ts`.
+
+- Para alterar sem mexer no código, defina `VITE_WHATSAPP_NUMBER`.
+- Exemplo: crie um `.env.local` com:
+  - `VITE_WHATSAPP_NUMBER=5519996693018`
 
 ### Dados dos Produtos
-Edite `src/data/productDetails.ts` para customizar informações.
+Edite `src/data/productDetails.ts` (fonte canônica das páginas) e `src/data/solutions.ts` (cards/carrossel).
 
 ---
 
@@ -150,10 +133,10 @@ Veja [DEPLOY.md](./DEPLOY.md) para instruções completas.
 
 | Uso | Claro | Escuro |
 |-----|-------|--------|
-| Background | `white` | `gray-900` |
-| Cards | `white` | `gray-800` |
-| Borders | `gray-200` | `gray-700` |
-| Text | `gray-900` | `white` |
+| Background | `emerald-50` | `gray-950` |
+| Superfícies | `white/90` + `emerald-50/..` | `gray-900/..` + `emerald-950/..` |
+| Borders | `emerald-100/200` | `emerald-900` |
+| Text | `gray-900` | `gray-100` |
 | Primary | `green-600` | `green-500` |
 
 ### Espaçamentos
@@ -211,9 +194,7 @@ conexaosolar/
 ## 📞 Contato
 
 **ConectaSolar**
-- 📱 WhatsApp: +55 (51) 9 9669-3018
-- 🌐 Website: conectasolar.com.br
-- 📧 Email: contato@conectasolar.com.br
+- 📱 WhatsApp: configurável via `VITE_WHATSAPP_NUMBER`
 
 **Desenvolvido por:** Kalebe
 
@@ -229,34 +210,6 @@ conexaosolar/
 Feito com ❤️ e ⚛️ React
 
 </div>
-
-## Estrutura de Componentes
-
-```
-src/
-├── components/
-│   ├── Header.tsx          # Navegação fixa
-│   ├── Hero.tsx            # Seção inicial
-│   ├── Products.tsx        # Cards de produtos
-│   ├── Contact.tsx         # Formulário
-│   ├── Footer.tsx          # Rodapé
-│   └── WhatsAppButton.tsx  # Botão flutuante
-├── lib/
-│   └── supabase.ts         # Cliente Supabase
-├── App.tsx                 # Componente principal
-└── main.tsx               # Entry point
-```
-
-## Database Schema
-
-O projeto usa uma tabela `contacts` no Supabase com os seguintes campos:
-
-- `id` (uuid)
-- `name` (text)
-- `phone` (text)
-- `email` (text)
-- `message` (text)
-- `created_at` (timestamptz)
 
 ## SEO
 

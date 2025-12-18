@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  @apply bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-300 antialiased;
+  @apply bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 antialiased;
 }
 
 /* Scroll snap container */
@@ -36,7 +36,7 @@ body {
 
 @layer components {
   .card {
-    @apply bg-white p-5 rounded-3xl shadow-sm transition
+    @apply bg-white/90 dark:bg-gray-900/70 p-5 rounded-3xl shadow-sm transition border border-emerald-100/70 dark:border-emerald-900/30
            hover:shadow-md active:scale-[0.98];
   }
 
@@ -54,7 +54,7 @@ body {
   }
 
   .product-tag {
-    @apply text-green-600 font-semibold text-sm tracking-wide uppercase;
+    @apply text-green-600 dark:text-green-400 font-semibold text-sm tracking-wide uppercase;
   }
 
   .btn-primary {
@@ -63,6 +63,6 @@ body {
   }
 
   .info-box {
-    @apply bg-gray-50 p-6 rounded-3xl;
+    @apply bg-white/90 dark:bg-gray-900/70 p-6 rounded-3xl border border-emerald-100/70 dark:border-emerald-900/30;
   }
 }

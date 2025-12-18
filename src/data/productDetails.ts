@@ -1,9 +1,14 @@
-// Dados completos dos produtos baseados no PDF APN Outubro 2025
+// Dados completos dos produtos baseados no PDF APN Dezembro 2025
 export interface ProductDetail {
   id: string;
   title: string;
   subtitle: string;
   tagline: string;
+  preview?: {
+    summary: string;
+    benefits: string[];
+    cta: string;
+  };
   hero: {
     headline: string;
     description: string;
@@ -34,15 +39,26 @@ export const productDetails: Record<string, ProductDetail> = {
     id: 'green',
     title: 'Conexão Green',
     subtitle: 'Economia aplicada diretamente na fatura de energia',
-    tagline: 'Reduza sua conta sem instalar nada',
+    tagline: 'Reduza sua conta sem investimento',
+    preview: {
+      summary: 'Reduza sua conta de energia sem investimento inicial. Os créditos aparecem na fatura da distribuidora e o boleto do serviço iGreen é enviado por WhatsApp e aplicativo.',
+      benefits: [
+        'Créditos aplicados na fatura da distribuidora',
+        'Boleto do serviço iGreen via WhatsApp e app',
+        'Você segue recebendo a fatura mínima/encargos da distribuidora',
+        'Sem obras ou equipamentos necessários',
+        'Sem investimento inicial'
+      ],
+      cta: 'Simular minha economia'
+    },
     hero: {
       headline: 'Sua conta de luz pesa no bolso?',
-      description: 'Reduza até 20% na conta de energia sem obras, sem investimento inicial e sem mudanças na sua rotina. Economia garantida todo mês.'
+      description: 'Reduza a conta de energia sem obras, sem investimento inicial e sem mudanças na sua rotina. Os créditos aparecem na fatura da distribuidora e o boleto do serviço iGreen é enviado por WhatsApp e aplicativo.'
     },
     benefits: [
       {
         title: 'Economia Imediata',
-        description: 'Desconto aplicado direto na sua fatura mensal da distribuidora de energia'
+        description: 'Créditos aplicados na fatura da distribuidora (você continua recebendo a fatura mínima/encargos)'
       },
       {
         title: 'Sem Investimento Inicial',
@@ -61,8 +77,8 @@ export const productDetails: Record<string, ProductDetail> = {
         description: 'Contrato transparente com valores e descontos claramente definidos'
       },
       {
-        title: 'Flexibilidade',
-        description: 'Cancele quando quiser, sem multas ou taxas de rescisão'
+        title: 'Condições Claras',
+        description: 'Regras e condições definidas em contrato, com total transparência'
       }
     ],
     howItWorks: [
@@ -84,29 +100,29 @@ export const productDetails: Record<string, ProductDetail> = {
       {
         step: 4,
         title: 'Ativação e economia',
-        description: 'Em poucos dias você começa a economizar. O desconto aparece direto na sua fatura'
+        description: 'Em poucos dias você começa a economizar. Os créditos aparecem na fatura da distribuidora e você recebe o boleto do serviço iGreen por WhatsApp e app'
       }
     ],
     faq: [
       {
         question: 'Como funciona o desconto na fatura?',
-        answer: 'O desconto é aplicado automaticamente pela distribuidora de energia. Você continua recebendo sua conta normalmente, mas com um valor menor devido ao crédito de energia limpa.'
+        answer: 'Os créditos de energia aparecem na fatura da distribuidora. Você continua recebendo a fatura mínima/encargos da distribuidora e o pagamento do serviço iGreen é feito via boleto (enviado por WhatsApp e pelo aplicativo).'
       },
       {
         question: 'Preciso fazer obras no meu imóvel?',
         answer: 'Não! A Conexão Green não exige instalação de equipamentos, obras ou mudanças na estrutura elétrica do imóvel. Tudo é feito remotamente.'
       },
       {
-        question: 'Posso cancelar quando quiser?',
-        answer: 'Sim, o contrato é flexível e você pode cancelar quando quiser sem multas ou taxas de rescisão.'
+        question: 'Como funcionam as condições do contrato?',
+        answer: 'As condições (prazos, regras e demais detalhes) são definidas em contrato. Enviamos a proposta completa para você avaliar antes de assinar.'
       },
       {
         question: 'Qual a economia média?',
-        answer: 'A economia varia de acordo com o seu perfil de consumo, mas geralmente fica entre 10% e 20% na conta de energia.'
+        answer: 'A economia varia conforme seu perfil de consumo e as condições da sua distribuidora/UF. Fazemos uma simulação gratuita com base na sua fatura.'
       },
       {
         question: 'É seguro? Como sei que vou receber o desconto?',
-        answer: 'Totalmente seguro. A iGreen Energy é homologada pela ANEEL e o desconto é garantido em contrato. Você vê o crédito aplicado diretamente na sua fatura.'
+        answer: 'O processo segue as regras do setor e o desconto fica definido em contrato. Você acompanha a aplicação do crédito diretamente na sua fatura.'
       }
     ],
     cta: {
@@ -119,72 +135,88 @@ export const productDetails: Record<string, ProductDetail> = {
   solar: {
     id: 'solar',
     title: 'Conexão Solar',
-    subtitle: 'Energia solar sem instalação de painéis',
-    tagline: 'Energia limpa por assinatura',
+    subtitle: 'Gere sua própria energia sem investimento',
+    tagline: 'Instalação com investimento da iGreen',
+    preview: {
+      summary: 'Gere sua própria energia sem investimento inicial. A iGreen aluga o telhado e instala os painéis, garantindo desconto mensal na conta de luz durante o contrato.',
+      benefits: [
+        'Instalação com investimento da iGreen (mediante viabilidade)',
+        'Economia mensal na conta de luz',
+        'Sem compra de equipamentos',
+        'Ao final do período, o sistema é transferido',
+        'Energia 100% renovável e limpa'
+      ],
+      cta: 'Ver como funciona'
+    },
     hero: {
-      headline: 'Energia Solar Sem Instalar Painéis',
-      description: 'Aproveite os benefícios da energia solar sem precisar instalar equipamentos no seu telhado. Economia garantida com flexibilidade total.'
+      headline: 'Energia solar com instalação sem custo inicial',
+      description: 'A iGreen aluga o telhado do cliente e instala os painéis com investimento próprio, garantindo desconto mensal na conta de luz durante o contrato. Ao final do período, o sistema é transferido para o cliente.'
     },
     benefits: [
       {
-        title: 'Energia Solar Sem Obras',
-        description: 'Use energia solar sem instalar painéis no seu imóvel'
+        title: 'Sem Investimento Inicial',
+        description: 'A iGreen realiza o investimento e instala os painéis no seu imóvel (mediante viabilidade)'
       },
       {
         title: 'Economia Garantida',
-        description: 'Reduza sua conta de energia com créditos de usinas solares'
+        description: 'Desconto mensal na conta de luz durante todo o contrato'
       },
       {
-        title: 'Sem Investimento Inicial',
-        description: 'Não precisa comprar equipamentos ou fazer financiamentos'
+        title: 'Sem Compra de Equipamentos',
+        description: 'Você não precisa comprar painéis ou fazer financiamento para começar'
       },
       {
         title: '100% Renovável',
         description: 'Energia limpa, sustentável e amiga do meio ambiente'
       },
       {
-        title: 'Flexibilidade Total',
-        description: 'Cancele quando quiser, sem multas ou fidelidade'
+        title: 'Sistema Fica com Você',
+        description: 'Ao final do período, o sistema é transferido para o cliente'
       }
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Simulação gratuita',
-        description: 'Analisamos seu consumo e calculamos sua economia potencial'
+        title: 'Análise de consumo',
+        description: 'Avaliamos sua fatura e o perfil de consumo para entender o potencial de economia'
       },
       {
         step: 2,
-        title: 'Assinatura simples',
-        description: 'Assine o plano de energia solar que melhor se adequa ao seu consumo'
+        title: 'Viabilidade do imóvel',
+        description: 'Avaliamos tecnicamente o telhado/estrutura para validar se o imóvel é compatível'
       },
       {
         step: 3,
-        title: 'Créditos na fatura',
-        description: 'Você recebe créditos de energia solar direto na sua conta de luz'
+        title: 'Instalação dos painéis',
+        description: 'A iGreen instala o sistema com investimento próprio, após aprovação e formalização'
       },
       {
         step: 4,
-        title: 'Economia todo mês',
-        description: 'Pague menos na conta de energia todos os meses, sem complicação'
+        title: 'Economia mensal',
+        description: 'Você recebe desconto mensal na conta de luz durante todo o contrato'
+      },
+      {
+        step: 5,
+        title: 'Transferência do sistema',
+        description: 'Ao final do período, o sistema é transferido para o cliente'
       }
     ],
     faq: [
       {
-        question: 'Como recebo energia solar sem painéis?',
-        answer: 'Você assina um plano e recebe créditos de energia produzida por usinas solares da iGreen. Esses créditos são abatidos na sua conta de luz pela distribuidora.'
+        question: 'Como funciona a Conexão Solar?',
+        answer: 'A iGreen aluga o telhado do cliente e instala os painéis solares com investimento próprio. Você recebe desconto mensal na conta de luz durante o contrato e, ao final do período, o sistema é transferido para você.'
       },
       {
         question: 'Qual a diferença para a Conexão Green?',
-        answer: 'A Conexão Solar é específica para energia gerada por painéis solares, enquanto a Green pode incluir outras fontes renováveis. Ambas oferecem economia sem instalação.'
+        answer: 'Na Conexão Solar há instalação de painéis no imóvel (sem investimento inicial, mediante viabilidade). Na Conexão Green não há instalação no imóvel: o desconto é aplicado na fatura por energia injetada no sistema.'
       },
       {
         question: 'Posso usar em apartamento?',
-        answer: 'Sim! Como não precisa instalar nada, funciona perfeitamente em apartamentos, casas alugadas ou qualquer imóvel.'
+        answer: 'A Conexão Solar depende de viabilidade técnica e normalmente exige imóvel com telhado/estrutura compatível. Se você mora em apartamento, a Conexão Green pode ser uma alternativa por não exigir instalação.'
       },
       {
         question: 'Quanto tempo leva para ativar?',
-        answer: 'Após a contratação, a ativação geralmente leva de 15 a 30 dias, dependendo da distribuidora de energia da sua região.'
+        answer: 'Os prazos variam conforme a análise técnica, disponibilidade de agenda e etapas do processo. Após a simulação, informamos uma estimativa de cronograma.'
       }
     ],
     cta: {
@@ -199,6 +231,18 @@ export const productDetails: Record<string, ProductDetail> = {
     title: 'Conexão Placas',
     subtitle: 'Projeto completo de energia solar',
     tagline: 'Instale seu sistema solar',
+    preview: {
+      summary: 'Instale seu próprio sistema de energia solar. Projeto completo com painéis de alta eficiência, instalação profissional e suporte técnico.',
+      benefits: [
+        'Projeto personalizado para seu imóvel',
+        'Instalação profissional certificada',
+        'Painéis de alta eficiência e durabilidade',
+        'Retorno do investimento garantido',
+        'Monitoramento em tempo real',
+        'Manutenção e suporte técnico'
+      ],
+      cta: 'Solicitar orçamento'
+    },
     hero: {
       headline: 'Seu Próprio Sistema de Energia Solar',
       description: 'Projeto completo de energia solar fotovoltaica com instalação profissional, painéis de alta eficiência e garantia total. Investimento que se paga.'
@@ -290,13 +334,24 @@ export const productDetails: Record<string, ProductDetail> = {
     title: 'Conexão Livre',
     subtitle: 'Mercado livre de energia',
     tagline: 'Liberdade para escolher',
+    preview: {
+      summary: 'Mercado livre de energia com flexibilidade e economia. Escolha seu fornecedor e pague menos na conta de luz com transparência total.',
+      benefits: [
+        'Liberdade de escolher seu fornecedor',
+        'Economia de até 30% na conta',
+        'Previsibilidade nos custos',
+        'Sustentabilidade com energia limpa',
+        'Gestão profissional de energia'
+      ],
+      cta: 'Quero conhecer melhor'
+    },
     hero: {
       headline: 'Mercado Livre de Energia Para Sua Empresa',
-      description: 'Escolha seu fornecedor de energia e economize até 35% na conta. Solução ideal para empresas que buscam redução de custos e previsibilidade.'
+      description: 'Escolha seu fornecedor de energia e economize até 30% na conta. Solução ideal para empresas que buscam redução de custos e previsibilidade.'
     },
     benefits: [
       {
-        title: 'Economia de até 35%',
+        title: 'Economia de até 30%',
         description: 'Reduza significativamente os custos com energia elétrica'
       },
       {
@@ -345,11 +400,11 @@ export const productDetails: Record<string, ProductDetail> = {
     faq: [
       {
         question: 'Minha empresa pode migrar para o mercado livre?',
-        answer: 'Empresas com demanda contratada a partir de 500 kW podem migrar para o mercado livre. Fazemos uma análise gratuita de viabilidade.'
+        answer: 'A Conexão Livre é voltada para empresas conectadas em média e alta tensão. Fazemos uma análise de viabilidade para confirmar o enquadramento e estimar a economia.'
       },
       {
         question: 'Qual a economia média?',
-        answer: 'A economia varia conforme o perfil de consumo e condições de mercado, mas geralmente fica entre 15% e 35% na conta de energia.'
+        answer: 'A economia varia conforme perfil de consumo e condições de contratação. No material de apoio, a referência é de até 30% de economia mensal.'
       },
       {
         question: 'Tem risco de desabastecimento?',
@@ -361,7 +416,7 @@ export const productDetails: Record<string, ProductDetail> = {
       },
       {
         question: 'Quanto tempo leva a migração?',
-        answer: 'O processo de migração geralmente leva de 4 a 6 meses, incluindo todas as etapas regulatórias.'
+        answer: 'O prazo varia conforme o perfil da empresa e as etapas regulatórias. Após a análise, informamos um cronograma estimado.'
       }
     ],
     cta: {
@@ -376,9 +431,21 @@ export const productDetails: Record<string, ProductDetail> = {
     title: 'Conexão Telecom',
     subtitle: 'Planos de telefonia e internet',
     tagline: 'Conectividade com benefícios',
+    preview: {
+      summary: 'Planos de telefonia móvel com ligações e WhatsApp ilimitados, internet acumulada e iGreen Club grátis. Opções com ou sem portabilidade.',
+      benefits: [
+        'Planos a partir de 11GB por mês',
+        'Cobertura em todo Brasil',
+        'Opção com ou sem portabilidade',
+        'iGreen Club GRÁTIS incluso',
+        'Descontos em +600 mil estabelecimentos',
+        'Internet acumulada mês a mês'
+      ],
+      cta: 'Ver planos disponíveis'
+    },
     hero: {
       headline: 'Planos de Telefonia com iGreen Club Grátis',
-      description: 'Internet móvel de qualidade com cobertura nacional, portabilidade grátis e acesso aos benefícios exclusivos do iGreen Club.'
+      description: 'Planos com ligações e WhatsApp ilimitados, internet acumulada, opção com ou sem portabilidade e iGreen Club grátis.'
     },
     benefits: [
       {
@@ -387,7 +454,7 @@ export const productDetails: Record<string, ProductDetail> = {
       },
       {
         title: 'Cobertura Nacional',
-        description: 'Rede de qualidade em todo o território brasileiro'
+        description: 'Cobertura ampla para você usar com estabilidade'
       },
       {
         title: 'Portabilidade Grátis',
@@ -396,10 +463,6 @@ export const productDetails: Record<string, ProductDetail> = {
       {
         title: 'iGreen Club GRÁTIS',
         description: 'Acesso a +600 mil descontos em todo Brasil'
-      },
-      {
-        title: 'Sem Taxa de Adesão',
-        description: 'Ative seu plano sem custos adicionais'
       },
       {
         title: 'App Exclusivo',
@@ -447,7 +510,7 @@ export const productDetails: Record<string, ProductDetail> = {
       },
       {
         question: 'Tem fidelidade?',
-        answer: 'Nossos planos não têm fidelidade. Você pode cancelar quando quiser sem multas.'
+        answer: 'As condições do plano (regras e eventuais prazos) são informadas na proposta antes da contratação.'
       }
     ],
     cta: {
@@ -460,86 +523,97 @@ export const productDetails: Record<string, ProductDetail> = {
   expansao: {
     id: 'expansao',
     title: 'Conexão Expansão',
-    subtitle: 'Multiplique sua rede e seus ganhos',
-    tagline: 'Construa sua carreira de sucesso',
+    subtitle: 'Parceria comercial iGreen',
+    tagline: 'Indique soluções e gere resultados',
+    preview: {
+      summary: 'Seja parceiro comercial iGreen. Indique as soluções do portfólio e acompanhe o processo com suporte e materiais. Comissionamento conforme regras e condições definidas em contrato.',
+      benefits: [
+        'Parceria com regras e condições claras',
+        'Treinamento e materiais de apoio',
+        'Portfólio de soluções (energia e telecom)',
+        'Suporte durante as etapas do cliente',
+        'Sem promessas de renda garantida'
+      ],
+      cta: 'Quero ser parceiro'
+    },
     hero: {
-      headline: 'Multiplique sua rede e seus ganhos!',
-      description: 'Indique novos licenciados, forme sua equipe e alcance bônus, prêmios, viagens e comissões em escala. É o caminho para quem quer crescer rápido e construir uma carreira de sucesso na iGreen.'
+      headline: 'Parceria para indicar as soluções iGreen',
+      description: 'Atue como parceiro comercial indicando as soluções iGreen. Você conta com materiais e suporte, e o comissionamento segue as regras e condições definidas em contrato (sem promessa de renda garantida).'
     },
     benefits: [
       {
-        title: 'Comissões Recorrentes',
-        description: 'Ganhe comissões mensais de todas as conexões da sua rede (Green, Solar, Placas, Livre e Telecom)'
+        title: 'Comissionamento por resultados',
+        description: 'Remuneração conforme a política comercial vigente e as condições do contrato'
       },
       {
-        title: 'Bônus de Expansão',
-        description: 'R$300 por cada novo licenciado direto + R$100 por licenciado indireto (para licenciados PRO)'
+        title: 'Portfólio completo',
+        description: 'Indique diferentes soluções (energia e telecom) de acordo com o perfil do cliente'
       },
       {
-        title: 'Royalties Desbloqueados',
-        description: 'Até R$300 de royalties por licenciado na sua rede, ativados conforme sua qualificação'
+        title: 'Treinamento e materiais',
+        description: 'Onboarding e conteúdos de apoio para você apresentar as soluções com clareza'
       },
       {
-        title: 'Sistema de Qualificações',
-        description: 'Evolua de licenciado para PRO, depois S-EXPANSÃO e alcance níveis superiores com ganhos crescentes'
+        title: 'Suporte na jornada',
+        description: 'Acompanhamento para tirar dúvidas e orientar as etapas do processo com o cliente'
       },
       {
-        title: 'Investimento de Volta em 10 Dias',
-        description: 'Missão estruturada em 3 fases para recuperar seu investimento rapidamente'
+        title: 'Transparência',
+        description: 'Regras, prazos, elegibilidade e condições apresentados antes da formalização'
       },
       {
-        title: 'Prêmios e Viagens',
-        description: 'Conquiste bônus extras, participação em cruzeiros e reconhecimentos exclusivos'
+        title: 'Atuação flexível',
+        description: 'Trabalhe com indicação e relacionamento comercial de acordo com sua disponibilidade'
       }
     ],
     howItWorks: [
       {
         step: 1,
-        title: 'Fase 1: Conecte 5 Clientes Diretos',
-        description: 'Faça suas primeiras conexões Green ou Telecom. Ao completar 5 clientes, você se qualifica como PRO e garante recorrência imediata.'
+        title: 'Cadastro e onboarding',
+        description: 'Você se cadastra como parceiro e recebe orientações iniciais sobre o portfólio e o processo comercial'
       },
       {
         step: 2,
-        title: 'Fase 2: Indique 2 Licenciados',
-        description: 'Traga 2 novos licenciados para a iGreen nos primeiros 10 dias. Você ganha R$300 de comissão por cada licenciado direto.'
+        title: 'Apresentação das soluções',
+        description: 'Você indica a melhor solução para cada perfil e encaminha o lead para atendimento/viabilidade'
       },
       {
         step: 3,
-        title: 'Fase 3: Ajude sua Equipe a Crescer',
-        description: 'Auxilie seus 2 licenciados a conectarem 5 clientes cada. Ao completar, você se qualifica como S-EXPANSÃO, desbloqueia royalties e recupera seu investimento.'
+        title: 'Acompanhamento do processo',
+        description: 'A iGreen conduz as etapas com o cliente (proposta, documentação e implantação quando aplicável)'
       },
       {
         step: 4,
-        title: 'Evolução e Liderança',
-        description: 'Continue expandindo sua rede. Quanto maior sua equipe e qualificação, maiores suas comissões, royalties e bônus mensais.'
+        title: 'Comissionamento e pós-venda',
+        description: 'Após a formalização, o comissionamento ocorre conforme regras do produto/contrato e você mantém o relacionamento comercial'
       }
     ],
     faq: [
       {
-        question: 'Qual a diferença entre licenciado e licenciado PRO?',
-        answer: 'O licenciado PRO é quem já conectou pelo menos 5 clientes diretos. A qualificação PRO desbloqueia comissões maiores, incluindo R$100 adicionais por licenciado indireto e acesso a royalties.'
+        question: 'Como funciona a parceria comercial?',
+        answer: 'Você atua indicando as soluções iGreen para potenciais clientes e recebe comissionamento conforme a política comercial vigente e as condições definidas em contrato.'
       },
       {
-        question: 'Como funcionam os royalties?',
-        answer: 'Royalties são comissões que você recebe de todas as conexões feitas pela sua rede (diretos e indiretos). Eles são ativados conforme você avança nas qualificações e podem chegar a até R$300 por licenciado.'
+        question: 'Existe renda garantida ou prazo “certo” para retorno?',
+        answer: 'Não. Resultados variam conforme sua atuação, região, elegibilidade e adesão dos clientes. Apresentamos as regras e condições antes da formalização, sem promessas de ganhos garantidos.'
       },
       {
-        question: 'Realmente consigo recuperar meu investimento em 10 dias?',
-        answer: 'Sim! Seguindo a missão estruturada (5 clientes + 2 licenciados + ajudá-los a conectar 5 clientes cada), você recupera o investimento da licença e ainda desbloqueia comissões recorrentes.'
+        question: 'Preciso recrutar pessoas para participar?',
+        answer: 'O foco é a parceria comercial e a indicação de soluções para clientes. Qualquer regra adicional (quando aplicável) é sempre informada de forma transparente no material oficial e no contrato.'
       },
       {
-        question: 'Quais conexões geram comissão na Expansão?',
-        answer: 'Todas as conexões: Green, Solar, Placas, Livre, Telecom e novos Licenciados. Cada produto tem percentuais diferentes de GP (Geração Própria), GI (Geração Indireta) e RO (Royalties).'
+        question: 'Quais soluções posso indicar?',
+        answer: 'Você pode indicar as soluções do portfólio iGreen (energia e telecom), respeitando elegibilidade e regras de cada produto. No atendimento, ajudamos a enquadrar o cliente e estimar o potencial.'
       },
       {
         question: 'Onde encontro mais informações sobre regras e qualificações?',
-        answer: 'Acesse o Manual de Expansão completo em: igreenenergy.com.br/manual-expansao-igreen ou igreenenergy.com.br/licenciado-pro'
+        answer: 'Use os materiais oficiais fornecidos pela iGreen. Se quiser, enviamos os links e um resumo das regras aplicáveis no seu caso antes de qualquer compromisso.'
       }
     ],
     cta: {
-      primary: 'Quero ser licenciado',
-      secondary: 'Saiba mais sobre PRO',
-      whatsappMessage: 'Olá! Quero conhecer a Conexão Expansão e saber como me tornar licenciado iGreen'
+      primary: 'Quero ser parceiro',
+      secondary: 'Falar com especialista',
+      whatsappMessage: 'Olá! Quero conhecer a Conexão Expansão (parceria comercial) e entender como funciona o comissionamento e o processo'
     }
   }
 };

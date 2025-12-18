@@ -26,7 +26,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full bg-white dark:bg-gray-900 sticky top-0 z-40 border-b border-gray-100 dark:border-gray-800 transition-shadow">
+    <header className="w-full bg-white/80 dark:bg-gray-950/70 backdrop-blur sticky top-0 z-40 border-b border-emerald-100/70 dark:border-emerald-900/30 transition-shadow">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 cursor-pointer hover:opacity-80 transition">
           <div className="w-10 h-10 rounded-md bg-gradient-to-br from-green-500 to-blue-500 flex items-center justify-center text-white font-bold">CS</div>

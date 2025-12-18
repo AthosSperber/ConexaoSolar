@@ -1,7 +1,8 @@
 import Accordion from '../ui/Accordion';
+import { buildWhatsAppUrl } from '../../config/whatsapp';
 
 export default function Solar() {
-  const imageSrc = '/assets/sections/solar.jpg';
+  const imageSrc = '/assets/sections/livre.jpg';
   const fallbackImage =
     'data:image/svg+xml;charset=utf-8,' +
     encodeURIComponent(
@@ -18,13 +19,13 @@ export default function Solar() {
     );
 
   return (
-    <section id="solar" className="scroll-snap-section bg-gradient-to-br from-yellow-50 to-white">
+    <section id="solar" className="scroll-snap-section bg-gradient-to-br from-yellow-50 via-emerald-50/20 to-emerald-50/60 dark:from-gray-950 dark:via-yellow-950/10 dark:to-gray-950">
       <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Imagem à direita em desktop, topo em mobile */}
         <div className="order-2 md:order-2">
           <img
             src={imageSrc}
-            className="w-full rounded-3xl shadow-xl object-contain bg-white h-96"
+            className="w-full rounded-3xl shadow-xl object-contain bg-white dark:bg-gray-950 border border-emerald-100/60 dark:border-emerald-900/30 h-96"
             alt="Painéis solares instalados no telhado"
             loading="lazy"
             width="1000"
@@ -37,13 +38,13 @@ export default function Solar() {
 
         {/* Conteúdo à esquerda */}
         <div className="order-1 md:order-1">
-          <span className="product-tag text-yellow-600 font-semibold text-sm uppercase tracking-wide">Conexão Solar</span>
-          <h2 className="text-4xl font-extrabold text-gray-900 mt-3 mb-4">Energia solar sem investimento</h2>
-          <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+          <span className="product-tag text-yellow-600 dark:text-yellow-400 font-semibold text-sm uppercase tracking-wide">Conexão Solar</span>
+          <h2 className="text-4xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4">Energia solar sem investimento</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
             Painéis instalados no imóvel sem custo inicial. Você economiza na fatura desde o primeiro mês, com contrato transparente.
           </p>
 
-          <ul className="space-y-3 mb-8 hidden md:block text-gray-700">
+          <ul className="space-y-3 mb-8 hidden md:block text-gray-700 dark:text-gray-300">
             <li className="flex items-start gap-3">
               <span className="text-yellow-600 font-bold text-xl leading-none">✓</span>
               <span>Sem compra de equipamentos</span>
@@ -60,7 +61,7 @@ export default function Solar() {
 
           <Accordion title="Como funciona o processo?">
             <div className="space-y-4">
-              <ol className="space-y-3 text-gray-700">
+              <ol className="space-y-3 text-gray-700 dark:text-gray-300">
                 <li className="flex items-start gap-3">
                   <span className="text-yellow-600 font-bold">1.</span>
                   <span>Levantamento do seu consumo energético</span>
@@ -74,9 +75,9 @@ export default function Solar() {
                   <span>Instalação e acompanhamento contínuo</span>
                 </li>
               </ol>
-              <p className="text-sm text-gray-600 pt-2 border-t border-gray-200">Uma análise é feita antes para garantir que o imóvel é compatível com a solução.</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 pt-2 border-t border-gray-200 dark:border-gray-700">Uma análise é feita antes para garantir que o imóvel é compatível com a solução.</p>
               <a 
-                href="https://wa.me/5519996693018" 
+                href={buildWhatsAppUrl()} 
                 target="_blank" 
                 rel="noreferrer" 
                 className="btn-primary block text-center mt-6 bg-yellow-600 text-white py-4 rounded-full font-semibold hover:bg-yellow-700 active:scale-[0.98] transition"

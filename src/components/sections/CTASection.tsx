@@ -36,7 +36,7 @@ const CTASection: FC = () => {
 
           <button
             onClick={handleScroll}
-            className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white hover:bg-gray-100 text-green-700 font-bold rounded-xl transition-all duration-200 text-base md:text-lg shadow-2xl hover:shadow-white/20 active:scale-95 group"
+            className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-emerald-50 hover:bg-emerald-100 text-green-800 font-bold rounded-xl transition-all duration-200 text-base md:text-lg shadow-2xl hover:shadow-white/20 active:scale-95 group"
             aria-label="Falar com um especialista"
           >
             Falar com um especialista

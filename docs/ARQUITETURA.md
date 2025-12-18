@@ -17,7 +17,6 @@ A estrutura segue o padrão de um projeto Vite + React.
 │   │   ├── sections/     # Hero, About, SolutionsSection, BenefitsSection, CTASection, IgreenBenefits
 │   │   └── ui/           # SolutionCard, BenefitCard, Button, Carousel, ProductModal, Accordion
 │   ├── data/             # Dados mockados ou estáticos (texts.ts, solutions.ts, partner.ts, productDetails.ts)
-│   ├── lib/              # Configuração de clientes (ex: supabase.ts)
 │   ├── pages/            # Componentes de página completos (Home, Partnerships, ProductPage)
 │   └── App.tsx           # Ponto de entrada principal da aplicação
 └── docs/                 # Documentação do projeto
@@ -26,7 +25,7 @@ A estrutura segue o padrão de um projeto Vite + React.
 ## Front-end
 
 - **Stack:** Vite, React 18, TypeScript, Tailwind CSS.
-- **Roteamento:** O projeto utiliza `react-router-dom` para gerenciar a navegação, permitindo uma arquitetura de múltiplas páginas (MPA) escalável.
+- **Roteamento:** O projeto utiliza `react-router-dom` (SPA/CSR) com rotas estáticas e uma rota dinâmica para páginas de produto.
 - **Estrutura de Layout:** Um componente `AppLayout.tsx` define a estrutura visual comum (Header, Footer) e utiliza um `<Outlet>` para renderizar a página correspondente à rota ativa.
 - **Páginas:** Os componentes de página (como `Home.tsx` e `Partnerships.tsx`) residem em `src/pages` e são associados a rotas específicas no arquivo `main.tsx`.
 
@@ -65,17 +64,23 @@ Componentes reutilizáveis que seguem os padrões de UX/UI documentados:
   - Seções: Hero, Benefits, How It Works, FAQ, Final CTA
   - Rota dinâmica para 6 produtos: /green, /solar, /placas, /livre, /telecom, /expansao
 
+### Configuração de WhatsApp
+
+- Número padrão e override por ambiente ficam em `src/config/whatsapp.ts`.
+- Para configurar sem alterar código, defina `VITE_WHATSAPP_NUMBER` (Vite env).
+- Links/CTAs devem usar `buildWhatsAppUrl()` (evita números hardcoded e mantém consistência).
+
 ### Estrutura de Dados
 - **solutions.ts**: Dados básicos dos 6 produtos (id, title, subtitle, icon) - usado no carrossel e modal
 - **productDetails.ts**: Dados completos de cada produto para páginas dedicadas
   - Interface: `ProductDetail` com hero, benefits[], howItWorks[], faq[], cta
   - Record<string, ProductDetail> exportado para acesso por ID
-  - Fonte: Extraído de APN Outubro 2025.pdf
+  - Fonte: Extraído de APN Dezembro 2025.pdf (a extração de texto é gerada localmente via script em `scripts/extract-pdf-text.js`)
 
 ## Back-end
 
-- **Atual:** O "back-end" se resume à integração com o **Supabase** para persistir dados do formulário de contato.
-- **Futuro:** A arquitetura deve prever a criação de uma API dedicada (ex: Node.js, ou Serverless Functions) para lidar com lógica de negócio complexa, autenticação de usuários (clientes e licenciados) e gerenciamento de dados. O front-end deve ser desenvolvido pensando em consumir essa futura API.
+- **Atual:** Não há back-end nesta base. Os CTAs direcionam para WhatsApp e o conteúdo é estático (dados em `src/data`).
+- **Futuro:** Se houver necessidade (ex.: captura de leads, CRM, analytics, formulários), a arquitetura pode evoluir para uma API (Serverless/Node) mantendo o front-end como consumidor.
 
 ## Princípios Arquiteturais
 

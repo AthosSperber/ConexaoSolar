@@ -241,34 +241,15 @@ async function run() {
     .filter((f) => /^Cópia de 0\d\.jpg$/i.test(f))
     .map((f) => ({ name: f, path: path.join(inputDir, f) }));
 
-  const palettes = {
-    solar: { r: 202, g: 138, b: 4 }, // amber
-    telecom: { r: 79, g: 70, b: 229 } // indigo
-  };
-
-  if (!sectionAlready.has('solar.jpg')) {
-    const pick = await pickBestByPalette({ candidates: photoCandidates, palette: palettes.solar });
-    if (pick) results.push(await writeSection({ srcName: pick.name, outName: 'solar.jpg' }));
-    else results.push({ ok: false, outName: 'solar.jpg', reason: 'no-candidate-photo' });
-  }
-
-  if (!sectionAlready.has('telecom.jpg')) {
-    // Choose a different photo than the one possibly used for solar
-    const used = new Set(results.filter((r) => r.ok && typeof r.srcName === 'string').map((r) => r.srcName));
-    const remaining = photoCandidates.filter((c) => !used.has(c.name));
-    const pick = await pickBestByPalette({ candidates: remaining, palette: palettes.telecom });
-    if (pick) results.push(await writeSection({ srcName: pick.name, outName: 'telecom.jpg' }));
-    else results.push({ ok: false, outName: 'telecom.jpg', reason: 'no-candidate-photo' });
-  }
+  // Observação: este projeto não depende mais de imagens dedicadas para "solar" e "telecom" em `public/assets/sections/`.
+  // A seção Solar reutiliza `livre.jpg` e a Telecom usa apenas um placeholder (SVG embutido).
 
   // If any section is still missing, generate a consistent high-quality placeholder (avoids broken UI and low-quality random picks).
   const finalOk = new Set(results.filter((r) => r.ok).map((r) => r.outName));
   const placeholders = {
     green: { title: 'Imagem Conexão Green', from: '#DCFCE7', to: '#ECFDF5', text: '#16A34A' },
     livre: { title: 'Imagem Conexão Livre', from: '#F3E8FF', to: '#FAF5FF', text: '#7C3AED' },
-    placas: { title: 'Imagem Conexão Placas', from: '#DBEAFE', to: '#EFF6FF', text: '#2563EB' },
-    solar: { title: 'Imagem Conexão Solar', from: '#FEF9C3', to: '#FFF7ED', text: '#A16207' },
-    telecom: { title: 'Imagem Conexão Telecom', from: '#E0E7FF', to: '#EEF2FF', text: '#4F46E5' }
+    placas: { title: 'Imagem Conexão Placas', from: '#DBEAFE', to: '#EFF6FF', text: '#2563EB' }
   };
 
   for (const [key, cfg] of Object.entries(placeholders)) {

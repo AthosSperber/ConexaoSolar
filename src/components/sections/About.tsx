@@ -5,7 +5,7 @@ const About: FC = () => {
   return (
     <section 
       id="about" 
-      className="w-full py-16 md:py-20 lg:py-28 bg-gradient-to-b from-gray-50 via-gray-100/30 to-gray-50 dark:from-gray-900 dark:via-gray-900/80 dark:to-gray-900 border-t border-gray-200 dark:border-gray-700"
+      className="w-full py-16 md:py-20 lg:py-28 bg-gradient-to-b from-emerald-50/60 via-emerald-50/20 to-emerald-50/60 dark:from-gray-950 dark:via-gray-900/80 dark:to-gray-950 border-t border-gray-200 dark:border-gray-700"
       aria-label="Sobre Conecta Solar"
     >
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">

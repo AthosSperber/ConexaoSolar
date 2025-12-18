@@ -2,6 +2,8 @@ import { FC } from 'react';
 import { X, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Solution } from '../../data/solutions';
 import { Link } from 'react-router-dom';
+import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { productDetails } from '../../data/productDetails';
 
 interface ProductModalProps {
   solution: Solution | null;
@@ -9,86 +11,19 @@ interface ProductModalProps {
   onClose: () => void;
 }
 
-const productDetails: Record<string, {
-  benefits: string[];
-  summary: string;
-  cta: string;
-}> = {
-  'conexao-green': {
-    summary: 'Reduza sua conta de energia sem instalar nada. Economia mensal garantida diretamente na sua fatura, sem obras ou mudanças na rotina.',
-    benefits: [
-      'Economia mensal direto na fatura',
-      'Sem obras ou equipamentos necessários',
-      'Processo 100% digital e seguro',
-      'Sem investimento inicial',
-      'Contrato transparente e flexível'
-    ],
-    cta: 'Simular minha economia'
-  },
-  'conexao-livre': {
-    summary: 'Mercado livre de energia com flexibilidade e economia. Escolha seu fornecedor e pague menos na conta de luz com transparência total.',
-    benefits: [
-      'Liberdade de escolher seu fornecedor',
-      'Economia de até 35% na conta',
-      'Previsibilidade nos custos',
-      'Sustentabilidade com energia limpa',
-      'Gestão profissional de energia'
-    ],
-    cta: 'Quero conhecer melhor'
-  },
-  'conexao-placas': {
-    summary: 'Instale seu próprio sistema de energia solar. Projeto completo com painéis de alta eficiência, instalação profissional e suporte técnico.',
-    benefits: [
-      'Projeto personalizado para seu imóvel',
-      'Instalação profissional certificada',
-      'Painéis de alta eficiência e durabilidade',
-      'Retorno do investimento garantido',
-      'Monitoramento em tempo real',
-      'Manutenção e suporte técnico'
-    ],
-    cta: 'Solicitar orçamento'
-  },
-  'conexao-solar': {
-    summary: 'Energia solar por assinatura, sem instalação. Aproveite os benefícios da energia limpa sem investir em equipamentos ou obras.',
-    benefits: [
-      'Energia solar sem instalar painéis',
-      'Economia imediata na conta',
-      'Sem investimento em equipamentos',
-      'Flexibilidade para cancelar',
-      'Energia 100% renovável e limpa'
-    ],
-    cta: 'Ver como funciona'
-  },
-  'conexao-telecom': {
-    summary: 'Planos de telefonia móvel com internet de qualidade. Cobertura nacional, portabilidade grátis e benefícios exclusivos do iGreen Club.',
-    benefits: [
-      'Planos a partir de 11GB por mês',
-      'Cobertura em todo Brasil',
-      'Portabilidade grátis e rápida',
-      'iGreen Club GRÁTIS incluso',
-      'Descontos em +600 mil estabelecimentos',
-      'Sem taxa de adesão'
-    ],
-    cta: 'Ver planos disponíveis'
-  },
-  'conexao-expansao': {
-    summary: 'Torne-se parceiro iGreen. Construa sua rede, indique clientes e licenciados, e alcance comissões recorrentes, bônus e viagens.',
-    benefits: [
-      'Comissões recorrentes por cliente',
-      'Bônus por novos licenciados',
-      'Sistema de qualificação progressivo',
-      'Treinamento e suporte completo',
-      'Viagens e prêmios por desempenho',
-      'Trabalhe de onde quiser'
-    ],
-    cta: 'Quero ser parceiro'
-  }
-};
-
 const ProductModal: FC<ProductModalProps> = ({ solution, isOpen, onClose }) => {
   if (!isOpen || !solution) return null;
 
-  const details = productDetails[solution.id];
+  const productKey = solution.id.replace(/^conexao-/, '');
+  const product = productDetails[productKey];
+  const whatsappUrl = buildWhatsAppUrl(
+    product?.cta.whatsappMessage ?? `Olá! Quero saber mais sobre ${solution.title}`
+  );
+  const details = product?.preview ?? {
+    summary: solution.description ?? '',
+    benefits: [],
+    cta: product?.cta.primary ?? 'Falar no WhatsApp'
+  };
 
   return (
     <>
@@ -102,14 +37,14 @@ const ProductModal: FC<ProductModalProps> = ({ solution, isOpen, onClose }) => {
       {/* Modal */}
       <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
         <div 
-          className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative animate-[scale-in_0.3s_ease-out] border border-gray-100 dark:border-gray-800"
+          className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative animate-[scale-in_0.3s_ease-out] border border-emerald-100/70 dark:border-emerald-900/30"
           onClick={(e) => e.stopPropagation()}
           role="dialog"
           aria-modal="true"
           aria-labelledby="modal-title"
         >
           {/* Header */}
-          <div className="sticky top-0 bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 px-6 sm:px-8 py-6 flex items-start justify-between z-10">
+          <div className="sticky top-0 bg-white/95 dark:bg-gray-900/95 border-b border-emerald-100/70 dark:border-emerald-900/30 px-6 sm:px-8 py-6 flex items-start justify-between z-10">
             <div className="flex-1 pr-8">
               <h2 id="modal-title" className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">
                 {solution.title}
@@ -121,7 +56,7 @@ const ProductModal: FC<ProductModalProps> = ({ solution, isOpen, onClose }) => {
             
             <button
               onClick={onClose}
-              className="flex-shrink-0 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="flex-shrink-0 p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-emerald-950/30 transition-colors"
               aria-label="Fechar modal"
             >
               <X className="w-6 h-6 text-gray-600 dark:text-gray-400" />
@@ -155,7 +90,7 @@ const ProductModal: FC<ProductModalProps> = ({ solution, isOpen, onClose }) => {
           </div>
 
           {/* Footer */}
-          <div className="sticky bottom-0 bg-gradient-to-t from-white dark:from-gray-900 via-white dark:via-gray-900 to-transparent px-6 sm:px-8 py-6 border-t border-gray-100 dark:border-gray-800">
+          <div className="sticky bottom-0 bg-gradient-to-t from-emerald-50/90 dark:from-gray-950 via-emerald-50/60 dark:via-gray-950 to-transparent px-6 sm:px-8 py-6 border-t border-emerald-100/70 dark:border-emerald-900/30">
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 to={`/${solution.id.replace('conexao-', '')}`}
@@ -166,10 +101,10 @@ const ProductModal: FC<ProductModalProps> = ({ solution, isOpen, onClose }) => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="https://wa.me/5519996693018"
+                href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white px-6 py-3 rounded-xl font-semibold text-center transition-colors"
+                className="flex-1 bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/30 dark:hover:bg-emerald-950/40 text-emerald-900 dark:text-emerald-50 px-6 py-3 rounded-xl font-semibold text-center transition-colors border border-emerald-200/60 dark:border-emerald-900/30"
               >
                 {details.cta}
               </a>

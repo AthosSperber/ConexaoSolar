@@ -103,14 +103,14 @@ const Carousel: FC<Props> = ({
         <>
           <button
             onClick={prev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition"
+            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white dark:bg-gray-900/80 dark:hover:bg-gray-900 p-2 rounded-full shadow-md transition text-gray-900 dark:text-gray-100"
             aria-label="Anterior"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={next}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white p-2 rounded-full shadow-md transition"
+            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white dark:bg-gray-900/80 dark:hover:bg-gray-900 p-2 rounded-full shadow-md transition text-gray-900 dark:text-gray-100"
             aria-label="Próximo"
           >
             <ChevronRight className="w-5 h-5" />

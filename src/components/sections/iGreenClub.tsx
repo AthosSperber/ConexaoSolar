@@ -1,5 +1,6 @@
-import { Star, Smartphone, Gift, Zap, Wallet } from 'lucide-react';
+import { Star, Gift, Zap, Wallet } from 'lucide-react';
 import { testimonials } from '../../data/mock';
+import { buildWhatsAppUrl } from '../../config/whatsapp';
 
 export default function iGreenClubSection() {
   const appFeatures = [
@@ -12,8 +13,8 @@ export default function iGreenClubSection() {
     {
       icon: Gift,
       color: 'blue',
-      title: 'Descontos em +600mil Lojas',
-      description: 'Acesso a descontos em mais de 600 mil serviços e produtos em todo Brasil'
+      title: 'Descontos em +60 mil lojas',
+      description: 'Descontos e benefícios em lojas pelo Brasil direto no app'
     },
     {
       icon: Wallet,
@@ -30,34 +31,33 @@ export default function iGreenClubSection() {
   ];
 
   const colorClasses = {
-    emerald: 'bg-emerald-100 text-emerald-600',
-    blue: 'bg-blue-100 text-blue-600',
-    purple: 'bg-purple-100 text-purple-600',
-    yellow: 'bg-yellow-100 text-yellow-600'
+    emerald: 'bg-emerald-100 text-emerald-600 dark:bg-emerald-900/30 dark:text-emerald-300',
+    blue: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-300',
+    purple: 'bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-300',
+    yellow: 'bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-300'
   };
 
   return (
-    <section id="igreenclub" className="scroll-snap-section bg-gray-100 dark:bg-gray-900">
+    <section id="igreenclub" className="scroll-snap-section bg-emerald-50/40 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-16">
         {/* Header */}
         <div className="text-center mb-12">
           <span className="product-tag text-emerald-600 dark:text-emerald-400 font-semibold text-sm uppercase tracking-wide">iGreen Club</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4\">Todos os Clientes Recebem Acesso Gratuito</h2>
-          <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-4\">+600 mil Descontos em Serviços e Produtos</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4">Todos os Clientes Recebem Acesso Gratuito</h2>
+          <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-4">+600 mil Descontos em Serviços e Produtos</p>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Benefícios exclusivos para todos os clientes que contratam qualquer solução iGreen
           </p>
         </div>
 
-        {/* Funcionalidades do APP */}
-        <div className="mb-12 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 md:p-12 border border-emerald-100 dark:border-gray-700">
+        <div className="mb-12 bg-gradient-to-br from-emerald-50 to-green-50 dark:from-gray-900/70 dark:to-emerald-950/20 rounded-3xl p-8 md:p-12 border border-emerald-100/80 dark:border-emerald-900/30">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">Funcionalidades do App iGreen Club</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {appFeatures.map((feature, idx) => {
               const Icon = feature.icon;
               const colorClass = colorClasses[feature.color as keyof typeof colorClasses];
               return (
-                <div key={idx} className="bg-white dark:bg-gray-900 dark:border dark:border-gray-700 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                <div key={idx} className="bg-white/90 dark:bg-gray-900/70 rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-emerald-100/70 dark:border-emerald-900/30">
                   <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-4 ${colorClass}`}>
                     <Icon className="w-7 h-7" />
                   </div>
@@ -101,7 +101,7 @@ export default function iGreenClubSection() {
         </div>
 
         {/* Depoimentos */}
-        <div className="bg-white dark:bg-gray-900 rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700 mb-12">
+          <div className="bg-white/90 dark:bg-gray-900/70 rounded-3xl p-6 sm:p-8 md:p-12 shadow-sm border border-emerald-100/70 dark:border-emerald-900/30 mb-12">
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">O que dizem nossos membros</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((t) => (
@@ -124,10 +124,10 @@ export default function iGreenClubSection() {
           <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6">ACESSO GRATUITO</p>
           <p className="text-base sm:text-lg text-emerald-50 mb-8">ao iGreen Club com +600 mil descontos</p>
           <a 
-            href="https://wa.me/5519996693018" 
+            href={buildWhatsAppUrl()} 
             target="_blank" 
             rel="noreferrer" 
-            className="inline-block bg-white text-emerald-600 px-10 py-4 rounded-full font-bold text-lg hover:bg-gray-100 active:scale-[0.98] transition shadow-lg"
+            className="inline-block bg-emerald-50 text-emerald-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-emerald-100 active:scale-[0.98] transition shadow-lg"
           >
             Conhecer Mais Benefícios
           </a>

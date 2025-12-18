@@ -21,8 +21,8 @@ O sistema **deve** suportar os temas Dark (🌙) e Light (☀️).
 - **Provedor:** A aplicação é encapsulada pelo `ThemeProvider`, configurado para usar a classe do sistema como padrão (`defaultTheme="system"`) e persistir a escolha do usuário no `localStorage`.
 - **Controle:** Um botão `ThemeToggle` com ícones de sol e lua está posicionado no `Header`, permitindo ao usuário alternar manualmente entre 'Light', 'Dark' ou voltar para o modo 'System'.
 - **Padrão de Cores (Base):**
-  - **Light:** Fundo `bg-gray-50` ou `bg-white`, Texto `text-gray-800` ou `text-gray-900`.
-  - **Dark:** Fundo `dark:bg-gray-900` ou `dark:bg-black`, Texto `dark:text-gray-200` ou `dark:text-gray-50`.
+  - **Light (atual):** Fundo `bg-emerald-50` e seções com `bg-emerald-50/..` (menos “branco chapado”). Texto `text-gray-900`.
+  - **Dark (atual):** Fundo `dark:bg-gray-950` com superfícies `dark:bg-gray-900/..` e nuance `dark:to-emerald-950/..`. Texto `dark:text-gray-100`.
 
 ## Padrões de Layout Implementados
 
@@ -47,7 +47,7 @@ Todas as seções devem usar:
 ### Cores
 - **Principal**: Verde (`green-600`, `green-700`)
 - **Neutras**: Cinza (`gray-50` a `gray-900`)
-- **Fundos**: Gradientes suaves (`from-white to-green-50`)
+- **Fundos**: Emerald suave no light (`emerald-50`) e nuance emerald no dark (`emerald-950/..`)
 
 ### Interações
 - **Hover**: `hover:shadow-lg transition-all duration-300`

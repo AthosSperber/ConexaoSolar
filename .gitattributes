@@ -1,0 +1,11 @@
+# Normalize line endings across OSes
+* text=auto eol=lf
+
+# Treat common binaries as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.svg text eol=lf
+*.pdf binary
+*.ico binary

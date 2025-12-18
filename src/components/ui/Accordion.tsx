@@ -9,10 +9,10 @@ type Props = {
 const Accordion: FC<Props> = ({ title, children, defaultOpen = false }) => {
   const [open, setOpen] = useState(defaultOpen);
   return (
-    <div className="border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden bg-white dark:bg-gray-800">
+    <div className="border border-emerald-200/70 dark:border-emerald-900/30 rounded-2xl overflow-hidden bg-white/90 dark:bg-gray-900/70">
       <button
         type="button"
-        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-gray-50 dark:hover:bg-gray-700/40 transition"
+        className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left hover:bg-emerald-50/70 dark:hover:bg-emerald-950/20 transition"
         onClick={() => setOpen((s) => !s)}
         aria-expanded={open}
       >

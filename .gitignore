@@ -10,6 +10,17 @@ node_modules
 dist
 dist-ssr
 *.local
+.local/
+
+# Documentos e extrações locais (não versionar)
+*.pdf
+*_EXTRACTED.txt
+*_extracted.txt
+*_full.txt
+pdf_extracted.txt
+
+# Insumos locais
+imagensparaextrair/
 
 .vscode/*
 !.vscode/extensions.json
