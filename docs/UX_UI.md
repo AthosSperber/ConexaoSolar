@@ -121,9 +121,9 @@ Tabelas devem ter scroll horizontal em mobile:
 O projeto utiliza um **padrão manual** para fotos dos consultores. Não há pipeline automático de processamento de imagens.
 
 ### Localização
-As fotos devem ser colocadas em `public/assets/consultant/` com o nome do consultor:
-- `public/assets/consultant/athos.jpg`
-- `public/assets/consultant/pai.jpg`
+As fotos devem ser colocadas em `public/assets/consultant/` com o nome correspondente ao `id` do consultor no JSON:
+- `public/assets/consultant/athos.jpg` (para `"id": "athos"`)
+- `public/assets/consultant/pai.jpg` (para `"id": "pai"`)
 
 ### Formato e Especificações
 - **Formato:** JPEG (.jpg)
