@@ -1,52 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://conexaosolar.com.br/</loc>
+    <loc>https://conexao-solar.vercel.app/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/#solucoes</loc>
+    <loc>https://conexao-solar.vercel.app/#solucoes</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/#contact</loc>
+    <loc>https://conexao-solar.vercel.app/#contact</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/parcerias</loc>
+    <loc>https://conexao-solar.vercel.app/parcerias</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/green</loc>
+    <loc>https://conexao-solar.vercel.app/green</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/solar</loc>
+    <loc>https://conexao-solar.vercel.app/solar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/placas</loc>
+    <loc>https://conexao-solar.vercel.app/placas</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/livre</loc>
+    <loc>https://conexao-solar.vercel.app/livre</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/telecom</loc>
+    <loc>https://conexao-solar.vercel.app/telecom</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://conexaosolar.com.br/expansao</loc>
+    <loc>https://conexao-solar.vercel.app/expansao</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

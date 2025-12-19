@@ -73,8 +73,23 @@ Componentes reutilizáveis que seguem os padrões de UX/UI documentados:
 
 ### Fotos do Consultor (Template)
 
-- O repositório mantém apenas um placeholder neutro versionado em `public/assets/consultant/profile.svg`.
-- Fotos reais em `public/assets/consultant/*` ficam ignoradas por `.gitignore` (exceto o placeholder), para evitar commitar imagens pessoais.
+- O template suporta foto do consultor via `public/assets/consultant/...`.
+- Para higiene do repositório (template vendável), a recomendação é **commitar no máximo um asset padrão** (placeholder ou exemplo) e manter fotos pessoais/variantes fora do Git via `.gitignore`.
+
+### Runtime SEO Override (public/consultant.json)
+
+- O `index.html` contém meta tags base (title/description/OG/Twitter) para funcionar bem em deploy estático.
+- Em runtime, um script no `index.html` busca `public/consultant.json` (com `cache: 'no-store'`) e aplica overrides de:
+  - `document.title`
+  - `meta[name="description"]`
+  - `og:title`, `og:description`, `og:image`
+  - `twitter:title`, `twitter:description`, `twitter:image`
+  - `canonical` e `og:url`
+
+#### Canonical/og:url (fallback por domínio, sem SSR)
+
+- Se `seo.canonicalUrl` existir no JSON, ele é usado como fonte de verdade.
+- Se não existir, o fallback é `location.origin` (domínio atual do deploy), evitando hardcode em `*.vercel.app` e reduzindo retrabalho ao migrar para domínio próprio.
 
 ### Estrutura de Dados
 - **solutions.ts**: Dados básicos dos 6 produtos (id, title, subtitle, icon) - usado no carrossel e modal

@@ -72,15 +72,21 @@
           setMeta('meta[name="description"]', seo.description);
           setMeta('meta[property="og:title"]', seo.title);
           setMeta('meta[property="og:description"]', seo.description);
-          setMeta('meta[property="og:image"]', seo.ogImage);
           setMeta('meta[name="twitter:title"]', seo.title);
           setMeta('meta[name="twitter:description"]', seo.description);
-          setMeta('meta[name="twitter:image"]', seo.ogImage);
 
-          if (seo.canonicalUrl) {
-            const canonical = document.querySelector('link[rel="canonical"]');
-            if (canonical) canonical.setAttribute('href', seo.canonicalUrl);
-            setMeta('meta[property="og:url"]', seo.canonicalUrl);
+          // Canonical/og:url fallback (sem SSR): usa seo.canonicalUrl quando definido,
+          // senão usa o domínio atual do deploy.
+          const canonicalUrl = seo.canonicalUrl || window.location.origin;
+          const canonical = document.querySelector('link[rel="canonical"]');
+          if (canonical) canonical.setAttribute('href', canonicalUrl);
+          setMeta('meta[property="og:url"]', canonicalUrl);
+
+          // OG/Twitter image: preferir URL absoluta para compatibilidade.
+          if (seo.ogImage) {
+            const ogImageAbs = new URL(seo.ogImage, canonicalUrl).toString();
+            setMeta('meta[property="og:image"]', ogImageAbs);
+            setMeta('meta[name="twitter:image"]', ogImageAbs);
           }
 
           const ld = document.getElementById('ld-consultant');
@@ -123,7 +129,7 @@
     <div class="no-js-hero" style="display:none; padding:24px; text-align:center; background:#ffffff;">
       <h1 style="font-size:22px; margin-bottom:8px;">Energia e economia com consultoria iGreen</h1>
       <p style="color:#4b5563; margin-bottom:12px;">Athos – Consultor iGreen | Atendimento direto</p>
-      <p><a href="#contact" style="background:#059669;color:#fff;padding:10px 16px;border-radius:9999px;text-decoration:none;">Simule sua economia</a></p>
+      <p><a href="/#contact" style="background:#059669;color:#fff;padding:10px 16px;border-radius:9999px;text-decoration:none;">Simule sua economia</a></p>
     </div>
 
     <div id="root"></div>

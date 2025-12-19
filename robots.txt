@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://conexaosolar.com.br/sitemap.xml
+Sitemap: https://conexao-solar.vercel.app/sitemap.xml

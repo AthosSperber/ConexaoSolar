@@ -251,6 +251,9 @@ em todo Brasil
 
 #### C. PROGRAMA DE GAMIFICAÇÃO - ROLETA (Página 25 - EXATA):
 
+> ⚠️ Observação do projeto: os trechos abaixo são **citações EXATAS do material**. Eles podem conter linguagem absoluta (“GANHA”, “Sem limites”, “ATÉ 100%”, etc.).
+> No site ConectaSolar, a copy deve seguir o padrão seguro/condicional em `docs/REGRAS_APN_2025.md` e `docs/UX_UI.md` (regras/campanhas, indicação válida, cashback para abater na conta de energia).
+
 ```
 iGreen Club
 
@@ -275,6 +278,8 @@ Saiba mais: igreenenergy.com.br/igreen-premia-materiais-de-apoio
 ```
 
 #### D. CASHBACK SUSTENTÁVEL (Página 26 - EXATA):
+
+> ⚠️ Observação do projeto: este trecho é citação EXATA e **não** deve ser copiado para páginas públicas sem adaptar para linguagem condicional conforme `docs/REGRAS_APN_2025.md`.
 
 ```
 Cashback

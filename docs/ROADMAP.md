@@ -39,6 +39,8 @@
   - [x] CTA B2B (/para-consultores): WhatsApp fixo do proprietário.
   - [x] Copy do iGreen Club alinhado às regras APN (dez/2025) + fonte viva em `docs/REGRAS_APN_2025.md`.
   - [x] Suporte a navegação por hash para seções da Home (ex.: `/#contact`).
+  - [x] Preview ao compartilhar (Open Graph/Twitter): `public/og-image.png` + meta tags no `index.html`.
+  - [x] SEO sanity (sem SSR): runtime override via `public/consultant.json` + fallback de `canonical/og:url` por `location.origin`.
 
 ## 🚧 Em Andamento
 

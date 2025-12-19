@@ -95,6 +95,8 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 
 - **Observação operacional (cache):** WhatsApp/Instagram/Meta cacheiam a prévia. Quando atualizar a imagem/tags, use o Facebook Sharing Debugger ("Scrape Again") em https://developers.facebook.com/tools/debug/.
 - **Compatibilidade:** em alguns crawlers, prefira `og:image` com URL absoluta (ex.: `https://conexao-solar.vercel.app/og-image.png`). Ao migrar para domínio próprio, atualize `canonical`/`og:url`/`og:image` para o domínio final.
+- **fb:app_id:** não vamos criar Meta App nem adicionar `fb:app_id` agora; warnings em ferramentas da Meta podem ser ignorados enquanto `og:image`/tags estiverem válidas.
+- **Canonical/og:url (sem SSR):** o HTML pode ter valores padrão, mas em runtime (JS) usamos `seo.canonicalUrl` quando definido no `public/consultant.json`; caso contrário, usamos `location.origin` como fallback para o domínio atual do deploy.
 
 ---
 
