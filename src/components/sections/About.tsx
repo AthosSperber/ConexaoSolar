@@ -22,12 +22,12 @@ const About: FC = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-5 gap-10 items-center">
           <div className="md:col-span-2 flex justify-center md:justify-start">
-            <div className="w-56 h-56 sm:w-64 sm:h-64 rounded-3xl overflow-hidden border border-emerald-100/70 dark:border-emerald-900/30 bg-white/90 dark:bg-gray-900/70 shadow-lg flex items-center justify-center">
+            <div className="w-56 sm:w-64 aspect-[4/5] rounded-3xl overflow-hidden border border-emerald-100/70 dark:border-emerald-900/30 bg-white/90 dark:bg-gray-900/70 shadow-lg flex items-center justify-center">
               {consultant.photo?.src && !photoError ? (
                 <img
                   src={consultant.photo.src}
                   alt={consultant.photo.alt || consultant.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-top"
                   loading="lazy"
                   onError={(e) => {
                     (e.currentTarget as HTMLImageElement).style.display = 'none';

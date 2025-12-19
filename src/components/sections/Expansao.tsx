@@ -39,8 +39,8 @@ export default function Expansao() {
         {/* Portfólio para indicar */}
         <div className="mb-12">
           <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">Soluções que você pode indicar</h3>
-          <div className="overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0">
-            <table className="w-full text-xs sm:text-sm min-w-[600px]">
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs sm:text-sm min-w-[520px]">
               <thead>
                 <tr className="bg-emerald-100 dark:bg-emerald-900 border-b-2 border-emerald-600 dark:border-emerald-500">
                   <th className="px-4 py-3 text-left font-bold text-gray-900 dark:text-white">Produto</th>

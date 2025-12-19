@@ -43,8 +43,8 @@ export default function iGreenClubSection() {
         {/* Header */}
         <div className="text-center mb-12">
           <span className="product-tag text-emerald-600 dark:text-emerald-400 font-semibold text-sm uppercase tracking-wide">iGreen Club</span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4">Todos os Clientes Recebem Acesso Gratuito</h2>
-          <p className="text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-4">+600 mil Descontos em Serviços e Produtos</p>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mt-3 mb-4">Todos os Clientes Recebem Acesso Gratuito</h2>
+          <p className="text-xl sm:text-2xl font-bold text-emerald-600 dark:text-emerald-400 mb-4">+600 mil Descontos em Serviços e Produtos</p>
           <p className="text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Benefícios exclusivos para todos os clientes que contratam qualquer solução iGreen
           </p>
@@ -75,7 +75,7 @@ export default function iGreenClubSection() {
           <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-yellow-300 dark:border-yellow-700 shadow-md">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">🎱 Gire a Roleta e Ganhe</h3>
             <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>A cada indicação válida pelo app iGreen Club (cliente indicado validado e ativo): 1 Giro + 1 Número da Sorte</strong></p>
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 sm:gap-3 mb-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-3 mb-8">
               {['+1 Sorte', 'R$ 25', 'R$ 50', 'R$ 100', 'R$ 250', 'R$ 500'].map((prize, i) => (
                 <div key={i} className="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 text-center font-bold text-yellow-600 dark:text-yellow-400 border-2 border-yellow-200 dark:border-yellow-700 hover:shadow-md transition text-sm sm:text-base">
                   {prize}

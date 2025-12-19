@@ -19,7 +19,7 @@ body {
 
 /* Scroll snap sections */
 .scroll-snap-section {
-  @apply min-h-screen flex items-center justify-center py-20;
+  @apply min-h-screen;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
