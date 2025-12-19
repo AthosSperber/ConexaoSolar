@@ -30,6 +30,12 @@
   - [x] Seção de benefícios iGreen Club (IgreenBenefits).
   - [x] Correção de bugs de z-index nas setas de navegação.
   - [x] Dark mode completo em Products section.
+  - [x] Padrão manual de fotos do consultor em `public/assets/consultant/`.
+  - [x] Seleção de consultor por ENV (`VITE_CONSULTANT_ID`) com fallback.
+  - [x] Perfis por consultor em `public/consultant.<id>.json`.
+  - [x] Navegação mobile no Header (menu hambúrguer + painel colapsável).
+  - [x] A11y: foco do menu mobile (foco no 1º item ao abrir; retorna ao botão ao fechar).
+  - [x] Separar vitrine B2B em rota /para-consultores (link discreto no Footer).
 
 ## 🚧 Em Andamento
 
@@ -40,5 +46,6 @@
 
 ## ⏭️ Próximo Passo Imediato
 
+- Empacotar onboarding e operação (playbook em `docs/CLIENTES.md`) para vender sem retrabalho.
 - Implementar sistema de análise para tracking de conversões e comportamento do usuário.
 - Avaliar necessidade de funcionalidades do backlog (Simulador de Economia, Área do Licenciado).

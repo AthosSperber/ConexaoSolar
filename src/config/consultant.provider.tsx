@@ -2,16 +2,54 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 import { DEFAULT_CONSULTANT } from './consultant.defaults';
 import type { ConsultantProfile } from './consultant.types';
 
-async function fetchConsultantProfile(): Promise<ConsultantProfile | null> {
+let cachedProfile: ConsultantProfile | null | undefined;
+let cachedSource: string | undefined;
+
+function isValidProfile(json: ConsultantProfile | null): json is ConsultantProfile {
+  return !!json?.id && !!json?.name && !!json?.brand?.title;
+}
+
+function getConsultantIdFromEnv(): string | null {
+  const id = import.meta.env.VITE_CONSULTANT_ID?.trim();
+  return id ? id : null;
+}
+
+async function fetchJson(pathname: string): Promise<ConsultantProfile | null> {
   try {
-    const response = await fetch('/consultant.json', { cache: 'no-store' });
+    const response = await fetch(pathname, { cache: 'no-store' });
     if (!response.ok) return null;
     const json = (await response.json()) as ConsultantProfile;
-    if (!json?.id || !json?.name || !json?.brand?.title) return null;
-    return json;
+    return isValidProfile(json) ? json : null;
   } catch {
     return null;
   }
+}
+
+async function fetchConsultantProfile(): Promise<{ profile: ConsultantProfile | null; source: string } | null> {
+  if (cachedProfile !== undefined) {
+    return { profile: cachedProfile, source: cachedSource || 'memory-cache' };
+  }
+
+  const id = getConsultantIdFromEnv();
+  const preferredPath = id ? `/consultant.${id}.json` : null;
+  const fallbackPath = '/consultant.json';
+
+  if (preferredPath) {
+    const preferred = await fetchJson(preferredPath);
+    if (preferred) {
+      cachedProfile = preferred;
+      cachedSource = preferredPath;
+      return { profile: preferred, source: preferredPath };
+    }
+    console.warn(
+      `[consultant] Failed to load ${preferredPath}; falling back to ${fallbackPath}. Check VITE_CONSULTANT_ID=${id}.`
+    );
+  }
+
+  const fallback = await fetchJson(fallbackPath);
+  cachedProfile = fallback;
+  cachedSource = fallbackPath;
+  return { profile: fallback, source: fallbackPath };
 }
 
 type ConsultantContextValue = {
@@ -28,7 +66,8 @@ export function ConsultantProvider({ children }: { children: React.ReactNode }) 
   useEffect(() => {
     let active = true;
     void (async () => {
-      const profile = await fetchConsultantProfile();
+      const result = await fetchConsultantProfile();
+      const profile = result?.profile;
       if (!active || !profile) return;
       setConsultant(profile);
       setLoadedFromFile(true);

@@ -1,5 +1,6 @@
 import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
 import { useConsultant } from '../../config/consultant';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const { consultant } = useConsultant();
@@ -29,6 +30,11 @@ export default function Footer() {
       </div>
       <div className="max-w-4xl mx-auto text-center mt-8 pt-6 border-t border-gray-700 text-xs text-gray-400">
         © {new Date().getFullYear()} {consultant.brand.short}. Todos os direitos reservados.
+        <div className="mt-2">
+          <Link to="/para-consultores" className="hover:text-green-400 transition">
+            Sou consultor iGreen
+          </Link>
+        </div>
       </div>
     </footer>
   );

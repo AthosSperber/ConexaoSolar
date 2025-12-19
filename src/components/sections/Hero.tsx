@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { partnerData } from '../../data/partner';
 import { useConsultant } from '../../config/consultant';
+import { track } from '../../lib/analytics';
 
 const Hero: FC = () => {
   const { consultant } = useConsultant();
@@ -18,6 +19,18 @@ const Hero: FC = () => {
     if (productsSection) {
       productsSection.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const handlePrimaryCtaClick = () => {
+    track('cta_click', {
+      consultantId: consultant.id,
+      placement: 'hero',
+      cta: 'primary',
+      action: 'scroll_to_solucoes',
+      pathname: window.location.pathname,
+    });
+
+    scrollToProducts();
   };
 
   return (
@@ -39,7 +52,7 @@ const Hero: FC = () => {
             </p>
 
             <button
-              onClick={scrollToProducts}
+              onClick={handlePrimaryCtaClick}
               className="inline-block px-6 py-3 md:px-8 md:py-4 bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 font-bold rounded-lg transition-colors duration-200 text-base md:text-lg shadow-md active:scale-95"
               aria-label={consultant.hero.cta}
             >

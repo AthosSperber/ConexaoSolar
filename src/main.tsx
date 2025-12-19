@@ -6,6 +6,7 @@ import App from './App.tsx';
 import Home from './pages/Home.tsx';
 import Partnerships from './pages/Partnerships.tsx';
 import ProductPage from './pages/ProductPage.tsx';
+import ParaConsultores from './pages/ParaConsultores.tsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/parcerias',
         element: <Partnerships />,
+      },
+      {
+        path: '/para-consultores',
+        element: <ParaConsultores />,
       },
       {
         path: '/:productId',

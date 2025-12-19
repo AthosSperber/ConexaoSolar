@@ -4,6 +4,71 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 
 ---
 
+### **2025-12-19: Operação Comercial (Domínio do Cliente + Deploy Gerenciado)**
+
+- **Decisão:** Operar o ConectaSolar como um produto vendável no formato **setup + mensalidade**, com **domínio do cliente** (ele compra e mantém) e **deploy/hospedagem gerenciados**.
+- **Justificativa:** Reduz risco e custo (domínio não fica “preso” à operação), melhora previsibilidade (recorrência) e evita manutenção infinita sem contrato.
+- **Hospedagem recomendada:** Vercel (simplicidade) ou Cloudflare Pages (custo/escala).
+
+---
+
+### **2025-12-19: Seleção de Consultor por ENV (VITE_CONSULTANT_ID)**
+
+- **Decisão:** Permitir selecionar o consultor via variável de ambiente `VITE_CONSULTANT_ID`, carregando `public/consultant.<id>.json` em runtime com fallback automático para `public/consultant.json`.
+- **Justificativa:** Aumenta portabilidade e simplifica deploy (Vercel/Netlify/etc.) sem precisar editar/commitar alterações só para trocar consultor.
+- **Comportamento:** Se `consultant.<id>.json` não existir (404) ou for inválido, a aplicação loga um aviso e usa `consultant.json`.
+
+---
+
+### **2025-12-19: Simplificação do Fluxo de Fotos do Consultor (Padrão Manual)**
+
+- **Decisão:** Remover o pipeline automático de geração/otimização de fotos e usar fotos prontas diretamente em `public/assets/consultant/`.
+- **Motivação:** Reduzir complexidade operacional e manter portabilidade simples (trocar consultor = trocar foto + JSON), sem depender de scripts/ferramentas.
+- **Padrão:** `photo.src` deve apontar para `/assets/consultant/<id>.jpg` (ou `.webp`).
+
+---
+
+### **2025-12-19: Header Mobile com Menu Colapsável (Hambúrguer)**
+
+- **Decisão:** Implementar navegação mobile no `Header` com botão de menu (hambúrguer) e painel colapsável.
+- **Motivo:** A navegação estava invisível no celular porque o `<nav>` desktop usa `hidden md:flex`.
+- **Detalhes de comportamento:**
+  - Fecha ao navegar entre rotas.
+  - Fecha ao clicar em um item.
+  - Fecha ao pressionar `Escape`.
+  - Fecha automaticamente ao mudar para `md+` (evita estado inconsistente em resize/rotação).
+- **Acessibilidade:** mantém `aria-expanded` e `aria-controls` no botão.
+
+---
+
+### **2025-12-19: Acessibilidade do Menu Mobile (Gerenciamento de Foco)**
+
+- **Decisão:** Ao abrir o menu mobile, mover foco para o primeiro item do painel; ao fechar, devolver o foco para o botão do menu.
+- **Motivo:** Melhorar navegação por teclado e compatibilidade com leitores de tela, reduzindo “perda de contexto” ao abrir/fechar o menu.
+
+---
+
+### **2025-12-19: Tracking Neutro de Eventos (Sem Amarrar em Provedor)**
+
+- **Decisão:** Instrumentar cliques importantes com uma função `track(event, params)` neutra no frontend.
+- **Motivo:** Medir conversão (principalmente WhatsApp) e permitir otimização sem depender desde já de GA4/Umami/Plausible.
+- **Comportamento:**
+  - Em dev: loga no console.
+  - Em prod: envia para `window.dataLayer` (se existir) ou `window.gtag` (se existir); caso contrário, não faz nada.
+- **Padrão de eventos:**
+  - Evento principal: `cta_click`
+  - Parâmetros mínimos: `consultantId`, `placement`, `cta`, `pathname`
+
+---
+
+### **2025-12-19: Separar Vitrine B2B em Rota Dedicada (/para-consultores)**
+
+- **Decisão:** Mover o conteúdo "Para consultores iGreen" para uma rota dedicada (`/para-consultores`), removendo da Home.
+- **Motivo:** Evitar misturar públicos (B2C: lead solar/cliente final) e (B2B: consultor), preservando conversão do site principal.
+- **Descoberta:** Link discreto no rodapé (Footer) com texto "Sou consultor iGreen".
+
+---
+
 ### **2025-12-15: Implementação de Páginas Dedicadas por Produto**
 
 - **Decisão:** Criar sistema de páginas dedicadas para cada produto (Green, Solar, Placas, Livre, Telecom, Expansão) com template reutilizável e roteamento dinâmico.

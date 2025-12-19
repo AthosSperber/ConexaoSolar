@@ -4,7 +4,7 @@ export const homeContent = {
     tagline: "Energia e Economia",
     links: [
       { label: "Quem eu sou", id: "about" },
-      { label: "Como Funciona", id: "como-funciona" },
+      { label: "Como Funciona", id: "solucoes" },
       { label: "Contato", id: "contact" },
     ],
   },

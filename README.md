@@ -87,9 +87,16 @@ npm run typecheck    # Type checking
 ### Perfil do consultor (portabilidade consultor → consultor)
 O perfil (nome, foto, selo, mensagens e SEO) é carregado em runtime via `public/consultant.json`.
 
-- Para trocar o consultor sem rebuild: edite `public/consultant.json`.
-- Use `public/consultant.example.json` como base.
-- Foto do consultor: aponte `photo.src` para um arquivo em `public/` (ex.: `/assets/consultant/athos.jpg`). Se não existir, o site mostra as iniciais automaticamente.
+- **Padrão (fallback):** `public/consultant.json`
+- **Multi-consultor por ENV (recomendado):**
+	- Crie `public/consultant.<id>.json` (use `public/consultant.example.json` como base)
+	- Defina `VITE_CONSULTANT_ID=<id>` (copie `.env.example` para `.env.local`)
+	- O app tenta carregar `/consultant.<id>.json` e cai para `/consultant.json` automaticamente
+
+Foto do consultor:
+- `photo.src` deve apontar para um arquivo direto em `public/assets/consultant/`.
+	- Ex.: `/assets/consultant/athos.jpg` ou `/assets/consultant/athos.webp`
+	- Recomendado: imagem quadrada (ex.: 800x800) e arquivo leve (ex.: < 200KB)
 
 ### WhatsApp
 O número do WhatsApp é centralizado em `src/config/whatsapp.ts`.
@@ -250,7 +257,7 @@ npm install
 npm run images:convert
 ```
 
-O script `scripts/convert-images.js` gera arquivos `-480.webp`, `-768.webp` e `-1200.webp` ao lado das imagens originais. Os componentes já usam `<picture>`/`srcset` para carregar o melhor formato/tamanho.
+O script `scripts/convert-images.js` gera arquivos `-480.webp`, `-768.webp` e `-1200.webp` ao lado das imagens originais em `src/assets/images/` (pipeline das imagens do site). Os componentes já usam `<picture>`/`srcset` para carregar o melhor formato/tamanho.
 
 Observação: a conversão usa a biblioteca `sharp` (instalada como devDependency). Em algumas plataformas pode ser necessário instalar bibliotecas nativas (vcbuild/ prebuilt binaries). Se preferir, gere as WebP manualmente com `magick`.
 

@@ -30,6 +30,24 @@ Este arquivo é o repositório para todas as ideias, funcionalidades futuras e m
 
 ## Melhorias e Expansões
 
+## Analytics / Conversão
+
+- [ ] Escolher provedor de analytics (GA4 vs Umami vs Plausible).
+- [ ] Dashboard mínimo: cliques em WhatsApp por seção (Hero / Para consultores iGreen) e cliques em "Simular".
+- [ ] Capturar UTMs da URL e anexar na mensagem do WhatsApp (opcional).
+
+- [ ] **Tracking de conversão (WhatsApp) + UTM:**
+  - [ ] Capturar UTMs da URL e anexar na mensagem do WhatsApp.
+  - [ ] Evento de clique no WhatsApp (para medir conversão por campanha).
+
+- [ ] **Página de Depoimentos / Prova Social:**
+  - [ ] Seção/página dedicada com depoimentos, antes/depois e perguntas comuns.
+  - [ ] CTA para WhatsApp com contexto (ex.: “vim pelos depoimentos”).
+
+- [ ] **Integração de formulário / CRM leve:**
+  - [ ] Formulário opcional de lead (nome + WhatsApp + cidade/UF) com envio para e-mail/planilha/CRM.
+  - [ ] Alternativa: integração com webhook (Zapier/Make) sem backend próprio.
+
 - [ ] Refatorar os componentes `Expansao.tsx` e `iGreenClub.tsx` para serem mais dinâmicos e consumirem dados de uma estrutura mais robusta, em vez de estarem hard-coded.
 - [ ] Criar uma página dedicada para cada "Conexão" (Green, Solar, Placas, Livre, Telecom, Expansão) com detalhes expandidos.
 - [ ] Adicionar um blog ou seção de notícias com conteúdo sobre energia sustentável.

@@ -32,3 +32,7 @@ imagensparaextrair/
 *.sln
 *.sw?
 .env
+
+# Fotos pessoais de consultores (não versionar no template)
+public/assets/consultant/*
+!public/assets/consultant/profile.svg

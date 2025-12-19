@@ -115,3 +115,39 @@ Tabelas devem ter scroll horizontal em mobile:
 - Ocultar em mobile, mostrar em desktop: `hidden md:block` ou `hidden md:flex`
 - Mostrar em mobile, ocultar em desktop: `block md:hidden` ou `flex md:hidden`
 - ThemeToggle móvel: Dentro de wrapper `<div className="md:hidden">`
+
+### Header (mobile)
+
+- Padrão: botão de menu (hambúrguer) em `md:hidden` + painel colapsável com links.
+- Acessibilidade: `aria-expanded`, `aria-controls` e rótulo "Abrir/Fechar menu".
+- Comportamento:
+  - Fecha ao clicar em item.
+  - Fecha ao navegar (troca de rota).
+  - Fecha com `Escape`.
+  - Fecha ao mudar para `md+` (resize/rotação) para evitar estado inconsistente.
+- UX: usar transição sutil (200ms) e respeitar `prefers-reduced-motion`.
+- Acessibilidade (teclado):
+  - Ao abrir o menu: foco vai para o primeiro item.
+  - Ao fechar o menu: foco retorna para o botão do menu.
+
+## Fotos do consultor
+
+Para manter performance e portabilidade sem aumentar a complexidade operacional, as fotos do consultor são gerenciadas como **assets prontos** na pasta pública.
+
+> Importante: isso é diferente do pipeline de imagens gerais do site (catálogo/sections) em `src/assets/images/`, que pode usar `npm run images:convert` para gerar variações WebP e `srcset`.
+
+### Padrão (manual)
+
+ - Salvar a foto em: `public/assets/consultant/<id>.jpg` (ou `<id>.webp`)
+ - Recomendado: 800x800 (ou ~800px no maior lado) e < 200KB (ideal < 150KB)
+ - Enquadramento: busto/rosto, olhos no terço superior, fundo sem distrações
+
+### Uso no perfil
+
+Nos arquivos `public/consultant*.json`, configure `photo.src` apontando para `/assets/consultant/<id>.jpg` (ou `.webp`) e mantenha `alt` descritivo.
+
+## Conteúdo B2B (consultores)
+
+- Regra: conteúdo de venda para consultores (B2B) deve ficar fora do scroll principal da Home (B2C).
+- Padrão: usar rota dedicada (`/para-consultores`) reutilizando a section existente.
+- Descoberta: link discreto no Footer (ex.: "Sou consultor iGreen").
