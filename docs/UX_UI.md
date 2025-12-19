@@ -14,6 +14,17 @@ Este documento define os princípios visuais e de interação que guiam o desenv
 
 5. **Animações Funcionais:** Animações devem ser suaves, rápidas (200-300ms) e servir a um propósito (guiar o olho, indicar uma transição), nunca apenas por estética.
 
+## 📣 Copy e Conformidade (APN Dez/2025)
+
+Para conteúdos ligados ao **iGreen Club** (roleta, cashback, número da sorte, etc.), o texto deve seguir estas regras:
+
+- Evitar promessas absolutas (ex.: “garantido”, “sem limites”, “até 100%” como regra fixa).
+- Sempre condicionar a **regras/campanhas vigentes** e critérios de **indicação válida** (cliente indicado validado e ativo).
+- Quando falar em cashback, deixar claro que o uso é **para abater na conta de energia** (conforme regras).
+- Quando possível, oferecer um link neutro de referência: https://www.igreenenergy.com.br/igreenclub
+
+Fonte viva do projeto: `docs/REGRAS_APN_2025.md`.
+
 ## 🌗 Dark Mode / Light Mode (OBRIGATÓRIO)
 O sistema **deve** suportar os temas Dark (🌙) e Light (☀️).
 

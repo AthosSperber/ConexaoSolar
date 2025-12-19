@@ -502,7 +502,7 @@ export const productDetails: Record<string, ProductDetail> = {
       },
       {
         question: 'O que é o iGreen Club?',
-        answer: 'É um programa de benefícios exclusivo com descontos em +600 mil estabelecimentos, sorteios de prêmios, roleta com cashback e muito mais.'
+        answer: 'É um app/programa de benefícios para clientes iGreen, com descontos em +600 mil estabelecimentos. A roleta e os números da sorte existem, mas são condicionados a indicação válida pelo app (cliente indicado validado e ativo). Cashback pode ser utilizado para abater na conta de energia, conforme regras/campanhas.'
       },
       {
         question: 'A cobertura é boa na minha região?',

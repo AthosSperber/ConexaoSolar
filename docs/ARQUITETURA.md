@@ -69,13 +69,19 @@ Componentes reutilizáveis que seguem os padrões de UX/UI documentados:
 - Número padrão e override por ambiente ficam em `src/config/whatsapp.ts`.
 - Para configurar sem alterar código, defina `VITE_WHATSAPP_NUMBER` (Vite env).
 - Links/CTAs devem usar `buildWhatsAppUrl()` (evita números hardcoded e mantém consistência).
+- **Exceção (B2B):** a rota `/para-consultores` usa um número fixo do proprietário para CTAs de venda do setup, evitando redirecionar leads B2B para o WhatsApp do consultor carregado via JSON.
+
+### Fotos do Consultor (Template)
+
+- O repositório mantém apenas um placeholder neutro versionado em `public/assets/consultant/profile.svg`.
+- Fotos reais em `public/assets/consultant/*` ficam ignoradas por `.gitignore` (exceto o placeholder), para evitar commitar imagens pessoais.
 
 ### Estrutura de Dados
 - **solutions.ts**: Dados básicos dos 6 produtos (id, title, subtitle, icon) - usado no carrossel e modal
 - **productDetails.ts**: Dados completos de cada produto para páginas dedicadas
   - Interface: `ProductDetail` com hero, benefits[], howItWorks[], faq[], cta
   - Record<string, ProductDetail> exportado para acesso por ID
-  - Fonte: Extraído de APN Dezembro 2025.pdf (a extração de texto é gerada localmente via script em `scripts/extract-pdf-text.js`)
+  - Referência de regras (copy/condições): `docs/REGRAS_APN_2025.md` + https://www.igreenenergy.com.br/igreenclub
 
 ## Back-end
 

@@ -20,7 +20,7 @@ export default function iGreenClubSection() {
       icon: Wallet,
       color: 'purple',
       title: 'Link de Indicação',
-      description: 'Cashback Sustentável: ganhe indicando novos clientes e abata na sua conta'
+      description: 'Cashback Sustentável: ao indicar clientes pelo app, você pode receber cashback para abater na conta de energia (conforme regras/campanhas)'
     },
     {
       icon: Star,
@@ -74,7 +74,7 @@ export default function iGreenClubSection() {
           {/* Roleta de Prêmios */}
           <div className="bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-yellow-300 dark:border-yellow-700 shadow-md">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">🎱 Gire a Roleta e Ganhe</h3>
-            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>Cada indicação de cliente novo = 1 Giro + 1 Número da Sorte</strong></p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>A cada indicação válida pelo app iGreen Club (cliente indicado validado e ativo): 1 Giro + 1 Número da Sorte</strong></p>
             <div className="grid grid-cols-3 md:grid-cols-6 gap-2 sm:gap-3 mb-8">
               {['+1 Sorte', 'R$ 25', 'R$ 50', 'R$ 100', 'R$ 250', 'R$ 500'].map((prize, i) => (
                 <div key={i} className="bg-white dark:bg-gray-900 rounded-xl p-3 sm:p-4 text-center font-bold text-yellow-600 dark:text-yellow-400 border-2 border-yellow-200 dark:border-yellow-700 hover:shadow-md transition text-sm sm:text-base">
@@ -82,21 +82,40 @@ export default function iGreenClubSection() {
                 </div>
               ))}
             </div>
-            <p className="text-sm text-gray-700 dark:text-gray-300 font-semibold">✓ Sem limites de giros! ✓ Quanto mais indicar, mais chance de ganhar!</p>
-            <p className="text-xs text-gray-600 dark:text-gray-400 mt-4">Referência: igreenenergy.com.br/igreen-premia-materiais-de-apoio</p>
+            <p className="text-sm text-gray-700 dark:text-gray-300 font-semibold">✓ Cada indicação válida gera 1 giro ✓ Quanto mais indicar, mais chances (conforme regras do programa)</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-4">
+              Referência:{' '}
+              <a
+                href="https://www.igreenenergy.com.br/igreenclub"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:no-underline"
+              >
+                igreenenergy.com.br/igreenclub
+              </a>
+            </p>
           </div>
 
           {/* Cashback Sustentável */}
           <div className="bg-gradient-to-r from-green-50 to-emerald-50 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-6 sm:p-8 md:p-12 border-2 border-green-300 dark:border-green-700 shadow-md">
             <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">💚 Cashback Sustentável</h3>
-            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>Ganhe cashback ao indicar novos clientes e abata direto na sua conta de energia:</strong></p>
+            <p className="text-base sm:text-lg text-gray-700 dark:text-gray-300 mb-6"><strong>Ao indicar novos clientes pelo app, você pode receber cashback para abater na conta de energia (conforme regras/campanhas):</strong></p>
             <div className="bg-white dark:bg-gray-900 rounded-2xl p-6 sm:p-8 text-center mb-6 border-2 border-green-300 dark:border-green-700">
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Desconto Máximo na Energia Injetada</p>
-              <p className="text-4xl sm:text-5xl font-extrabold text-green-600 dark:text-green-400 mb-2">ATÉ 100%</p>
-              <p className="text-sm text-gray-700 dark:text-gray-300 font-semibold">Ou use para outras indicações e ganhe recorrência</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">Uso do cashback</p>
+              <p className="text-2xl sm:text-3xl font-extrabold text-green-600 dark:text-green-400 mb-2">Para abater na conta de energia</p>
+              <p className="text-sm text-gray-700 dark:text-gray-300 font-semibold">Conforme regras, validações e campanhas vigentes</p>
             </div>
-            <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">🎯 <strong>O Licenciado ganha recorrência das suas indicações enquanto você zera a energia!</strong></p>
-            <p className="text-xs text-gray-600 dark:text-gray-400">Referência: igreenenergy.com.br/cashback-sustentavel</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">
+              Referência:{' '}
+              <a
+                href="https://www.igreenenergy.com.br/igreenclub"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:no-underline"
+              >
+                igreenenergy.com.br/igreenclub
+              </a>
+            </p>
           </div>
         </div>
 
@@ -131,7 +150,17 @@ export default function iGreenClubSection() {
           >
             Conhecer Mais Benefícios
           </a>
-          <p className="text-sm text-emerald-100 mt-6">Referência: www.igreenenergy.com.br/igreenclub</p>
+          <p className="text-sm text-emerald-100 mt-6">
+            Consulte regras e condições:{' '}
+            <a
+              href="https://www.igreenenergy.com.br/igreenclub"
+              target="_blank"
+              rel="noreferrer"
+              className="underline hover:no-underline"
+            >
+              igreenenergy.com.br/igreenclub
+            </a>
+          </p>
         </div>
       </div>
     </section>

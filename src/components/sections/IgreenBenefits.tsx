@@ -7,22 +7,22 @@ export default function IgreenBenefits() {
       icon: Gift,
       color: 'yellow',
       title: 'Roleta de Prêmios',
-      description: 'A cada indicação válida, gire a roleta e ganhe prêmios instantâneos de R$ 25 até R$ 500',
-      highlight: 'Sem limites de giros!'
+      description: 'A cada indicação válida pelo app iGreen Club (cliente indicado validado e ativo), você ganha 1 giro na roleta e 1 número da sorte. Prêmios/valores variam conforme regras e campanhas.',
+      highlight: '1 giro por indicação válida'
     },
     {
       icon: Star,
       color: 'purple',
       title: 'Sorteio Anual',
-      description: 'Concorra a uma cabine de Cruzeiro para 2 pessoas. Quanto mais indicar, mais números da sorte você acumula',
-      highlight: 'Cruzeiro All-Inclusive'
+      description: 'Concorra em campanhas/sorteios conforme regras do programa. Quanto mais indicar pelo app, mais números da sorte você acumula (quando aplicável).',
+      highlight: 'Conforme regras do programa'
     },
     {
       icon: TrendingUp,
       color: 'green',
       title: 'Cashback Sustentável',
-      description: 'Ganhe cashback em indicações e abata até 100% da energia injetada pela iGreen na sua conta',
-      highlight: 'Até 100% de desconto'
+      description: 'Cashback por indicações pode ser utilizado para abater na conta de energia, conforme regras, validações e campanhas do iGreen Club.',
+      highlight: 'Conforme regras e campanhas'
     },
     {
       icon: Smartphone,
@@ -144,7 +144,7 @@ export default function IgreenBenefits() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-white hover:text-green-100 font-semibold text-base transition-colors"
               >
-                Ver detalhes completos
+                Consultar regras e detalhes
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>

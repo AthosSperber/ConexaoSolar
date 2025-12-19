@@ -30,12 +30,15 @@
   - [x] Seção de benefícios iGreen Club (IgreenBenefits).
   - [x] Correção de bugs de z-index nas setas de navegação.
   - [x] Dark mode completo em Products section.
-  - [x] Padrão manual de fotos do consultor em `public/assets/consultant/`.
+  - [x] Fotos do consultor: placeholder versionado + fotos reais ignoradas por git.
   - [x] Seleção de consultor por ENV (`VITE_CONSULTANT_ID`) com fallback.
   - [x] Perfis por consultor em `public/consultant.<id>.json`.
   - [x] Navegação mobile no Header (menu hambúrguer + painel colapsável).
   - [x] A11y: foco do menu mobile (foco no 1º item ao abrir; retorna ao botão ao fechar).
   - [x] Separar vitrine B2B em rota /para-consultores (link discreto no Footer).
+  - [x] CTA B2B (/para-consultores): WhatsApp fixo do proprietário.
+  - [x] Copy do iGreen Club alinhado às regras APN (dez/2025) + fonte viva em `docs/REGRAS_APN_2025.md`.
+  - [x] Suporte a navegação por hash para seções da Home (ex.: `/#contact`).
 
 ## 🚧 Em Andamento
 

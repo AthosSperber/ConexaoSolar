@@ -20,11 +20,12 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 
 ---
 
-### **2025-12-19: Simplificação do Fluxo de Fotos do Consultor (Padrão Manual)**
+### **2025-12-19: Fotos do Consultor (Placeholder no Repositório)**
 
-- **Decisão:** Remover o pipeline automático de geração/otimização de fotos e usar fotos prontas diretamente em `public/assets/consultant/`.
-- **Motivação:** Reduzir complexidade operacional e manter portabilidade simples (trocar consultor = trocar foto + JSON), sem depender de scripts/ferramentas.
-- **Padrão:** `photo.src` deve apontar para `/assets/consultant/<id>.jpg` (ou `.webp`).
+- **Decisão:** Manter apenas um placeholder neutro versionado (`public/assets/consultant/profile.svg`) e ignorar fotos reais em `public/assets/consultant/*` (exceto o placeholder).
+- **Motivo:** Privacidade + reuso do template sem risco de commitar fotos pessoais/indesejadas.
+- **Padrão:** `photo.src` aponta para `/assets/consultant/profile.svg` nos JSONs e defaults.
+- **Personalização (deploy):** Substituir/fornecer a foto real no ambiente de deploy e ajustar o JSON do consultor; o `.gitignore` evita que a imagem seja commitada no repositório.
 
 ---
 
@@ -66,6 +67,22 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 - **Decisão:** Mover o conteúdo "Para consultores iGreen" para uma rota dedicada (`/para-consultores`), removendo da Home.
 - **Motivo:** Evitar misturar públicos (B2C: lead solar/cliente final) e (B2B: consultor), preservando conversão do site principal.
 - **Descoberta:** Link discreto no rodapé (Footer) com texto "Sou consultor iGreen".
+
+---
+
+### **2025-12-19: CTA B2B com WhatsApp do Proprietário (Número Fixo)**
+
+- **Decisão:** Na rota `/para-consultores`, os CTAs de venda (ex.: "Quero meu site") sempre abrem o WhatsApp do proprietário (`5519996693018`), independente do consultor carregado via JSON.
+- **Motivo:** Essa página vende o setup/serviço; evita que uma instalação do template redirecione o lead B2B para o WhatsApp de um consultor do cliente.
+- **Implementação:** Forçar `buildWhatsAppUrl(message, SELLER_WHATSAPP_NUMBER)` no fluxo B2B.
+
+---
+
+### **2025-12-19: Copy do iGreen Club Alinhado às Regras APN (dez/2025)**
+
+- **Decisão:** Evitar promessas absolutas (ex.: roleta/cashback “garantido”, “sem limites”, “até 100%” como regra fixa). Sempre condicionar benefícios a regras/campanhas vigentes, indicação válida e critérios de validação/ativação, e deixar claro que cashback é para abater na conta de energia.
+- **Fonte viva:** `docs/REGRAS_APN_2025.md` + página oficial: https://www.igreenenergy.com.br/igreenclub
+- **Motivo:** Reduzir risco de não conformidade e manter o discurso consistente entre páginas/CTAs.
 
 ---
 
