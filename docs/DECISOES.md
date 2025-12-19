@@ -208,3 +208,18 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 - **Solução Técnica:** `useRef<HTMLDivElement>` + `scrollTo({ left: newScrollPosition, behavior: 'smooth' })` + botões absolutamente posicionados com `z-10`
 - **Padrão Visual:** Botões circulares brancos (dark: gray-800) com sombra, hover suave, ícones Lucide React
 - **Impacto:** Melhor experiência de navegação em desktop sem prejudicar mobile.
+
+---
+
+### **2025-12-19: Remoção do Pipeline Automático de Fotos do Consultor**
+
+- **Decisão:** Remover o sistema de pipeline automático de processamento de fotos de consultores (script `prepare-consultant-photo.js`, comando npm `photo:consultant`, e geração de múltiplas versões WebP).
+- **Justificativa:** O pipeline automático adicionava complexidade desnecessária ao projeto. Para um caso de uso simples (2-3 consultores), o processamento manual de fotos é mais direto e fácil de manter. A dependência `sharp` já está sendo usada para outros propósitos no projeto, então não havia necessidade de manter um script dedicado.
+- **Nova Abordagem:** Padrão manual com arquivo único por consultor (`/assets/consultant/<id>.jpg`), dimensões recomendadas de 400-800px quadradas, peso máximo de 200KB. Se a foto não existir, o sistema mostra as iniciais do consultor automaticamente.
+- **Trade-offs Considerados:**
+  - ✅ **Prós:** Simplicidade, menos código para manter, facilita onboarding de novos consultores, não requer execução de scripts
+  - ❌ **Contras:** Sem otimização automática de imagens, responsabilidade manual de compressão, sem múltiplas resoluções para diferentes telas
+- **Impacto:** Redução de complexidade no repositório, documentação mais clara, processo de adição de consultores mais simples.
+- **Arquivos Removidos:** `scripts/prepare-consultant-photo.js` (não existia mais)
+- **Comandos Removidos:** `npm run photo:consultant` (não existia mais)
+- **Documentação Atualizada:** `docs/UX_UI.md`, `docs/DECISOES.md`, `docs/ROADMAP.md`, `README.md`, `docs/README.md`
