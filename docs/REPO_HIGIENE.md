@@ -10,6 +10,14 @@ Este documento define o que deve (ou não) ser versionado no GitHub para manter 
 - Configurações: `package.json`, `tsconfig*.json`, `vite.config.ts`, `tailwind.config.js`, `postcss.config.js`, `eslint.config.js`
 - Scripts de apoio: `scripts/`
 
+### Perfis de consultor (template)
+
+- Produção (default): `public/consultant.json`.
+- Modelo (referência): `public/consultant.example.json`.
+- Se você vender o template para vários consultores, cada instalação pode:
+  - editar apenas o `consultant.json` (mais simples), ou
+  - criar `public/consultant.<id>.json` e configurar `VITE_CONSULTANT_ID=<id>` no deploy.
+
 ## O que NÃO vai para o GitHub (gerado/local)
 
 - Dependências: `node_modules/`
@@ -17,6 +25,11 @@ Este documento define o que deve (ou não) ser versionado no GitHub para manter 
 - Logs: `*.log`, `logs/`
 - Ambiente local: `.env`
 - PDFs e extrações de texto: `*.pdf`, `*_EXTRACTED.txt`, `*_full.txt` (gera localmente)
+
+### Fotos pessoais
+
+- Evite versionar pastas com múltiplas fotos pessoais no template.
+- Se precisar, mantenha somente o necessário em `public/assets/consultant/`.
 
 ## Onde guardar artefatos locais
 
