@@ -86,6 +86,15 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 
 ---
 
+### **2025-12-19: Preview ao Compartilhar (Open Graph / Twitter)**
+
+- **Decisão:** Padronizar a prévia de compartilhamento (WhatsApp/Instagram/etc.) via meta tags Open Graph/Twitter no `index.html` e imagem estática em `public/og-image.png`.
+- **Motivo:** Evitar fallback incorreto (ex.: “bolt.new”) quando o crawler não encontra OG image válida ou está cacheado; garantir consistência de branding.
+- **Requisitos:** `og:image` deve ser público, HTTPS e retornar 200 OK; tamanho recomendado 1200×630.
+- **Ícones:** `public/apple-touch-icon.png` para ícone no iOS.
+
+---
+
 ### **2025-12-15: Implementação de Páginas Dedicadas por Produto**
 
 - **Decisão:** Criar sistema de páginas dedicadas para cada produto (Green, Solar, Placas, Livre, Telecom, Expansão) com template reutilizável e roteamento dinâmico.

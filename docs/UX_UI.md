@@ -25,6 +25,13 @@ Para conteúdos ligados ao **iGreen Club** (roleta, cashback, número da sorte, 
 
 Fonte viva do projeto: `docs/REGRAS_APN_2025.md`.
 
+## 🔗 Branding — Link Preview (Open Graph)
+
+- OG image padrão: `public/og-image.png` (1200×630).
+- Deve ter alto contraste e legibilidade no mobile.
+- Deve funcionar em fundos claros/escuros (a OG image é estática; priorizar legibilidade).
+- `public/apple-touch-icon.png` (180×180) para iOS.
+
 ## 🌗 Dark Mode / Light Mode (OBRIGATÓRIO)
 O sistema **deve** suportar os temas Dark (🌙) e Light (☀️).
 
