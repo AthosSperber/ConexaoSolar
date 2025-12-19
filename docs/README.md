@@ -24,4 +24,5 @@ O ConectaSolar é uma landing page em React/Vite para apresentar o portfólio de
 1. Clone o repositório.
 2. Instale as dependências: `npm install`
 3. (Opcional) Configure o WhatsApp via env: copie `.env.example` para `.env.local` e ajuste `VITE_WHATSAPP_NUMBER`.
-4. Rode o ambiente de desenvolvimento: `npm run dev`
+4. (Opcional) Personalize o perfil do consultor: edite `public/consultant.json` e adicione foto em `public/assets/consultant/<id>.jpg` (400-800px, <200KB).
+5. Rode o ambiente de desenvolvimento: `npm run dev`

@@ -89,7 +89,11 @@ O perfil (nome, foto, selo, mensagens e SEO) é carregado em runtime via `public
 
 - Para trocar o consultor sem rebuild: edite `public/consultant.json`.
 - Use `public/consultant.example.json` como base.
-- Foto do consultor: aponte `photo.src` para um arquivo em `public/` (ex.: `/assets/consultant/athos.jpg`). Se não existir, o site mostra as iniciais automaticamente.
+- **Foto do consultor:** Coloque a foto em `public/assets/consultant/<id>.jpg` (ex.: `/assets/consultant/athos.jpg`) e referencie em `consultant.json`:
+  - Formato: JPEG (.jpg)
+  - Dimensões recomendadas: 400-800px (quadrada)
+  - Peso máximo: 200KB
+  - Se não existir, o site mostra as iniciais automaticamente.
 
 ### WhatsApp
 O número do WhatsApp é centralizado em `src/config/whatsapp.ts`.

@@ -30,6 +30,7 @@
   - [x] Seção de benefícios iGreen Club (IgreenBenefits).
   - [x] Correção de bugs de z-index nas setas de navegação.
   - [x] Dark mode completo em Products section.
+  - [x] Padrão manual de fotos do consultor (remoção de pipeline automático).
 
 ## 🚧 Em Andamento
 

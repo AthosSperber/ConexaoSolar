@@ -115,3 +115,39 @@ Tabelas devem ter scroll horizontal em mobile:
 - Ocultar em mobile, mostrar em desktop: `hidden md:block` ou `hidden md:flex`
 - Mostrar em mobile, ocultar em desktop: `block md:hidden` ou `flex md:hidden`
 - ThemeToggle móvel: Dentro de wrapper `<div className="md:hidden">`
+
+## 📸 Fotos do Consultor
+
+O projeto utiliza um **padrão manual** para fotos dos consultores. Não há pipeline automático de processamento de imagens.
+
+### Localização
+As fotos devem ser colocadas em `public/assets/consultant/` com o nome do consultor:
+- `public/assets/consultant/athos.jpg`
+- `public/assets/consultant/pai.jpg`
+
+### Formato e Especificações
+- **Formato:** JPEG (.jpg)
+- **Dimensões recomendadas:** 400x400px mínimo, até 800x800px
+- **Peso máximo:** 200KB (recomendado: 100-150KB)
+- **Proporção:** Quadrada (1:1)
+- **Enquadramento:** Rosto centralizado, fundo limpo ou desfocado
+- **Qualidade:** 80-90% de compressão JPEG
+
+### Boas Práticas
+- Use fotos profissionais ou de boa qualidade
+- Evite fundos muito carregados ou distrações
+- Mantenha o rosto bem iluminado
+- Expressão amigável e profissional
+- Se não houver foto disponível, o sistema mostra as iniciais automaticamente
+
+### Integração com Perfis
+No arquivo `public/consultant.json`, referencie a foto:
+```json
+{
+  "id": "athos",
+  "photo": {
+    "src": "/assets/consultant/athos.jpg",
+    "alt": "Athos, Consultor iGreen"
+  }
+}
+```
