@@ -35,5 +35,4 @@ imagensparaextrair/
 
 # Fotos pessoais de consultores (não versionar no template)
 public/assets/consultant/*
-!public/assets/consultant/profile.svg
-!public/assets/consultant/athos-800.webp
+!public/assets/consultant/athos.png

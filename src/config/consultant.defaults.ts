@@ -12,7 +12,7 @@ export const DEFAULT_CONSULTANT: ConsultantProfile = {
     text: 'Consultor iGreen licenciado',
   },
   photo: {
-    src: '/assets/consultant/profile.svg',
+    src: '/assets/consultant/athos.png',
     alt: 'Consultor iGreen',
   },
   about: {
