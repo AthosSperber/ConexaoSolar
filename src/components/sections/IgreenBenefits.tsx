@@ -1,7 +1,15 @@
 import { Gift, Star, TrendingUp, Smartphone } from 'lucide-react';
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
 
 export default function IgreenBenefits() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    'Olá! Quero saber mais sobre o iGreen Club e como aproveitar os benefícios.',
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
+
   const benefits = [
     {
       icon: Gift,
@@ -128,7 +136,7 @@ export default function IgreenBenefits() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <a
-                href={buildWhatsAppUrl()}
+                href={whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 bg-emerald-50 text-green-800 hover:bg-emerald-100 px-8 py-4 rounded-xl font-bold text-base sm:text-lg transition-all shadow-lg hover:shadow-xl group"

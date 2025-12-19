@@ -1,11 +1,19 @@
 import { Zap, Sun, Home, Building2, Wifi, MessageCircle, ChevronRight } from 'lucide-react';
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
 
 function scrollTo(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
 }
 
 export default function Products() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    'Olá! Gostaria de falar com um especialista e entender qual solução iGreen faz mais sentido para mim.',
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
+
   const products = [
     {
       id: 'green',
@@ -106,7 +114,7 @@ export default function Products() {
 
         {/* CTA Consultor */}
         <a
-          href={buildWhatsAppUrl('Olá! Gostaria de falar com um consultor')}
+          href={whatsappHref}
           target="_blank"
           rel="noreferrer"
           className="w-full flex items-center gap-3 md:gap-4 p-6 md:p-8 rounded-2xl bg-gradient-to-r from-green-600 to-emerald-600 text-white shadow-lg hover:shadow-xl transition active:scale-[0.98]"

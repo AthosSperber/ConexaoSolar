@@ -1,8 +1,15 @@
 import Accordion from '../ui/Accordion';
 import { CheckCircle2, TrendingUp } from 'lucide-react';
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
 
 export default function Expansao() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    'Quero conhecer a Conexão Expansão (parceria comercial) e entender as regras e condições',
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
   return (
     <section id="expansao" className="scroll-snap-section bg-emerald-50/40 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-12 md:py-16">
@@ -136,7 +143,7 @@ export default function Expansao() {
           <h3 className="text-3xl font-extrabold mb-3">Quer entender como funciona a parceria?</h3>
           <p className="text-lg text-emerald-50 mb-8 max-w-3xl mx-auto">Fale com um especialista para conhecer regras, elegibilidade e condições de comissionamento, com total transparência.</p>
           <a 
-            href={buildWhatsAppUrl('Quero conhecer a Conexão Expansão (parceria comercial) e entender as regras e condições')} 
+            href={whatsappHref} 
             target="_blank" 
             rel="noreferrer" 
             className="inline-block bg-emerald-50 text-emerald-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-emerald-100 active:scale-[0.98] transition shadow-lg"

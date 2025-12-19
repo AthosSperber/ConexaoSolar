@@ -1,4 +1,6 @@
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
+import { productDetails } from '../../data/productDetails';
 const fallbackImage =
   'data:image/svg+xml;charset=utf-8,' +
   encodeURIComponent(
@@ -15,6 +17,13 @@ const fallbackImage =
   );
 
 export default function Telecom() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    productDetails.telecom.cta.whatsappMessage,
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
+
   return (
     <section id="telecom" className="scroll-snap-section bg-emerald-50/40 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -54,7 +63,7 @@ export default function Telecom() {
           </ul>
 
           <a 
-            href={buildWhatsAppUrl()} 
+            href={whatsappHref} 
             target="_blank" 
             rel="noreferrer" 
             className="btn-primary inline-block bg-indigo-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-indigo-700 active:scale-[0.98] transition"

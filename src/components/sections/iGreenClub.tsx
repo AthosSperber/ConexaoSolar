@@ -1,8 +1,16 @@
 import { Star, Gift, Zap, Wallet } from 'lucide-react';
 import { testimonials } from '../../data/mock';
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
 
 export default function iGreenClubSection() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    'Olá! Quero saber mais sobre o iGreen Club e como funciona para clientes iGreen.',
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
+
   const appFeatures = [
     {
       icon: Zap,
@@ -143,7 +151,7 @@ export default function iGreenClubSection() {
           <p className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6">ACESSO GRATUITO</p>
           <p className="text-base sm:text-lg text-emerald-50 mb-8">ao iGreen Club com +600 mil descontos</p>
           <a 
-            href={buildWhatsAppUrl()} 
+            href={whatsappHref}
             target="_blank" 
             rel="noreferrer" 
             className="inline-block bg-emerald-50 text-emerald-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-emerald-100 active:scale-[0.98] transition shadow-lg"

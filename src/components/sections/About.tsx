@@ -8,7 +8,8 @@ const About: FC = () => {
 
   const whatsappHref = buildWhatsAppUrl(
     consultant.whatsapp?.defaultMessage,
-    consultant.whatsapp?.number || WHATSAPP_NUMBER
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
   );
 
   const initials = getInitials(consultant.name);

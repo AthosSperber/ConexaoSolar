@@ -2,8 +2,9 @@ import { FC } from 'react';
 import { X, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Solution } from '../../data/solutions';
 import { Link } from 'react-router-dom';
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
 import { productDetails } from '../../data/productDetails';
+import { useConsultant } from '../../config/consultant';
 
 interface ProductModalProps {
   solution: Solution | null;
@@ -14,10 +15,14 @@ interface ProductModalProps {
 const ProductModal: FC<ProductModalProps> = ({ solution, isOpen, onClose }) => {
   if (!isOpen || !solution) return null;
 
+  const { consultant } = useConsultant();
+
   const productKey = solution.id.replace(/^conexao-/, '');
   const product = productDetails[productKey];
   const whatsappUrl = buildWhatsAppUrl(
-    product?.cta.whatsappMessage ?? `Olá! Quero saber mais sobre ${solution.title}`
+    product?.cta.whatsappMessage ?? `Olá! Quero saber mais sobre ${solution.title}`,
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
   );
   const details = product?.preview ?? {
     summary: solution.description ?? '',

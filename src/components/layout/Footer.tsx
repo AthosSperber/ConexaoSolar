@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
   const { consultant } = useConsultant();
   const phone = consultant.whatsapp?.number || WHATSAPP_NUMBER;
-  const whatsappHref = buildWhatsAppUrl(consultant.whatsapp?.defaultMessage, phone);
+  const whatsappHref = buildWhatsAppUrl(consultant.whatsapp?.defaultMessage, phone, consultant.name);
 
   return (
     <footer className="bg-gray-900 text-white px-4 py-8 md:py-12 mt-12 md:mt-16">

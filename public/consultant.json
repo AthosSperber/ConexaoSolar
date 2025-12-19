@@ -16,7 +16,7 @@
   "about": {
     "heading": "Quem eu sou",
     "title": "Orientação clara para você economizar com energia mais limpa",
-    "description": "Eu sou o Athos Sperber, consultor iGreen. Meu papel é entender seu perfil, explicar as opções com transparência e te orientar na escolha da solução mais adequada — com acompanhamento do início ao fim, sem complicação."
+    "description": "Eu sou Athos, consultor iGreen. Meu papel é entender seu perfil, explicar as opções com transparência e te orientar na escolha da solução mais adequada — com acompanhamento do início ao fim, sem complicação."
   },
   "hero": {
     "headline": "Energia renovável e economia, com orientação de verdade",
@@ -25,7 +25,7 @@
   },
   "whatsapp": {
     "number": "5519996693018",
-    "defaultMessage": "Olá, Athos! Vi seu site e queria sua orientação: você pode analisar meu perfil e me indicar a melhor solução iGreen para eu ter economia e energia renovável?"
+    "defaultMessage": "Olá, {{consultantFirstName}}! Vi seu site e queria sua orientação: você pode analisar meu perfil e me indicar a melhor solução iGreen para eu ter economia e energia renovável?"
   },
   "seo": {
     "title": "Athos Sperber – Consultor iGreen | Energia e Economia",

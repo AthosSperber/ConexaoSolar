@@ -1,7 +1,16 @@
 import Accordion from '../ui/Accordion';
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
+import { productDetails } from '../../data/productDetails';
 
 export default function Placas() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    productDetails.placas.cta.whatsappMessage,
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
+
   const imageSrc = '/assets/sections/placas.jpg';
   const fallbackImage =
     'data:image/svg+xml;charset=utf-8,' +
@@ -76,7 +85,7 @@ export default function Placas() {
                 </li>
               </ul>
               <a 
-                href={buildWhatsAppUrl()} 
+                href={whatsappHref} 
                 target="_blank" 
                 rel="noreferrer" 
                 className="btn-primary block text-center mt-6 bg-blue-600 text-white py-4 rounded-full font-semibold hover:bg-blue-700 active:scale-[0.98] transition"

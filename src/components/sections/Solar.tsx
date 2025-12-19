@@ -1,7 +1,16 @@
 import Accordion from '../ui/Accordion';
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
+import { productDetails } from '../../data/productDetails';
 
 export default function Solar() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    productDetails.solar.cta.whatsappMessage,
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
+
   const imageSrc = '/assets/sections/livre.jpg';
   const fallbackImage =
     'data:image/svg+xml;charset=utf-8,' +
@@ -77,7 +86,7 @@ export default function Solar() {
               </ol>
               <p className="text-sm text-gray-600 dark:text-gray-400 pt-2 border-t border-gray-200 dark:border-gray-700">Uma análise é feita antes para garantir que o imóvel é compatível com a solução.</p>
               <a 
-                href={buildWhatsAppUrl()} 
+                href={whatsappHref} 
                 target="_blank" 
                 rel="noreferrer" 
                 className="btn-primary block text-center mt-6 bg-yellow-600 text-white py-4 rounded-full font-semibold hover:bg-yellow-700 active:scale-[0.98] transition"

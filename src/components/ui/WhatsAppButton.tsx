@@ -13,7 +13,7 @@ export default function WhatsAppButton({ phone, message }: Props) {
   const resolvedMessage =
     message || consultant.whatsapp?.defaultMessage || 'Olá! Gostaria de falar com um consultor iGreen sobre energia e economia.';
 
-  const href = buildWhatsAppUrl(resolvedMessage, resolvedPhone);
+  const href = buildWhatsAppUrl(resolvedMessage, resolvedPhone, consultant.name);
 
   return (
     <a

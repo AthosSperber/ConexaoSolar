@@ -1,6 +1,14 @@
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
 
 export default function Contact() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    'Olá! Quero tirar uma dúvida e entender qual solução iGreen faz mais sentido para mim.',
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
+
   return (
     <section id="contact" className="bg-emerald-50/40 dark:bg-gray-900 px-4 py-16 md:py-20 text-center border-t border-gray-200 dark:border-gray-700">
       <div className="max-w-2xl mx-auto">
@@ -11,7 +19,7 @@ export default function Contact() {
         </p>
 
         <a
-          href={buildWhatsAppUrl()}
+          href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-green-600 text-white hover:bg-green-700 dark:bg-green-500 dark:hover:bg-green-600 px-6 py-3 rounded-xl font-semibold text-base transition"

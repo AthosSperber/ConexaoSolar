@@ -2,10 +2,12 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { CheckCircle2, ArrowRight, MessageCircle } from 'lucide-react';
 import { productDetails } from '../data/productDetails';
 import Accordion from '../components/ui/Accordion';
-import { buildWhatsAppUrl } from '../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../config/whatsapp';
+import { useConsultant } from '../config/consultant';
 
 export default function ProductPage() {
   const { productId } = useParams<{ productId: string }>();
+  const { consultant } = useConsultant();
   
   const product = productId ? productDetails[productId] : null;
 
@@ -13,7 +15,11 @@ export default function ProductPage() {
     return <Navigate to="/" replace />;
   }
 
-  const whatsappUrl = buildWhatsAppUrl(product.cta.whatsappMessage);
+  const whatsappUrl = buildWhatsAppUrl(
+    product.cta.whatsappMessage,
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
 
   return (
     <div className="min-h-screen bg-transparent">

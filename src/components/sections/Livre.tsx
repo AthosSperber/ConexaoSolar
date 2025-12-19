@@ -1,4 +1,6 @@
-import { buildWhatsAppUrl } from '../../config/whatsapp';
+import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
+import { useConsultant } from '../../config/consultant';
+import { productDetails } from '../../data/productDetails';
 
 const imageSrc = '/assets/sections/livre.jpg';
 const fallbackImage =
@@ -17,6 +19,13 @@ const fallbackImage =
   );
 
 export default function Livre() {
+  const { consultant } = useConsultant();
+  const whatsappHref = buildWhatsAppUrl(
+    productDetails.livre.cta.whatsappMessage,
+    consultant.whatsapp?.number || WHATSAPP_NUMBER,
+    consultant.name
+  );
+
   return (
     <section id="livre" className="scroll-snap-section bg-gradient-to-br from-purple-50 via-emerald-50/20 to-emerald-50/60 dark:from-gray-950 dark:via-purple-950/10 dark:to-gray-950">
       <div className="max-w-6xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -59,7 +68,7 @@ export default function Livre() {
           </ul>
 
           <a 
-            href={buildWhatsAppUrl()} 
+            href={whatsappHref} 
             target="_blank" 
             rel="noreferrer" 
             className="btn-primary inline-block bg-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-purple-700 active:scale-[0.98] transition"
