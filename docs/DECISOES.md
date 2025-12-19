@@ -93,6 +93,9 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 - **Requisitos:** `og:image` deve ser público, HTTPS e retornar 200 OK; tamanho recomendado 1200×630.
 - **Ícones:** `public/apple-touch-icon.png` para ícone no iOS.
 
+- **Observação operacional (cache):** WhatsApp/Instagram/Meta cacheiam a prévia. Quando atualizar a imagem/tags, use o Facebook Sharing Debugger ("Scrape Again") em https://developers.facebook.com/tools/debug/.
+- **Compatibilidade:** em alguns crawlers, prefira `og:image` com URL absoluta (ex.: `https://conexao-solar.vercel.app/og-image.png`). Ao migrar para domínio próprio, atualize `canonical`/`og:url`/`og:image` para o domínio final.
+
 ---
 
 ### **2025-12-15: Implementação de Páginas Dedicadas por Produto**

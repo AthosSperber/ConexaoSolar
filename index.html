@@ -14,8 +14,8 @@
     <meta property="og:description" content="Consultor iGreen: soluções em energia e economia com atendimento direto no WhatsApp. Entenda qual opção faz mais sentido para você." />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:url" content="https://conexaosolar.com.br" />
-    <meta property="og:image" content="/og-image.png" />
+    <meta property="og:url" content="https://conexao-solar.vercel.app" />
+    <meta property="og:image" content="https://conexao-solar.vercel.app/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="ConectaSolar | Soluções iGreen" />
@@ -23,10 +23,10 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Athos – Consultor iGreen | Energia e Economia" />
     <meta name="twitter:description" content="Consultor iGreen: soluções em energia e economia com atendimento direto no WhatsApp." />
-    <meta name="twitter:image" content="/og-image.png" />
+    <meta name="twitter:image" content="https://conexao-solar.vercel.app/og-image.png" />
 
     <meta name="theme-color" content="#00A859" />
-    <link rel="canonical" href="https://conexaosolar.com.br" />
+    <link rel="canonical" href="https://conexao-solar.vercel.app" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Structured data (JSON-LD) -->
@@ -38,12 +38,12 @@
             "@type": "Person",
             "name": "Athos",
             "jobTitle": "Consultor iGreen",
-            "url": "https://conexaosolar.com.br",
-            "image": "https://conexaosolar.com.br/assets/social/og-solar.png"
+            "url": "https://conexao-solar.vercel.app",
+            "image": "https://conexao-solar.vercel.app/og-image.png"
           },
           {
             "@type": "WebSite",
-            "url": "https://conexaosolar.com.br",
+            "url": "https://conexao-solar.vercel.app",
             "name": "Athos – Consultor iGreen | Energia e Economia",
             "description": "Consultor iGreen: soluções em energia e economia com atendimento direto no WhatsApp."
           }
@@ -85,8 +85,8 @@
 
           const ld = document.getElementById('ld-consultant');
           if (ld && seo.title) {
-            const canonicalUrl = seo.canonicalUrl || 'https://conexaosolar.com.br';
-            const ogImage = seo.ogImage ? new URL(seo.ogImage, canonicalUrl).toString() : canonicalUrl;
+            const canonicalUrl = seo.canonicalUrl || window.location.origin;
+            const ogImage = seo.ogImage ? new URL(seo.ogImage, canonicalUrl).toString() : new URL('/og-image.png', canonicalUrl).toString();
             const graph = {
               "@context": "https://schema.org",
               "@graph": [
