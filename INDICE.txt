@@ -1,0 +1,86 @@
+================================================================================
+  ÍNDICE DE ARQUIVOS DE CONSOLIDAÇÃO - ConectaSolar Worktree
+================================================================================
+
+📍 VOCÊ ESTÁ AQUI: worktree-2025-12-20T03-58-00
+
+⚠️  SITUAÇÃO: Worktree desatualizado - precisa sincronizar com main
+
+
+🎯 ARQUIVOS PRINCIPAIS (o que você pediu)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ docs/WHATSAPP_VENDAS.md    → Playbook WhatsApp vendas (5 templates + 8 objeções)
+✅ docs/README.md             → Atualizado (+ link para WHATSAPP_VENDAS)
+✅ docs/ROADMAP.md            → Atualizado (+ Fase 5: Vendas B2B)
+✅ docs/DECISOES.md           → Atualizado (+ decisão 2025-12-20)
+
+
+📚 GUIAS DE CONSOLIDAÇÃO (leia nesta ordem)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. 📌 LEIA-ME-PRIMEIRO.md     → COMECE AQUI (avisos importantes)
+2. 🚀 START-HERE.md           → 3 passos simples para resolver tudo
+3. ✅ CHECKLIST.md            → Checklist completo fase por fase
+4. 📊 RESUMO-EXECUTIVO.md     → Visão técnica geral da situação
+5. 📖 CONSOLIDAR-README.md    → Guia técnico detalhado (troubleshooting)
+
+
+🔧 SCRIPTS AUTOMATIZADOS (rode no terminal)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔍 diagnostico.bat            → Ver estado atual (30s)
+🚀 consolidar-tudo.bat        → RESOLVER TUDO automaticamente (2-3min)
+🔄 sync-worktree.bat          → Alternativa de sincronização manual
+
+
+⚡ ATALHO SUPER RÁPIDO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Terminal (cmd):
+    consolidar-tudo.bat
+
+OU (uma linha):
+    git stash && git pull origin main --rebase && git stash pop
+
+
+🎯 O QUE VOCÊ PRECISA FAZER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Abrir terminal (VS Code ou cmd)
+2. Rodar: diagnostico.bat
+3. Rodar: consolidar-tudo.bat
+4. Conferir que existe:
+   - docs/PROPOSTA_COMERCIAL.md (do PR #4)
+   - docs/NEGOCIO.md (do PR #4)
+   - docs/WHATSAPP_VENDAS.md (novo)
+5. Commit + Push
+
+
+🔥 SE TIVER PRESSA (apenas 1 comando)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+    consolidar-tudo.bat
+
+
+🆘 PRECISA DE AJUDA?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Cole aqui a saída de:
+    diagnostico.bat
+
+E te direi exatamente o que fazer.
+
+
+📌 LEMBRE-SE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ NÃO mexa diretamente nos arquivos docs/ antes de consolidar
+❌ NÃO delete os .bat antes de rodar
+✅ RODE os scripts primeiro
+✅ DEPOIS valide/commit
+
+
+================================================================================
+Criado: 2025-12-20T04:09 UTC | Agent: GitHub Copilot CLI
+================================================================================
