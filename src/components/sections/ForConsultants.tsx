@@ -8,7 +8,8 @@ const ForConsultants: FC = () => {
 
   // CTA de venda do template: sempre direciona para o WhatsApp do vendedor (não do consultor do site).
   const SELLER_WHATSAPP_NUMBER = '5519996693018';
-  const message = 'Olá! Sou consultor iGreen e quero um site nesse modelo (setup + mensalidade R$ 79). Como funciona?';
+  const message =
+    'Olá! Sou consultor iGreen e quero contratar o ConectaSolar (site pronto + mensalidade). Pode me enviar os detalhes do setup, SLA da mensalidade e próximos passos (domínio, prazo e pagamento)?';
 
   const whatsappHref = buildWhatsAppUrl(message, SELLER_WHATSAPP_NUMBER || WHATSAPP_NUMBER);
 
@@ -31,10 +32,10 @@ const ForConsultants: FC = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">
-            Quer um site assim para divulgar seu trabalho como consultor iGreen?
+            ConectaSolar: site pronto (produto) para consultor iGreen
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
-            Setup + mensalidade com escopo fechado: site no ar com SSL, WhatsApp como CTA principal e SEO básico.
+            Setup + mensalidade com escopo fechado: entregamos seu site no ar, com SEO básico e WhatsApp como CTA — você foca em vender.
           </p>
         </div>
 
@@ -52,14 +53,17 @@ const ForConsultants: FC = () => {
             </p>
 
             <ul className="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
-              <li>• Domínio é do cliente</li>
-              <li>• Site publicado (SSL incluso)</li>
-              <li>• WhatsApp como CTA principal</li>
-              <li>• SEO básico (title/description/og)</li>
-              <li>• Mensalidade inclui 1 alteração simples/mês + manutenção técnica</li>
+              <li>• Setup: configuração do seu perfil (nome, região, links e WhatsApp)</li>
+              <li>• Setup: site publicado com SSL (HTTPS)</li>
+              <li>• Setup: SEO básico + preview de compartilhamento (Open Graph)</li>
+              <li>• Setup: entrega em até 5 dias úteis (com material + domínio/DNS ok)</li>
+              <li>• Mensalidade: hospedagem + manutenção técnica + 1 alteração simples/mês</li>
+              <li>• SLA: resposta em até 1 dia útil; site fora do ar em até 2 dias úteis; alteração simples em até 5 dias úteis</li>
             </ul>
 
-            <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">Sem fidelidade. Cancelou, tiramos do ar.</p>
+            <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
+              Sem fidelidade. Domínio é do cliente. Cancelou, o site pode ser retirado do ar.
+            </p>
 
             <a
               href={whatsappHref}
@@ -83,14 +87,17 @@ const ForConsultants: FC = () => {
             </p>
 
             <ul className="mt-6 space-y-3 text-gray-700 dark:text-gray-300">
-              <li>• Domínio é do cliente</li>
-              <li>• Site publicado (SSL incluso)</li>
-              <li>• WhatsApp como CTA principal</li>
-              <li>• SEO básico (title/description/og)</li>
-              <li>• Mensalidade inclui 1 alteração simples/mês + manutenção técnica</li>
+              <li>• Setup: configuração do seu perfil (nome, região, links e WhatsApp)</li>
+              <li>• Setup: site publicado com SSL (HTTPS)</li>
+              <li>• Setup: SEO básico + preview de compartilhamento (Open Graph)</li>
+              <li>• Setup: entrega em até 5 dias úteis (com material + domínio/DNS ok)</li>
+              <li>• Mensalidade: hospedagem + manutenção técnica + 1 alteração simples/mês</li>
+              <li>• SLA: resposta em até 1 dia útil; site fora do ar em até 2 dias úteis; alteração simples em até 5 dias úteis</li>
             </ul>
 
-            <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">Sem fidelidade. Cancelou, tiramos do ar.</p>
+            <p className="mt-6 text-sm text-gray-600 dark:text-gray-400">
+              Sem fidelidade. Domínio é do cliente. Cancelou, o site pode ser retirado do ar.
+            </p>
 
             <a
               href={whatsappHref}
@@ -105,7 +112,7 @@ const ForConsultants: FC = () => {
         </div>
 
         <p className="text-center text-sm text-gray-600 dark:text-gray-400 mt-8">
-          Domínio é do cliente. Mensalidade cobre hospedagem, SSL e manutenção básica.
+          Domínio é do cliente. Mensalidade cobre hospedagem, SSL e manutenção básica (SLA simples incluso).
         </p>
       </div>
     </section>

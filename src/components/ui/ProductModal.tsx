@@ -13,9 +13,9 @@ interface ProductModalProps {
 }
 
 const ProductModal: FC<ProductModalProps> = ({ solution, isOpen, onClose }) => {
-  if (!isOpen || !solution) return null;
-
   const { consultant } = useConsultant();
+
+  if (!isOpen || !solution) return null;
 
   const productKey = solution.id.replace(/^conexao-/, '');
   const product = productDetails[productKey];

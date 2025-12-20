@@ -1,6 +1,8 @@
 # Operação para vender sites ConectaSolar (consultores iGreen)
 
-Este documento é um playbook simples para você operar o ConectaSolar como um **produto de site portátil** (consultor → consultor) com baixo atrito.
+Este documento é um playbook (SOP/checklist) para operar o ConectaSolar como um **produto de site portátil** (consultor → consultor) com baixo atrito.
+
+Estratégia, escopo fechado, SLA e precificação ficam centralizados em: **[docs/NEGOCIO.md](NEGOCIO.md)**.
 
 ## Modelo recomendado (simples)
 
@@ -8,14 +10,7 @@ Este documento é um playbook simples para você operar o ConectaSolar como um *
 - **Hospedagem/Deploy:** você gerencia (Vercel recomendado; Cloudflare Pages como alternativa custo/escala)
 - **Cobrança:** **Setup + Mensalidade** (com limites de escopo)
 
-### Pacotes (referência)
-
-- **Promo (3 primeiros):** Setup **R$ 450** + **R$ 79/mês**
-- **Padrão:** Setup **R$ 750** + **R$ 79/mês**
-
-Observações:
-- Sem fidelidade.
-- Domínio é do cliente.
+Para pacotes, regras e limites de manutenção (SLA), use: **[docs/NEGOCIO.md](NEGOCIO.md)**.
 
 ## Checklist de onboarding (o que o cliente precisa fornecer)
 
@@ -75,7 +70,7 @@ Observações:
 
 ## Escopo de manutenção (para evitar suporte infinito)
 
-Sugestão de escopo para mensalidade (ajuste conforme seu posicionamento):
+Resumo (a versão “contratual” e os limites objetivos ficam em **[docs/NEGOCIO.md](NEGOCIO.md)**):
 
 Inclui:
 - Hospedagem + SSL + monitoramento básico

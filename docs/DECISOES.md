@@ -4,6 +4,14 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 
 ---
 
+### 2025-12-20 — Publi discreta do ConectaSolar no Footer (B2B)
+
+- Decisão: manter o site principal focado em B2C (cliente final), mas adicionar uma chamada curta no Footer direcionada a consultores iGreen.
+- Motivo: capturar demanda B2B sem poluir a jornada do cliente final.
+- Implementação: micro-copy + CTA para `/para-consultores` próximo do link “Sou consultor iGreen”.
+
+---
+
 ### **2025-12-19: Operação Comercial (Domínio do Cliente + Deploy Gerenciado)**
 
 - **Decisão:** Operar o ConectaSolar como um produto vendável no formato **setup + mensalidade**, com **domínio do cliente** (ele compra e mantém) e **deploy/hospedagem gerenciados**.

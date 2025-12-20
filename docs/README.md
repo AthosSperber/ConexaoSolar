@@ -5,7 +5,9 @@ O ConectaSolar é uma landing page em React/Vite para apresentar o portfólio de
 
 ## Objetivo (produto)
 
-Além do uso para o consultor Athos, o projeto foi estruturado para ser um **template portável** para outros consultores (troca de consultor via JSON em `public/` + `VITE_CONSULTANT_ID`).
+Além do uso para o consultor Athos, o projeto foi estruturado para ser um **template portável e vendável** (setup + mensalidade) para outros consultores (troca de consultor via JSON em `public/` + `VITE_CONSULTANT_ID`).
+
+Este repositório é pensado para operar como **produto**: implantação rápida com escopo fechado + manutenção recorrente.
 
 ## Público-Alvo
 - **Clientes Finais:** Proprietários de imóveis residenciais e comerciais interessados em reduzir custos com energia.
@@ -19,11 +21,12 @@ Além do uso para o consultor Athos, o projeto foi estruturado para ser um **tem
 
 ## Documentação
 
-- Arquitetura: `docs/ARQUITETURA.md`
-- Padrões visuais: `docs/UX_UI.md`
-- Roadmap/Backlog: `docs/ROADMAP.md`, `docs/BACKLOG.md`
-- Higiene do repositório (o que versionar/ignorar): `docs/REPO_HIGIENE.md`
-- Operação (vender/operar clientes): `docs/CLIENTES.md`
+- Negócio (produto vendável): [NEGOCIO.md](NEGOCIO.md)
+- Operação (SOP/checklist): [CLIENTES.md](CLIENTES.md)
+- Arquitetura: [ARQUITETURA.md](ARQUITETURA.md)
+- Padrões visuais: [UX_UI.md](UX_UI.md)
+- Roadmap/Backlog: [ROADMAP.md](ROADMAP.md), [BACKLOG.md](BACKLOG.md)
+- Higiene do repositório (o que versionar/ignorar): [REPO_HIGIENE.md](REPO_HIGIENE.md)
 
 ## Como Rodar o Projeto
 1. Clone o repositório.
