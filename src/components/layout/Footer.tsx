@@ -1,6 +1,7 @@
 import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
 import { useConsultant } from '../../config/consultant';
 import { Link } from 'react-router-dom';
+import { track } from '../../lib/analytics';
 
 export default function Footer() {
   const { consultant } = useConsultant();
@@ -31,9 +32,29 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto text-center mt-8 pt-6 border-t border-gray-700 text-xs text-gray-400">
         © {new Date().getFullYear()} {consultant.brand.short}. Todos os direitos reservados.
         <div className="mt-2">
-          <Link to="/para-consultores" className="hover:text-green-400 transition">
+          <Link
+            to="/para-consultores"
+            className="hover:text-green-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded"
+          >
             Sou consultor iGreen
           </Link>
+          <div className="mt-1 text-[11px] leading-snug text-gray-400">
+            <span>É consultor iGreen? O ConectaSolar cria seu site (setup + mensalidade). </span>
+            <Link
+              to="/para-consultores"
+              onClick={() =>
+                track('cta_click', {
+                  consultantId: consultant.id,
+                  placement: 'footer',
+                  cta: 'for_consultants',
+                  pathname: window.location.pathname,
+                })
+              }
+              className="underline underline-offset-2 hover:text-green-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded"
+            >
+              Ver detalhes
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

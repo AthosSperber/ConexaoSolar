@@ -4,6 +4,23 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 
 ---
 
+### 2025-12-20 — Kit de Fechamento: Proposta Comercial (1-pager)
+
+- **Decisão:** Criar documento unificado (`docs/PROPOSTA_COMERCIAL.md`) para venda do ConectaSolar, com prazo padrão de **3 a 5 dias úteis** (após materiais completos) e SLA da mensalidade definido como **1 alteração simples/mês** (SLA A).
+- **Justificativa:** Consolidar proposta de valor, preços (Promo: R$ 450 + R$ 79/mês; Padrão: R$ 750 + R$ 79/mês), escopo (inclui/não inclui) e processo (onboarding → entrega → manutenção) em formato copiável para WhatsApp, reduzindo atrito comercial e acelerando fechamento.
+- **Posicionamento B2B:** Site consultor-first (B2C) com vitrine B2B via `/para-consultores` + footer micro-ad. A PROPOSTA_COMERCIAL referencia `docs/NEGOCIO.md` (estratégia/escopo) e `docs/CLIENTES.md` (SOP/checklist).
+- **SLA A (alteração simples):** até 30 minutos de execução, sem criar novas seções/páginas, sem buscar/criar conteúdo (material pronto do cliente), sem integrações/automação. Prazo de entrega: até 5 dias úteis (após envio de material).
+
+---
+
+### 2025-12-20 — Publi discreta do ConectaSolar no Footer (B2B)
+
+- Decisão: manter o site principal focado em B2C (cliente final), mas adicionar uma chamada curta no Footer direcionada a consultores iGreen.
+- Motivo: capturar demanda B2B sem poluir a jornada do cliente final.
+- Implementação: micro-copy + CTA para `/para-consultores` próximo do link “Sou consultor iGreen”.
+
+---
+
 ### **2025-12-19: Operação Comercial (Domínio do Cliente + Deploy Gerenciado)**
 
 - **Decisão:** Operar o ConectaSolar como um produto vendável no formato **setup + mensalidade**, com **domínio do cliente** (ele compra e mantém) e **deploy/hospedagem gerenciados**.
