@@ -16,7 +16,7 @@
 - **Setup (implantação):** R$ 750 (pagamento único)
 - **Mensalidade:** R$ 79/mês
 
-**Sem fidelidade:** Cancelou a mensalidade, o site sai do ar.  
+**Sem fidelidade:** Cancelou a mensalidade, a hospedagem gerenciada é encerrada.  
 **Domínio:** Você compra e mantém a posse (recomendado).
 
 ---
