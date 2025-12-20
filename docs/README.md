@@ -21,6 +21,7 @@ Este repositório é pensado para operar como **produto**: implantação rápida
 
 ## Documentação
 
+- **Proposta Comercial (1-pager):** [PROPOSTA_COMERCIAL.md](PROPOSTA_COMERCIAL.md)
 - Negócio (produto vendável): [NEGOCIO.md](NEGOCIO.md)
 - Operação (SOP/checklist): [CLIENTES.md](CLIENTES.md)
 - Arquitetura: [ARQUITETURA.md](ARQUITETURA.md)
