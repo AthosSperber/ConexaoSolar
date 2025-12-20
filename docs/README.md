@@ -24,6 +24,7 @@ Além do uso para o consultor Athos, o projeto foi estruturado para ser um **tem
 - Roadmap/Backlog: `docs/ROADMAP.md`, `docs/BACKLOG.md`
 - Higiene do repositório (o que versionar/ignorar): `docs/REPO_HIGIENE.md`
 - Operação (vender/operar clientes): `docs/CLIENTES.md`
+- Playbook WhatsApp (vendas e follow-up): `docs/WHATSAPP_VENDAS.md`
 
 ## Como Rodar o Projeto
 1. Clone o repositório.

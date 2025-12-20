@@ -49,6 +49,9 @@
   - [ ] Otimização de performance (lazy loading de imagens, code splitting).
   - [ ] Testes de usabilidade com usuários reais.
 
+- **Fase 5: Vendas e Conversão B2B**
+  - [x] Playbook WhatsApp (vendas e follow-up)
+
 ## ⏭️ Próximo Passo Imediato
 
 - Empacotar onboarding e operação (playbook em `docs/CLIENTES.md`) para vender sem retrabalho.

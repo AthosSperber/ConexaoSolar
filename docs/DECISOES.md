@@ -4,6 +4,15 @@ Este documento registra as decisões técnicas, de arquitetura e de UX/UI mais i
 
 ---
 
+### **2025-12-20: Padronizar Follow-ups de WhatsApp (Vendas B2B)**
+
+- **Decisão:** Criar playbook estruturado de vendas via WhatsApp (`docs/WHATSAPP_VENDAS.md`) com 5 templates de mensagens (primeira abordagem, follow-ups 2h/24h/3 dias, fechamento) e respostas para 8 objeções comuns.
+- **Justificativa:** Reduzir atrito e retrabalho comercial no processo de venda B2B (consultor → consultor), padronizar comunicação e aumentar conversão sem perder a personalização necessária.
+- **Escopo do playbook:** Templates consistentes com `docs/CLIENTES.md` (preços, prazos, escopo de SLA), respostas diretas para objeções (preço, fidelidade, tecnologia, garantias), boas práticas de follow-up (máx. 3 toques, não ser insistente).
+- **Motivo comercial:** Venda de setup (R$ 450–750) + mensalidade (R$ 79/mês) requer processo comercial eficiente e replicável; WhatsApp é canal principal de conversão B2B no segmento.
+
+---
+
 ### **2025-12-19: Operação Comercial (Domínio do Cliente + Deploy Gerenciado)**
 
 - **Decisão:** Operar o ConectaSolar como um produto vendável no formato **setup + mensalidade**, com **domínio do cliente** (ele compra e mantém) e **deploy/hospedagem gerenciados**.
