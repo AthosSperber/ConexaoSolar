@@ -42,9 +42,16 @@
   - [x] Preview ao compartilhar (Open Graph/Twitter): `public/og-image.png` + meta tags no `index.html`.
   - [x] SEO sanity (sem SSR): runtime override via `public/consultant.json` + fallback de `canonical/og:url` por `location.origin`.
 
+- **Fase 4: Kit de Fechamento (Proposta Comercial)**
+  - [x] Criar `docs/PROPOSTA_COMERCIAL.md` (1-pager copiável para WhatsApp)
+  - [x] Definir prazo padrão: 3 a 5 dias úteis (após materiais completos)
+  - [x] Definir SLA mensalidade: 1 alteração simples/mês (SLA A)
+  - [x] Blocos "copiar e colar no WhatsApp" (proposta + pedido de materiais)
+  - [x] Referências para `docs/NEGOCIO.md` e `docs/CLIENTES.md`
+
 ## 🚧 Em Andamento
 
-- **Fase 4: Analytics e Melhorias**
+- **Fase 5: Analytics e Melhorias**
   - [ ] Implementar sistema de análise e métricas (Google Analytics/Plausible).
   - [ ] Otimização de performance (lazy loading de imagens, code splitting).
   - [ ] Testes de usabilidade com usuários reais.
@@ -54,6 +61,6 @@
 
 ## ⏭️ Próximo Passo Imediato
 
-- Empacotar onboarding e operação (playbook em `docs/CLIENTES.md`) para vender sem retrabalho.
+- **Fechar 3 clientes Promo** e coletar depoimentos (validação de produto)
 - Implementar sistema de análise para tracking de conversões e comportamento do usuário.
 - Avaliar necessidade de funcionalidades do backlog (Simulador de Economia, Área do Licenciado).

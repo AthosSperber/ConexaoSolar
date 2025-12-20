@@ -3,7 +3,7 @@ import { testimonials } from '../../data/mock';
 import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
 import { useConsultant } from '../../config/consultant';
 
-export default function iGreenClubSection() {
+export default function IGreenClubSection() {
   const { consultant } = useConsultant();
   const whatsappHref = buildWhatsAppUrl(
     'Olá! Quero saber mais sobre o iGreen Club e como funciona para clientes iGreen.',
