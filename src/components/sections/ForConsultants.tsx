@@ -32,7 +32,7 @@ const ForConsultants: FC = () => {
       <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         <div className="text-center mb-10 md:mb-14">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-4 leading-tight">
-            ConectaSolar: site pronto (produto) para consultor iGreen
+            ConectaSolar: soluções digitais prontas para consultores iGreen
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Setup + mensalidade com escopo fechado: entregamos seu site no ar, com SEO básico e WhatsApp como CTA — você foca em vender.
