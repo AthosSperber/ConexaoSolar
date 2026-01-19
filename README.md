@@ -112,6 +112,30 @@ Edite `src/data/productDetails.ts` (fonte canônica das páginas) e `src/data/so
 
 ---
 
+## 🧭 Governed Snapshot (governanca-system)
+
+Esta landing consome um snapshot governado publicado como artefato estático no GitHub Pages do projeto [AthosSperber/governanca-system](https://github.com/AthosSperber/governanca-system).
+
+- **Pages demo:** https://athossperber.github.io/governanca-system/
+- **JSON público:** https://athossperber.github.io/governanca-system/governed_snapshot_conexao_solar.json
+
+### Configuração via ENV
+
+Defina `VITE_GOVERNANCA_SNAPSHOT_URL` para sobrescrever a URL do snapshot (copie `.env.example` para `.env.local`):
+
+```bash
+VITE_GOVERNANCA_SNAPSHOT_URL=https://athossperber.github.io/governanca-system/governed_snapshot_conexao_solar.json
+```
+
+### Rodar localmente
+
+```bash
+npm install
+npm run dev
+```
+
+---
+
 ## 📦 Build e Deploy
 
 ### Build de Produção
@@ -260,4 +284,3 @@ npm run images:convert
 O script `scripts/convert-images.js` gera arquivos `-480.webp`, `-768.webp` e `-1200.webp` ao lado das imagens originais em `src/assets/images/` (pipeline das imagens do site). Os componentes já usam `<picture>`/`srcset` para carregar o melhor formato/tamanho.
 
 Observação: a conversão usa a biblioteca `sharp` (instalada como devDependency). Em algumas plataformas pode ser necessário instalar bibliotecas nativas (vcbuild/ prebuilt binaries). Se preferir, gere as WebP manualmente com `magick`.
-
