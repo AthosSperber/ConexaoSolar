@@ -27,6 +27,9 @@ export type ConsultantProfile = {
     number?: string;
     defaultMessage?: string;
   };
+  social?: {
+    instagram?: string;
+  };
   seo?: {
     title?: string;
     description?: string;

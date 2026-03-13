@@ -31,6 +31,9 @@ export const DEFAULT_CONSULTANT: ConsultantProfile = {
     defaultMessage:
       'Olá! Quero entender qual solução iGreen faz sentido para mim e como posso ter energia renovável e economia.',
   },
+  social: {
+    instagram: 'https://www.instagram.com/athosigreen/',
+  },
   seo: {
     title: 'Consultor iGreen | Energia e Economia',
     description:

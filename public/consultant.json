@@ -27,6 +27,9 @@
     "number": "5519996693018",
     "defaultMessage": "Olá, {{consultantFirstName}}! Vi seu site e queria sua orientação: você pode analisar meu perfil e me indicar a melhor solução iGreen para eu ter economia e energia renovável?"
   },
+  "social": {
+    "instagram": "https://www.instagram.com/athosigreen/"
+  },
   "seo": {
     "title": "Athos Sperber – Consultor iGreen | Energia e Economia",
     "description": "Consultor iGreen: orientação clara para escolher a melhor solução e buscar economia com energia renovável. Atendimento direto no WhatsApp.",
