@@ -1,6 +1,7 @@
 import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
 import { useConsultant } from '../../config/consultant';
 
+
 export default function Footer() {
   const { consultant } = useConsultant();
   const phone = consultant.whatsapp?.number || WHATSAPP_NUMBER;
