@@ -1,13 +1,12 @@
 import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
 import { useConsultant } from '../../config/consultant';
 
-const DEFAULT_INSTAGRAM_URL = 'https://www.instagram.com/athosigreen/';
 
 export default function Footer() {
   const { consultant } = useConsultant();
   const phone = consultant.whatsapp?.number || WHATSAPP_NUMBER;
   const whatsappHref = buildWhatsAppUrl(consultant.whatsapp?.defaultMessage, phone, consultant.name);
-  const instagramHref = consultant.social?.instagram?.trim() || DEFAULT_INSTAGRAM_URL;
+  const instagramHref = consultant.social?.instagram?.trim() || 'https://www.instagram.com/athosigreen/';
 
   return (
     <footer className="bg-gray-900 text-white px-4 py-8 md:py-12 mt-12 md:mt-16">
