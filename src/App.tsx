@@ -4,6 +4,7 @@ import { AppLayout } from './components/layout/AppLayout';
 import Header from './components/layout/Header.tsx';
 import Footer from './components/layout/Footer.tsx';
 import WhatsAppButton from './components/ui/WhatsAppButton';
+import InstagramButton from './components/ui/InstagramButton';
 import ScrollToTopButton from './components/ui/ScrollToTopButton';
 import { ConsultantProvider } from './config/consultant';
 import { useEffect } from 'react';
@@ -54,6 +55,7 @@ export default function App() {
 
         <Footer />
         <ScrollToTopButton />
+        <InstagramButton />
         <WhatsAppButton />
       </AppLayout>
     </ConsultantProvider>

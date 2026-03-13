@@ -207,12 +207,6 @@ export default function Header() {
           >
             Parcerias
           </Link>
-          <Link
-            to="/para-consultores"
-            className="hover:text-green-600 dark:hover:text-green-400 transition font-medium"
-          >
-            Sou consultor iGreen
-          </Link>
           <ThemeToggle />
         </nav>
 
@@ -323,13 +317,6 @@ export default function Header() {
                   >
                     Parcerias
                   </Link>
-                  <Link
-                    to="/para-consultores"
-                    onClick={() => closeMobileMenu({ restoreFocus: true })}
-                    className="py-2 font-medium hover:text-green-600 dark:hover:text-green-400 transition"
-                  >
-                    Sou consultor iGreen
-                  </Link>
                 </>
               ) : (
                 <>
@@ -347,13 +334,6 @@ export default function Header() {
                     className="py-2 font-medium hover:text-green-600 dark:hover:text-green-400 transition"
                   >
                     Parcerias
-                  </Link>
-                  <Link
-                    to="/para-consultores"
-                    onClick={() => closeMobileMenu({ restoreFocus: true })}
-                    className="py-2 font-medium hover:text-green-600 dark:hover:text-green-400 transition"
-                  >
-                    Sou consultor iGreen
                   </Link>
                 </>
               )}
