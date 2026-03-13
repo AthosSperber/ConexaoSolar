@@ -1,7 +1,5 @@
 import { buildWhatsAppUrl, WHATSAPP_NUMBER } from '../../config/whatsapp';
 import { useConsultant } from '../../config/consultant';
-import { Link } from 'react-router-dom';
-import { track } from '../../lib/analytics';
 
 export default function Footer() {
   const { consultant } = useConsultant();
@@ -32,15 +30,6 @@ export default function Footer() {
       </div>
       <div className="max-w-4xl mx-auto text-center mt-8 pt-6 border-t border-gray-700 text-xs text-gray-400">
         © {new Date().getFullYear()} {consultant.brand.short}. Todos os direitos reservados.
-        <div className="mt-2 flex flex-col items-center gap-1">
-          <Link
-            to="/para-consultores"
-            className="hover:text-green-400 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900 rounded font-semibold inline-flex items-center gap-1"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
-            Sou consultor iGreen
-          </Link>
-        </div>
       </div>
     </footer>
   );
