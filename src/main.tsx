@@ -1,12 +1,11 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Navigate, createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from './components/providers/ThemeProvider.tsx';
 import App from './App.tsx';
 import Home from './pages/Home.tsx';
 import Partnerships from './pages/Partnerships.tsx';
 import ProductPage from './pages/ProductPage.tsx';
-import ParaConsultores from './pages/ParaConsultores.tsx';
 import './index.css';
 
 const router = createBrowserRouter([
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/para-consultores',
-        element: <ParaConsultores />,
+        element: <Navigate to="/" replace />,
       },
       {
         path: '/:productId',

@@ -22,22 +22,15 @@ export default function WhatsAppButton({ phone, message }: Props) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`fixed bottom-6 right-6 z-50 bg-gradient-to-br from-green-600 via-green-500 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white px-5 py-4 rounded-full shadow-2xl transition-all duration-300 flex items-center gap-3 ring-emerald-400/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-950 ${hovered ? 'scale-105 shadow-emerald-300/40' : ''}`}
+      className={`fixed bottom-6 right-6 z-50 bg-gradient-to-br from-green-600 via-green-500 to-emerald-500 hover:from-green-700 hover:to-emerald-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 flex items-center justify-center ring-emerald-400/70 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-gray-950 ${hovered ? 'scale-105 shadow-emerald-300/40' : ''}`}
       aria-label={`Falar com ${consultant.name} no WhatsApp`}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       style={{ boxShadow: hovered ? '0 8px 32px 0 rgba(16, 185, 129, 0.18)' : undefined }}
     >
-      <span className="animate-pulse-slow inline-flex items-center justify-center">
-        <MessageCircle className="w-7 h-7" />
-      </span>
-      <span className="hidden sm:inline font-semibold text-base tracking-tight drop-shadow-sm">
-        Falar no WhatsApp
+      <span className="inline-flex items-center justify-center">
+        <MessageCircle className="w-6 h-6" />
       </span>
     </a>
   );
 }
-
-// Tailwind animation personalizada
-// Adicione ao tailwind.config.js:
-// theme: { extend: { animation: { 'pulse-slow': 'pulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite' } } }
